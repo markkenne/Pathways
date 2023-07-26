@@ -1,0 +1,5 @@
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\CostFloorValid2\obj\Debug\net7.0\CostFloorValid2.csproj.AssemblyReference.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\CostFloorValid2\obj\Debug\net7.0\CostFloorValid2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\CostFloorValid2\obj\Debug\net7.0\CostFloorValid2.AssemblyInfoInputs.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\CostFloorValid2\obj\Debug\net7.0\CostFloorValid2.AssemblyInfo.cs
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\CostFloorValid2\obj\Debug\net7.0\CostFloorValid2.csproj.CoreCompileInputs.cache

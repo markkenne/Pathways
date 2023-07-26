@@ -1,0 +1,15 @@
+C:\Users\dpdmak\Desktop\Pathways\helloworld\bin\Debug\net7.0\HelloWorld.exe
+C:\Users\dpdmak\Desktop\Pathways\helloworld\bin\Debug\net7.0\HelloWorld.deps.json
+C:\Users\dpdmak\Desktop\Pathways\helloworld\bin\Debug\net7.0\HelloWorld.runtimeconfig.json
+C:\Users\dpdmak\Desktop\Pathways\helloworld\bin\Debug\net7.0\HelloWorld.dll
+C:\Users\dpdmak\Desktop\Pathways\helloworld\bin\Debug\net7.0\HelloWorld.pdb
+C:\Users\dpdmak\Desktop\Pathways\helloworld\obj\Debug\net7.0\HelloWorld.csproj.AssemblyReference.cache
+C:\Users\dpdmak\Desktop\Pathways\helloworld\obj\Debug\net7.0\HelloWorld.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dpdmak\Desktop\Pathways\helloworld\obj\Debug\net7.0\HelloWorld.AssemblyInfoInputs.cache
+C:\Users\dpdmak\Desktop\Pathways\helloworld\obj\Debug\net7.0\HelloWorld.AssemblyInfo.cs
+C:\Users\dpdmak\Desktop\Pathways\helloworld\obj\Debug\net7.0\HelloWorld.csproj.CoreCompileInputs.cache
+C:\Users\dpdmak\Desktop\Pathways\helloworld\obj\Debug\net7.0\HelloWorld.dll
+C:\Users\dpdmak\Desktop\Pathways\helloworld\obj\Debug\net7.0\refint\HelloWorld.dll
+C:\Users\dpdmak\Desktop\Pathways\helloworld\obj\Debug\net7.0\HelloWorld.pdb
+C:\Users\dpdmak\Desktop\Pathways\helloworld\obj\Debug\net7.0\HelloWorld.genruntimeconfig.cache
+C:\Users\dpdmak\Desktop\Pathways\helloworld\obj\Debug\net7.0\ref\HelloWorld.dll

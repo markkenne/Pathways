@@ -1,0 +1,15 @@
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\CalcGrades\obj\Debug\net7.0\CalcGrades.csproj.AssemblyReference.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\CalcGrades\obj\Debug\net7.0\CalcGrades.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\CalcGrades\obj\Debug\net7.0\CalcGrades.AssemblyInfoInputs.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\CalcGrades\obj\Debug\net7.0\CalcGrades.AssemblyInfo.cs
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\CalcGrades\obj\Debug\net7.0\CalcGrades.csproj.CoreCompileInputs.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\CalcGrades\bin\Debug\net7.0\CalcGrades.exe
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\CalcGrades\bin\Debug\net7.0\CalcGrades.deps.json
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\CalcGrades\bin\Debug\net7.0\CalcGrades.runtimeconfig.json
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\CalcGrades\bin\Debug\net7.0\CalcGrades.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\CalcGrades\bin\Debug\net7.0\CalcGrades.pdb
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\CalcGrades\obj\Debug\net7.0\CalcGrades.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\CalcGrades\obj\Debug\net7.0\refint\CalcGrades.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\CalcGrades\obj\Debug\net7.0\CalcGrades.pdb
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\CalcGrades\obj\Debug\net7.0\CalcGrades.genruntimeconfig.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\CalcGrades\obj\Debug\net7.0\ref\CalcGrades.dll

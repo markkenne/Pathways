@@ -1,0 +1,15 @@
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\SquareYards\bin\Debug\net7.0\SquareYards.exe
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\SquareYards\bin\Debug\net7.0\SquareYards.deps.json
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\SquareYards\bin\Debug\net7.0\SquareYards.runtimeconfig.json
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\SquareYards\bin\Debug\net7.0\SquareYards.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\SquareYards\bin\Debug\net7.0\SquareYards.pdb
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\SquareYards\obj\Debug\net7.0\SquareYards.csproj.AssemblyReference.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\SquareYards\obj\Debug\net7.0\SquareYards.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\SquareYards\obj\Debug\net7.0\SquareYards.AssemblyInfoInputs.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\SquareYards\obj\Debug\net7.0\SquareYards.AssemblyInfo.cs
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\SquareYards\obj\Debug\net7.0\SquareYards.csproj.CoreCompileInputs.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\SquareYards\obj\Debug\net7.0\SquareYards.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\SquareYards\obj\Debug\net7.0\refint\SquareYards.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\SquareYards\obj\Debug\net7.0\SquareYards.pdb
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\SquareYards\obj\Debug\net7.0\SquareYards.genruntimeconfig.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\SquareYards\obj\Debug\net7.0\ref\SquareYards.dll

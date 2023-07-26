@@ -1,0 +1,15 @@
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\FlooringCostValid\bin\Debug\net7.0\FlooringCostValid.exe
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\FlooringCostValid\bin\Debug\net7.0\FlooringCostValid.deps.json
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\FlooringCostValid\bin\Debug\net7.0\FlooringCostValid.runtimeconfig.json
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\FlooringCostValid\bin\Debug\net7.0\FlooringCostValid.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\FlooringCostValid\bin\Debug\net7.0\FlooringCostValid.pdb
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\FlooringCostValid\obj\Debug\net7.0\FlooringCostValid.csproj.AssemblyReference.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\FlooringCostValid\obj\Debug\net7.0\FlooringCostValid.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\FlooringCostValid\obj\Debug\net7.0\FlooringCostValid.AssemblyInfoInputs.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\FlooringCostValid\obj\Debug\net7.0\FlooringCostValid.AssemblyInfo.cs
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\FlooringCostValid\obj\Debug\net7.0\FlooringCostValid.csproj.CoreCompileInputs.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\FlooringCostValid\obj\Debug\net7.0\FlooringCostValid.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\FlooringCostValid\obj\Debug\net7.0\refint\FlooringCostValid.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\FlooringCostValid\obj\Debug\net7.0\FlooringCostValid.pdb
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\FlooringCostValid\obj\Debug\net7.0\FlooringCostValid.genruntimeconfig.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 1\FlooringCostValid\obj\Debug\net7.0\ref\FlooringCostValid.dll
