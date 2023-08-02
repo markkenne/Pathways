@@ -1,0 +1,15 @@
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_Emp\bin\Debug\net7.0\Obj_Emp.exe
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_Emp\bin\Debug\net7.0\Obj_Emp.deps.json
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_Emp\bin\Debug\net7.0\Obj_Emp.runtimeconfig.json
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_Emp\bin\Debug\net7.0\Obj_Emp.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_Emp\bin\Debug\net7.0\Obj_Emp.pdb
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_Emp\obj\Debug\net7.0\Obj_Emp.csproj.AssemblyReference.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_Emp\obj\Debug\net7.0\Obj_Emp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_Emp\obj\Debug\net7.0\Obj_Emp.AssemblyInfoInputs.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_Emp\obj\Debug\net7.0\Obj_Emp.AssemblyInfo.cs
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_Emp\obj\Debug\net7.0\Obj_Emp.csproj.CoreCompileInputs.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_Emp\obj\Debug\net7.0\Obj_Emp.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_Emp\obj\Debug\net7.0\refint\Obj_Emp.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_Emp\obj\Debug\net7.0\Obj_Emp.pdb
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_Emp\obj\Debug\net7.0\Obj_Emp.genruntimeconfig.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_Emp\obj\Debug\net7.0\ref\Obj_Emp.dll

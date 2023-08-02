@@ -1,0 +1,15 @@
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\simpleExample\obj\Debug\net7.0\simpleExample.csproj.AssemblyReference.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\simpleExample\obj\Debug\net7.0\simpleExample.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\simpleExample\obj\Debug\net7.0\simpleExample.AssemblyInfoInputs.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\simpleExample\obj\Debug\net7.0\simpleExample.AssemblyInfo.cs
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\simpleExample\obj\Debug\net7.0\simpleExample.csproj.CoreCompileInputs.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\simpleExample\bin\Debug\net7.0\simpleExample.exe
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\simpleExample\bin\Debug\net7.0\simpleExample.deps.json
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\simpleExample\bin\Debug\net7.0\simpleExample.runtimeconfig.json
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\simpleExample\bin\Debug\net7.0\simpleExample.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\simpleExample\bin\Debug\net7.0\simpleExample.pdb
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\simpleExample\obj\Debug\net7.0\simpleExample.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\simpleExample\obj\Debug\net7.0\refint\simpleExample.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\simpleExample\obj\Debug\net7.0\simpleExample.pdb
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\simpleExample\obj\Debug\net7.0\simpleExample.genruntimeconfig.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\simpleExample\obj\Debug\net7.0\ref\simpleExample.dll

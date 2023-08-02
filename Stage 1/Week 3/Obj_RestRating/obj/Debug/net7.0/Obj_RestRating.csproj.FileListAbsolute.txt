@@ -1,0 +1,15 @@
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_RestRating\bin\Debug\net7.0\Obj_RestRating.exe
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_RestRating\bin\Debug\net7.0\Obj_RestRating.deps.json
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_RestRating\bin\Debug\net7.0\Obj_RestRating.runtimeconfig.json
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_RestRating\bin\Debug\net7.0\Obj_RestRating.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_RestRating\bin\Debug\net7.0\Obj_RestRating.pdb
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_RestRating\obj\Debug\net7.0\Obj_RestRating.csproj.AssemblyReference.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_RestRating\obj\Debug\net7.0\Obj_RestRating.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_RestRating\obj\Debug\net7.0\Obj_RestRating.AssemblyInfoInputs.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_RestRating\obj\Debug\net7.0\Obj_RestRating.AssemblyInfo.cs
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_RestRating\obj\Debug\net7.0\Obj_RestRating.csproj.CoreCompileInputs.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_RestRating\obj\Debug\net7.0\Obj_RestRating.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_RestRating\obj\Debug\net7.0\refint\Obj_RestRating.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_RestRating\obj\Debug\net7.0\Obj_RestRating.pdb
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_RestRating\obj\Debug\net7.0\Obj_RestRating.genruntimeconfig.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_RestRating\obj\Debug\net7.0\ref\Obj_RestRating.dll

@@ -1,0 +1,15 @@
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_Dog\bin\Debug\net7.0\Obj_Dog.exe
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_Dog\bin\Debug\net7.0\Obj_Dog.deps.json
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_Dog\bin\Debug\net7.0\Obj_Dog.runtimeconfig.json
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_Dog\bin\Debug\net7.0\Obj_Dog.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_Dog\bin\Debug\net7.0\Obj_Dog.pdb
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_Dog\obj\Debug\net7.0\Obj_Dog.csproj.AssemblyReference.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_Dog\obj\Debug\net7.0\Obj_Dog.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_Dog\obj\Debug\net7.0\Obj_Dog.AssemblyInfoInputs.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_Dog\obj\Debug\net7.0\Obj_Dog.AssemblyInfo.cs
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_Dog\obj\Debug\net7.0\Obj_Dog.csproj.CoreCompileInputs.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_Dog\obj\Debug\net7.0\Obj_Dog.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_Dog\obj\Debug\net7.0\refint\Obj_Dog.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_Dog\obj\Debug\net7.0\Obj_Dog.pdb
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_Dog\obj\Debug\net7.0\Obj_Dog.genruntimeconfig.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\Obj_Dog\obj\Debug\net7.0\ref\Obj_Dog.dll
