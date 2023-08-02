@@ -1,0 +1,15 @@
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\RRatingInherit\bin\Debug\net7.0\RRatingInherit.exe
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\RRatingInherit\bin\Debug\net7.0\RRatingInherit.deps.json
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\RRatingInherit\bin\Debug\net7.0\RRatingInherit.runtimeconfig.json
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\RRatingInherit\bin\Debug\net7.0\RRatingInherit.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\RRatingInherit\bin\Debug\net7.0\RRatingInherit.pdb
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\RRatingInherit\obj\Debug\net7.0\RRatingInherit.csproj.AssemblyReference.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\RRatingInherit\obj\Debug\net7.0\RRatingInherit.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\RRatingInherit\obj\Debug\net7.0\RRatingInherit.AssemblyInfoInputs.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\RRatingInherit\obj\Debug\net7.0\RRatingInherit.AssemblyInfo.cs
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\RRatingInherit\obj\Debug\net7.0\RRatingInherit.csproj.CoreCompileInputs.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\RRatingInherit\obj\Debug\net7.0\RRatingInherit.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\RRatingInherit\obj\Debug\net7.0\refint\RRatingInherit.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\RRatingInherit\obj\Debug\net7.0\RRatingInherit.pdb
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\RRatingInherit\obj\Debug\net7.0\RRatingInherit.genruntimeconfig.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\RRatingInherit\obj\Debug\net7.0\ref\RRatingInherit.dll
