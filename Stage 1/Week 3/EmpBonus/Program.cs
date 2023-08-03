@@ -49,7 +49,7 @@ namespace EmployeeApp
                   userChoice = false;
 
                   //  TODO: Provide the user a menu of options
-                  
+
                   Console.WriteLine();
                   Console.WriteLine("Please select an option: ");
                   Console.WriteLine("L: Load the text data file into an array.");
@@ -58,6 +58,7 @@ namespace EmployeeApp
                   Console.WriteLine("R: Print a list of all Employees and their calculated bonuses.");
                   Console.WriteLine("U: Update information on an Employee.");
                   Console.WriteLine("D: Delete an Employee.");
+                  Console.WriteLine("I: Initialize or clear the array.");
                   Console.WriteLine("Q: Quit the program.");
 
                   //  TODO: Get a user option (valid means its on the menu)
@@ -65,7 +66,8 @@ namespace EmployeeApp
                   userChoiceString = Console.ReadLine();
 
                   userChoice = (userChoiceString=="L" || userChoiceString=="l" ||
-                              userChoiceString == "S" || userChoiceString == "s" ||
+                              userChoiceString == "I" || userChoiceString == "i" ||
+                              userChoiceString == "S" || userChoiceString == "s" ||                              
                               userChoiceString == "C" || userChoiceString == "c" ||
                               userChoiceString == "R" || userChoiceString == "r" ||
                               userChoiceString == "U" || userChoiceString == "u" ||
@@ -78,10 +80,17 @@ namespace EmployeeApp
                     }
 
                   } while (!userChoice);  // end of user choice input
+              //  TODO: If the option is a I or i then add load text file
+
+              if (userChoiceString=="I" || userChoiceString=="i")
+
+               { // Begin I execution here
+                  Console.WriteLine("In the I/i area");
+               } // end of I area
 
               //  TODO: Else if the option is a L or l then add load text file
 
-              if (userChoiceString=="L" || userChoiceString=="l")
+              else if (userChoiceString=="L" || userChoiceString=="l")
 
                { // Begin L execution here
                   Console.WriteLine("In the L/l area");
