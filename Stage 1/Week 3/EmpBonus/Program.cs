@@ -49,7 +49,8 @@ namespace EmployeeApp
                   userChoice = false;
 
                   //  TODO: Provide the user a menu of options
-
+                  
+                  Console.WriteLine();
                   Console.WriteLine("Please select an option: ");
                   Console.WriteLine("L: Load the text data file into an array.");
                   Console.WriteLine("S: Store the current Employee information in text file.");
@@ -84,27 +85,49 @@ namespace EmployeeApp
 
                { // Begin L execution here
                   Console.WriteLine("In the L/l area");
-               } //end of L area
+               } // end of L area
 
               //  TODO: Else if the option is a S or s then save the array to text file
 
               else if (userChoiceString=="S" || userChoiceString=="s")
                { // Begin S execution here
                  Console.WriteLine("In the S/s area");
-               } //end of S area
+               } // end of S area
 
               //  TODO: Else if the option is a C or c then add a name to the array (if there's room)
 
               else if (userChoiceString=="C" || userChoiceString=="c")
                { // Begin C execution here
                  Console.WriteLine("In the C/c area");
-               } //end of C area
+               } // end of C area
+
+              //  TODO: Else if the option is a R or r then print the array to the screen without nulls
+
+              else if (userChoiceString=="R" || userChoiceString=="r")
+               { // Begin R execution here
+                 Console.WriteLine("In the R/r area");
+               } // end of R area
+
+              //  TODO: Else if the option is a U or c then update a name in the array
+
+              else if (userChoiceString=="U" || userChoiceString=="u")
+               { // Begin U execution here
+                 Console.WriteLine("In the U/u area");
+               } // end of U area
+
+              //  TODO: Else if the option is a D or d then delete an Employee
+
+              else if (userChoiceString=="D" || userChoiceString=="d")
+               { // Begin D execution here
+                 Console.WriteLine("In the D/d area");
+               } //end of D area               
 
               //  TODO: Else if the option is a Q or q then quit the program
 
               else if (userChoiceString=="Q" || userChoiceString=="q") 
                { // Begin Q execution here
                  Console.WriteLine("Good-bye!");
+                 Console.WriteLine();
                }
            } while (!(userChoiceString=="Q") && !(userChoiceString=="q"));
 
