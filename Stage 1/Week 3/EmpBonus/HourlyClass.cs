@@ -20,7 +20,7 @@ namespace EmployeeApp
         // This is the default constructor when no values are being passed.
         public Hourly () : base()  // use the parent constructor for the name and rating
         {
-            HourlyRate = -1;
+            HourlyRate = 0;
 
         }
 
