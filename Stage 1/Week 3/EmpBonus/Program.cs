@@ -26,10 +26,102 @@ using System;
 namespace EmployeeApp
 {
   class Program
-  {
-    static void Main(string[] args)
-    { 
-    
+   {
+        static void Main(string[] args)
+       { 
+
+      
+         // Declare variables
+         bool userChoice;
+         string userChoiceString;
+         //const int arraySize=24;
+         //string[,] array = new string[arraySize, arraySize];
+         string fileName = "Employees.txt";
+
+        // Repeat main loop
+         do
+           {
+             //comment
+             // TODO: Get a valid input
+              do
+                 {
+                  //  Initialize variables
+                  userChoice = false;
+
+                  //  TODO: Provide the user a menu of options
+
+                  Console.WriteLine("Please select an option: ");
+                  Console.WriteLine("L: Load the text data file into an array.");
+                  Console.WriteLine("S: Store the current Employee information in text file.");
+                  Console.WriteLine("C: Add an Employee.");
+                  Console.WriteLine("R: Print a list of all Employees and their calculated bonuses.");
+                  Console.WriteLine("U: Update information on an Employee.");
+                  Console.WriteLine("D: Delete an Employee.");
+                  Console.WriteLine("Q: Quit the program.");
+
+                  //  TODO: Get a user option (valid means its on the menu)
+
+                  userChoiceString = Console.ReadLine();
+
+                  userChoice = (userChoiceString=="L" || userChoiceString=="l" ||
+                              userChoiceString == "S" || userChoiceString == "s" ||
+                              userChoiceString == "C" || userChoiceString == "c" ||
+                              userChoiceString == "R" || userChoiceString == "r" ||
+                              userChoiceString == "U" || userChoiceString == "u" ||
+                              userChoiceString == "D" || userChoiceString == "d" ||
+                              userChoiceString == "Q" || userChoiceString == "q");
+
+                  if (!userChoice)
+                    {
+                      Console.WriteLine("Please enter a valid option.");
+                    }
+
+                  } while (!userChoice);  // end of user choice input
+
+              //  TODO: Else if the option is a L or l then add load text file
+
+              if (userChoiceString=="L" || userChoiceString=="l")
+
+               { // Begin L execution here
+                  Console.WriteLine("In the L/l area");
+               } //end of L area
+
+              //  TODO: Else if the option is a S or s then save the array to text file
+
+              else if (userChoiceString=="S" || userChoiceString=="s")
+               { // Begin S execution here
+                 Console.WriteLine("In the S/s area");
+               } //end of S area
+
+              //  TODO: Else if the option is a C or c then add a name to the array (if there's room)
+
+              else if (userChoiceString=="C" || userChoiceString=="c")
+               { // Begin C execution here
+                 Console.WriteLine("In the C/c area");
+               } //end of C area
+
+              //  TODO: Else if the option is a Q or q then quit the program
+
+              else if (userChoiceString=="Q" || userChoiceString=="q") 
+               { // Begin Q execution here
+                 Console.WriteLine("Good-bye!");
+               }
+           } while (!(userChoiceString=="Q") && !(userChoiceString=="q"));
+
+
+       } // end main
+   }  // end program
+} // end namespace
+
+
+
+
+
+/*
+
+
+
+
 // Test the three Classes - Employee parent and child Hourly and child Salary     
       Console.WriteLine();
       Employee Emp1 = new Employee();  //default properties test Employee
@@ -80,11 +172,5 @@ namespace EmployeeApp
                 
         }
 
-
-
-
-
-
-    }
-  }
-}
+       }
+       */
