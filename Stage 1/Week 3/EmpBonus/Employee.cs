@@ -50,7 +50,18 @@ namespace EmployeeApp
             PayType = newPayType;
         }
        
+
+        // The following method demonstrates polymorphism.  This is the parent class method
+        public virtual double bonusAmt()
+        {
+            return 0;  // those employees that are neither H or S Type
+        }
+
+
+
+
                // This overrides ToString so an object can be printed out with the WriteLine.
+          
 
         public override string ToString()
         {

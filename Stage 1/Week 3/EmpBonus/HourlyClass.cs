@@ -10,6 +10,8 @@ namespace EmployeeApp
             { get; set; }
         
 
+
+
         // This is the default constructor when no values are being passed.
         public Hourly () : base()  // use the parent constructor for the name and rating
         {
@@ -23,11 +25,19 @@ namespace EmployeeApp
             HourlyRate = newHourlyRate;
         }
         
+        // The following method demonstrates polymorphism.  This is the child class method that overrides the parent
+        public override double bonusAmt()
+        {
+            return HourlyRate * 80;
+        }
+
+
+
         // This overrides ToString so an object can be printed out with the WriteLine.
 
         public override string ToString()
         {
-            return base.ToString() + " with an Hourly Rate of $" + HourlyRate;
+            return base.ToString() + " with an Hourly Rate of $" + HourlyRate + " with a Bonus of $"+ HourlyRate * 80;
         }
 
     }// class Hourly
