@@ -86,6 +86,22 @@ namespace EmployeeApp
 
                { // Begin I execution here
                   Console.WriteLine("In the I/i area");
+                  Employee[] EmpArray=new Employee[25];
+                  // Create an array of employees and initialize
+                  for (int index = 0; index < EmpArray.Length; index++)
+                   {
+                     EmpArray[index] = new Employee();
+                   }
+                   // print to screen on initial only
+                  for (int index = 0; index < EmpArray.Length; index++)
+                   {
+                     //if (!((EmpArray[index].LName) == null))
+                     if (((EmpArray[index].LName) == null))
+                       {
+                        Console.WriteLine("index item: " + index + "  " + EmpArray[index]);   
+                       }
+                   }
+                     Console.WriteLine("Array initialized.") ;
                } // end of I area
 
               //  TODO: Else if the option is a L or l then add load text file
