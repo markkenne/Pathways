@@ -36,7 +36,7 @@ namespace EmployeeApp
       Employee Emp2 = new Employee("Mark", "Kenne", "S"); //3 input properties test FName, LName, PayType
       Hourly   Emp6 = new Hourly(); //default properties test Hourly
       Hourly   Emp3 = new Hourly  ("July", "Smith", "H", 20.00); //4 input properties test FName, LName, PayType and Hourly w output incuding HrlyRate and bonus
-      Hourly   Emp4 = new Hourly  ("July", "Smith", "H", 31.55); //4 input properties test FName, LName, PayType and Hourly w output incuding HrlyRate and bonus
+      Hourly   Emp4 = new Hourly  ("Mary", "Kay", "H", 31.55); //4 input properties test FName, LName, PayType and Hourly w output incuding HrlyRate and bonus
       Salary   Emp7 = new Salary(); //default properties test Salary      
       Salary   Emp5 = new Salary  ("Jimmy", "Jones", "S", 100000.00); //4 input properties test FName, LName, PayType and Salary w output incuding Salary and bonus
 
@@ -75,7 +75,7 @@ namespace EmployeeApp
             if (!((EmpArray[index].LName) == null))
             {
 
-             Console.WriteLine(EmpArray[index]);   
+             Console.WriteLine("index item: " + index + "  " + EmpArray[index]);   
             }
                 
         }
