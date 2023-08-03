@@ -27,6 +27,8 @@ namespace EmployeeApp
 {
   class Program
    {
+ 
+ 
         static void Main(string[] args)
        { 
 
@@ -37,7 +39,7 @@ namespace EmployeeApp
          const int arraySize=25;
          bool arrayInit = false;
       //   string[,] EmpArray = new string[arraySize, arraySize];
-        // Employee[] EmpArray=new Employee[arraySize];
+         Employee[] EmpArray=new Employee[25];
         
 
 
@@ -91,7 +93,7 @@ namespace EmployeeApp
 
                { // Begin I execution here
                   Console.WriteLine("In the I/i area");
-                  Employee[] EmpArray=new Employee[25];
+                 //above again Employee[] EmpArray=new Employee[25];
                   // Create an array of employees and initialize
                   for (int index = 0; index < EmpArray.Length; index++)
                    {
@@ -125,39 +127,72 @@ namespace EmployeeApp
                  Console.WriteLine("In the S/s area");
                } // end of S area
 
-              //  TODO: Else if the option is a C or c then add a name to the array (if there's room)
+              //  TODO: Else if the option is a C or c then add a name to the array (if there's room)  #####################################################
 
               else if (userChoiceString=="C" || userChoiceString=="c")
                { // Begin C execution here
                  Console.WriteLine("In the C/c area");
-               } // end of C area
 
-              //  TODO: Else if the option is a R or r then print the array to the screen without nulls #####################################################
+  // Area C - Create row algorithm
+            // (1) Find out if any blanks exits
+            //    (1a) If Found, continue on
+            //    (1b) else warn and exit    
+            // (2) Get an input name to use
+            // (3) Does the name exist already
+            //    (3a) No. Continue
+            //    (3b) Exists (try again prompt)
+            //         (3b1) No thanks, exit
+            //         (3b2) Try again. Back to 2
+            // (4) Have a name and a slot, ready to write but wait for rating
+            // (5) Input a rating
+            // (6) Write the name and the rating to array
+            
+            
+            // init variables
+                 // bool foundnull = false;
+                 // string? findspace = "test";
+                 // string? inputname = "";
+                 // string searchname = ""; //added for val
+                 // int intrating = 0;
+                 // string? inputrating = "";
+                 // int userow = 0;
+                  
+         for (int index = 0; index < EmpArray.Length; index++)
+        {
+            if (((EmpArray[index].LName) == null))
+            {
 
-              else if (userChoiceString=="R" || userChoiceString=="r")
+             Console.WriteLine("index item: " + index + "  " + EmpArray[index]); 
+             Console.WriteLine("Found null at index "+ index);
+             break;  
+            }
+             Console.WriteLine();
+        }
+
+
+                      
+    }          // End of c area      
+
+
+
+
+
+
+              //  TODO: Else if the option is a R or r then print the array to the screen without nulls 
+
+              else if (userChoiceString=="R" || userChoiceString=="r")   
                { 
                  // Begin R execution here
-                 if (arrayInit == false) // array is not empty
-                   {
-                    Console.WriteLine("Employee array does not exist, please Initialize."); // print to screen
-                   }
-                   
-                 else 
-                   {
-                    Console.WriteLine("Printing array to screen:");
-                    // print each Employee's array row, skipping nulls
-                  //  for (int index = 0; index < EmpArray.Length; index++)
-                    //   {
-                      //   if (!((EmpArray[index].LName) == null))
-                        //   {
-                          //  Console.WriteLine("index item: " + index + "  " + EmpArray[index]);   
-                          // }
-                       }   
-                        
-                  
+                 // print each Employee to test the property gets and the toString
 
-                   
-           
+                 for (int index = 0; index < EmpArray.Length; index++)
+                   {
+                    if (!((EmpArray[index].LName) == null))
+                    {
+                     Console.WriteLine("index item: " + index + "  " + EmpArray[index]);   
+                    }
+                   }
+                     Console.WriteLine();
                } // end of R area
 
               //  TODO: Else if the option is a U or c then update a name in the array
