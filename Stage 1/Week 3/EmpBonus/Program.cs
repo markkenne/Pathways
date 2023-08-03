@@ -34,8 +34,13 @@ namespace EmployeeApp
          // Declare variables
          bool userChoice;
          string userChoiceString;
-         //const int arraySize=24;
-         //string[,] array = new string[arraySize, arraySize];
+         const int arraySize=25;
+         bool arrayInit = false;
+      //   string[,] EmpArray = new string[arraySize, arraySize];
+        // Employee[] EmpArray=new Employee[arraySize];
+        
+
+
          string fileName = "Employees.txt";
 
         // Repeat main loop
@@ -101,6 +106,7 @@ namespace EmployeeApp
                         Console.WriteLine("index item: " + index + "  " + EmpArray[index]);   
                        }
                    }
+                     arrayInit = true;
                      Console.WriteLine("Array initialized.") ;
                } // end of I area
 
@@ -126,11 +132,32 @@ namespace EmployeeApp
                  Console.WriteLine("In the C/c area");
                } // end of C area
 
-              //  TODO: Else if the option is a R or r then print the array to the screen without nulls
+              //  TODO: Else if the option is a R or r then print the array to the screen without nulls #####################################################
 
               else if (userChoiceString=="R" || userChoiceString=="r")
-               { // Begin R execution here
-                 Console.WriteLine("In the R/r area");
+               { 
+                 // Begin R execution here
+                 if (arrayInit == false) // array is not empty
+                   {
+                    Console.WriteLine("Employee array does not exist, please Initialize."); // print to screen
+                   }
+                   
+                 else 
+                   {
+                    Console.WriteLine("Printing array to screen:");
+                    // print each Employee's array row, skipping nulls
+                  //  for (int index = 0; index < EmpArray.Length; index++)
+                    //   {
+                      //   if (!((EmpArray[index].LName) == null))
+                        //   {
+                          //  Console.WriteLine("index item: " + index + "  " + EmpArray[index]);   
+                          // }
+                       }   
+                        
+                  
+
+                   
+           
                } // end of R area
 
               //  TODO: Else if the option is a U or c then update a name in the array
