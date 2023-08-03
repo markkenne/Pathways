@@ -2,38 +2,37 @@ using System;
 
 namespace EmployeeApp
 {
- 
 
-  class Hourly: Employee
+  class Salary: Employee
     {        
 
-  // set a constant for bonus hours to pay
-  const double bonusHrs = 80;
+ // set a constant for bonus percent
+  const double bonusPct = .10;
 
         // This is the automatic property variable.  The get and set methods are being created too.
-        public double HourlyRate  // property
+        public double SalaryAmt  // property
             { get; set; }
         
 
 
 
         // This is the default constructor when no values are being passed.
-        public Hourly () : base()  // use the parent constructor for the name and rating
+        public Salary () : base()  // use the parent constructor for the name and rating
         {
-            HourlyRate = -1;
+            SalaryAmt = -1;
 
         }
 
         // This is the constructor when three values are passed.
-        public Hourly (string FName, string LName, string PayType, double newHourlyRate) : base(FName,LName,PayType) // use the parent constructor for the name and rating
+        public Salary (string FName, string LName, string PayType, double newSalaryAmt) : base(FName,LName,PayType) // use the parent constructor for the name and rating
         {
-            HourlyRate = newHourlyRate;
+            SalaryAmt = newSalaryAmt;
         }
         
         // The following method demonstrates polymorphism.  This is the child class method that overrides the parent
         public override double bonusAmt()
         {
-            return HourlyRate * bonusHrs;
+            return SalaryAmt * bonusPct;
         }
 
 
@@ -42,7 +41,7 @@ namespace EmployeeApp
 
         public override string ToString()
         {
-            return base.ToString() + " with an Hourly Rate of $" + HourlyRate + " and a Bonus of $"+ HourlyRate * bonusHrs;
+            return base.ToString() + " with a Salary of $" + SalaryAmt + " and a Bonus of $"+ SalaryAmt * bonusPct;
         }
 
     }// class Hourly
