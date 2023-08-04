@@ -28,21 +28,15 @@ namespace EmployeeApp
   class Program
    {
  
- 
         static void Main(string[] args)
        { 
 
-      
          // Declare variables
          bool userChoice;
          string userChoiceString;
          const int arraySize=25;
          bool arrayInit = false;
-      //   string[,] EmpArray = new string[arraySize, arraySize];
          Employee[] EmpArray=new Employee[25];
-        
-
-
          string fileName = "Employees.txt";
 
         // Repeat main loop
@@ -87,6 +81,7 @@ namespace EmployeeApp
                     }
 
                   } while (!userChoice);  // end of user choice input
+           
               //  TODO: If the option is a I or i then add load text file
 
               if (userChoiceString=="I" || userChoiceString=="i")
@@ -127,106 +122,78 @@ namespace EmployeeApp
                  Console.WriteLine("In the S/s area");
                } // end of S area
 
-              //  TODO: Else if the option is a C or c then add a name to the array (if there's room)  #####################################################
+              //  TODO: Else if the option is a C or c then add a name to the array (if there's room)  
 
               else if (userChoiceString=="C" || userChoiceString=="c")
                { // Begin C execution here
-                 Console.WriteLine("In the C/c area");
+                    Console.WriteLine("In the C/c area");
 
-  // Area C - Create row algorithm
-            // (1) Find out if any blanks exits
-            //    (1a) If Found, continue on
-            //    (1b) else warn and exit    
-            // (2) Get an input name to use
-            // (3) Does the name exist already
-            //    (3a) No. Continue
-            //    (3b) Exists (try again prompt)
-            //         (3b1) No thanks, exit
-            //         (3b2) Try again. Back to 2
-            // (4) Have a name and a slot, ready to write but wait for rating
-            // (5) Input a rating
-            // (6) Write the name and the rating to array
-            
-            
-            // init variables
-                 // bool foundnull = false;
-                 // string? findspace = "test";
-                  string? inpFName = "";
-                  string? inpLName = "";
-                  string? inpPayType = "";
-                 // string? inpStrAmt = "0";
-                  double  inpAmount = 0;
-                  string dollarAmount = "0";
-                  int userow = 0;
-//string doubleInput = "25.25";
-//double doubleValue = 0;
+                // init variables for Create
+                   string? inpFName = "";
+                   string? inpLName = "";
+                   string? inpPayType = "";
+                   double  inpAmount = 0;
+                   string dollarAmount = "0";
+                   int userow = 0;
+                // Find an empty row to save in      
+                   for (int index = 0; index < EmpArray.Length; index++)
+                     {
+                      if (((EmpArray[index].LName) == null))
+                       {
+                        Console.WriteLine("index item: " + index + "  " + EmpArray[index]); 
+                        userow = index; //used to save row to array later
+                        Console.WriteLine("Found null at index "+ userow);
+                        break; // have one, thats enough 
+                       }
+                      else //exit with no room message
+                       { 
+                        Console.WriteLine("");
+                        Console.WriteLine("Your list is full. Either Delete one or Update an existing entry.");
+                        Console.WriteLine("");
+                       }
+                     Console.WriteLine();
+                    }
+                
+                // Input Employee data to Create an entry
+                   Console.WriteLine("Please input the new Employee's First Name:");
+                   inpFName = Console.ReadLine();
+                   Console.WriteLine(inpFName);
+                   Console.WriteLine("Please input the new Employee's Last Name:");
+                   inpLName = Console.ReadLine();
+                   Console.WriteLine(inpLName);   
+                   Console.WriteLine("Please input an Employee Type as S for Salary or H for Hourly, or ENTER for unknown.");
+                   inpPayType = Console.ReadLine();
+                   Console.WriteLine(inpPayType);
 
-                 // string searchname = ""; //added for val
-                 // int intrating = 0;
-                 // string? inputrating = "";
-                 // int userow = 0;
-                  
-         for (int index = 0; index < EmpArray.Length; index++)
-        {
-            if (((EmpArray[index].LName) == null))
-            {
+                // Take care of the child for Salary Class
+                   if (inpPayType=="S" || inpPayType=="s")
+                     {
+                      Console.WriteLine("Please input the new Employee's Annual Salary: ");
+                      dollarAmount = Console.ReadLine();
+                      inpAmount = double.Parse(dollarAmount);
+                      Console.WriteLine("The amount is: " + inpAmount);
 
-             Console.WriteLine("index item: " + index + "  " + EmpArray[index]); 
-             userow = index;
-             Console.WriteLine("Found null at index "+ userow);
-            // userow = index;
-             break;  
-            }
-             Console.WriteLine();
+                      // now create row to save to array using Salary
+                      Salary  EmpTemp = new Salary  (inpFName, inpLName, inpPayType, inpAmount);
+                      Console.WriteLine(EmpTemp);  // test print Hourly Class w three variables
+                      EmpArray[userow] = EmpTemp;                
+                     }
 
+                // Take care of the child for Hourly Class
+                   if (inpPayType=="H" || inpPayType=="h")
+                     {
+                      Console.WriteLine("Please input the new Employee's Hourly Rate: ");
+                      dollarAmount = Console.ReadLine();
+                      inpAmount = double.Parse(dollarAmount);
+                      Console.WriteLine("The amount is: " + inpAmount);
 
-        }
-            // Input Employee data to Create an entry
-             Console.WriteLine("Please input the new Employee's First Name");
-             inpFName = Console.ReadLine();
-             Console.WriteLine(inpFName);
-             Console.WriteLine("Please input the new Employee's Last Name");
-             inpLName = Console.ReadLine();
-             Console.WriteLine(inpLName);   
-             Console.WriteLine("Please input an Employee Type as S for Salary or H for Hourly, or ENTER for unknown.");
-             inpPayType = Console.ReadLine();
-             Console.WriteLine(inpPayType);
-
-             // Now take care of the children
-             if (inpPayType=="S" || inpPayType=="s")
-             {
-              Console.WriteLine("Please input the new Employee's Annual Salary: ");
-              dollarAmount = Console.ReadLine();
-              inpAmount = double.Parse(dollarAmount);
-              Console.WriteLine("The amount is: " + inpAmount);
-
-              // now create row to save to array using Salary
-              Salary  EmpTemp = new Salary  (inpFName, inpLName, inpPayType, inpAmount);
-              Console.WriteLine(EmpTemp);  // test print Hourly Class w three variables
-              EmpArray[userow] = EmpTemp;                
-             }
-             if (inpPayType=="H" || inpPayType=="h")
-             {
-              Console.WriteLine("Please input the new Employee's Hourly Rate: ");
-              dollarAmount = Console.ReadLine();
-              inpAmount = double.Parse(dollarAmount);
-              Console.WriteLine("The amount is: " + inpAmount);
-
-              // now create row to save to array using Hourly
-              Hourly  EmpTemp = new Hourly  (inpFName, inpLName, inpPayType, inpAmount);
-              Console.WriteLine(EmpTemp);  // test print Hourly Class w three variables  
-              EmpArray[userow] = EmpTemp;
-             }
-
-            // now save to array
-            
-
+                // now create row to save to array using Hourly
+                      Hourly  EmpTemp = new Hourly  (inpFName, inpLName, inpPayType, inpAmount);
+                      Console.WriteLine(EmpTemp);  // test print Hourly Class w three variables  
+                      EmpArray[userow] = EmpTemp;
+                     }
+ 
     }  // End of c area      
-
-
-
-
-
 
               //  TODO: Else if the option is a R or r then print the array to the screen without nulls 
 
@@ -245,11 +212,34 @@ namespace EmployeeApp
                      Console.WriteLine();
                } // end of R area
 
-              //  TODO: Else if the option is a U or c then update a name in the array
+              //  TODO: Else if the option is a U or c then update a name in the array   #####################################################
 
               else if (userChoiceString=="U" || userChoiceString=="u")
                { // Begin U execution here
                  Console.WriteLine("In the U/u area");
+
+
+
+
+
+               // Search for a Last name and update any piece of data 
+
+               // Create some variables
+                  string? searchname = "";
+                  string ud_dollaramount = "0";
+                
+              // input a last name string   
+                 Console.WriteLine("Input a Last name to Update:" );
+                 searchname = Console.ReadLine();
+
+                 for (int i = 0; i < EmpArray.Length; i++)
+                   {
+                  //   Console.WriteLine(i + " - " +  EmpArray.Length);
+                     if (EmpArray[i].LName == searchname)
+                        {
+                         Console.WriteLine(EmpArray[i].LName + " at row: " + i);
+                        }   
+                   }
                } // end of U area
 
               //  TODO: Else if the option is a D or d then delete an Employee
