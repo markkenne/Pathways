@@ -145,10 +145,10 @@ namespace EmployeeApp
                         Console.WriteLine("Found null at index "+ userow);
                         break; // have one, thats enough 
                        }
-                      else //exit with no room message
+                      else if (!((EmpArray[index].LName) == null))//exit with no room message
                        { 
                         Console.WriteLine("");
-                        Console.WriteLine("Your list is full. Either Delete one or Update an existing entry.");
+                      //not working yet...  Console.WriteLine("Your list is full. Either Delete one or Update an existing entry.");
                         Console.WriteLine("");
                        }
                      Console.WriteLine();
@@ -212,22 +212,23 @@ namespace EmployeeApp
                      Console.WriteLine();
                } // end of R area
 
-              //  TODO: Else if the option is a U or c then update a name in the array   #####################################################
+              //  TODO: Else if the option is a U or u then update a name in the array   
 
               else if (userChoiceString=="U" || userChoiceString=="u")
                { // Begin U execution here
                  Console.WriteLine("In the U/u area");
 
-
-
-
-
                // Search for a Last name and update any piece of data 
 
                // Create some variables
                   string? searchname = "";
-                  string ud_dollaramount = "0";
-                
+                  bool foundrow =  false;
+                  string newLName = "";
+                  string newFName = "";
+                  string newPayType = "";
+                  double  inpAmount = 0;
+                  string dollarAmount = "0";
+                  int userow = 0;                
               // input a last name string   
                  Console.WriteLine("Input a Last name to Update:" );
                  searchname = Console.ReadLine();
@@ -237,9 +238,59 @@ namespace EmployeeApp
                   //   Console.WriteLine(i + " - " +  EmpArray.Length);
                      if (EmpArray[i].LName == searchname)
                         {
+                         foundrow = true; 
+                         userow = i;
                          Console.WriteLine(EmpArray[i].LName + " at row: " + i);
-                        }   
+                        } 
+                  //   else foundrow = false;
+
                    }
+                    if (foundrow == false)
+                     {
+                       Console.WriteLine("Last Name of " + searchname + " was not found." );
+                     }    
+               
+               // now do the updates when name is found
+                Console.WriteLine("foundrow = " + foundrow);
+               if (foundrow == true)
+                {
+               Console.WriteLine("The Last Name is currently : " + EmpArray[userow].LName + " Enter the correct LAST name or ENTER to move on.");
+               newLName = Console.ReadLine();
+               Console.WriteLine("The First Name is currently : " + EmpArray[userow].FName + " Enter the correct FIRST name or ENTER to move on.");
+               newFName = Console.ReadLine();
+               Console.WriteLine("The Pay Type is currently : " + EmpArray[userow].PayType + " Enter the correct PAY TYPE as (H)ourly or (S)alary or ENTER to move on.");
+               newPayType = Console.ReadLine();
+                }
+               // TODO the ENTER routine needs to be coded above
+
+               // Take care of the child for Salary Class
+                   if (newPayType=="S" || newPayType=="s")
+                     {
+                      Console.WriteLine("Please input the new Employee's Annual Salary: ");
+                      dollarAmount = Console.ReadLine();
+                      inpAmount = double.Parse(dollarAmount);
+                      Console.WriteLine("The amount is: " + inpAmount);
+
+                      // now create row to save to array using Salary
+                      Salary  EmpTemp = new Salary  (newFName, newLName, newPayType, inpAmount);
+                      Console.WriteLine(EmpTemp);  // test print Hourly Class w three variables
+                      EmpArray[userow] = EmpTemp;                
+                     }
+
+                // Take care of the child for Hourly Class
+                   if (newPayType=="H" || newPayType=="h")
+                     {
+                      Console.WriteLine("Please input the new Employee's Hourly Rate: ");
+                      dollarAmount = Console.ReadLine();
+                      inpAmount = double.Parse(dollarAmount);
+                      Console.WriteLine("The amount is: " + inpAmount);
+
+                // now create row to save to array using Hourly
+                      Hourly  EmpTemp = new Hourly  (newFName, newLName, newPayType, inpAmount);
+                      Console.WriteLine(EmpTemp);  // test print Hourly Class w three variables  
+                      EmpArray[userow] = EmpTemp;
+                     }
+
                } // end of U area
 
               //  TODO: Else if the option is a D or d then delete an Employee
@@ -247,6 +298,59 @@ namespace EmployeeApp
               else if (userChoiceString=="D" || userChoiceString=="d")
                { // Begin D execution here
                  Console.WriteLine("In the D/d area");
+              // delete variables
+              string? deletename = "";
+              bool deleterowfound = false;
+              int delrow = 0;
+
+             // input a last name string to delete row  
+                 Console.WriteLine("Input an Employee Last Name to Delete:" );
+                 deletename = Console.ReadLine();
+
+                 for (int i = 0; i < EmpArray.Length; i++)
+                   {
+                  //   Console.WriteLine(i + " - " +  EmpArray.Length);
+                     if (EmpArray[i].LName == deletename)
+                        {
+                         deleterowfound = true; 
+                         delrow = i;
+                        //Console.WriteLine(EmpArray[i].LName + " at row: " + i);
+                         // clear the line using default method
+
+
+                  Console.WriteLine("Row " + i + ", named " + deletename + ", has been found,  and will be deleted.");
+                  Console.WriteLine("Are you sure? y/n");
+                  string stryn = Console.ReadLine();
+                  if (stryn == "y"|| stryn=="Y")
+                  {
+                // push these deletes to the array
+                Console.WriteLine(EmpArray[i].LName + " at row: " + i);
+                     // array[result,0]= null;
+                     // array[result,1]= null;
+                  }
+                  else 
+                  {
+                    Console.WriteLine("Canceled Delete");
+                  }
+
+
+
+
+
+                         EmpArray[delrow] = new Employee();
+                        } 
+                  //   else foundrow = false;
+
+                   }
+                    if (deleterowfound == false)
+                     {
+                       Console.WriteLine("Last Name of " + deletename + " was not found." );
+                     }    
+
+
+
+
+
                } //end of D area               
 
               //  TODO: Else if the option is a Q or q then quit the program
@@ -264,63 +368,3 @@ namespace EmployeeApp
 } // end namespace
 
 
-
-
-
-/*
-
-
-
-
-// Test the three Classes - Employee parent and child Hourly and child Salary     
-      Console.WriteLine();
-      Employee Emp1 = new Employee();  //default properties test Employee
-      Employee Emp2 = new Employee("Mark", "Kenne", "S"); //3 input properties test FName, LName, PayType
-      Hourly   Emp6 = new Hourly(); //default properties test Hourly
-      Hourly   Emp3 = new Hourly  ("July", "Smith", "H", 20.00); //4 input properties test FName, LName, PayType and Hourly w output incuding HrlyRate and bonus
-      Hourly   Emp4 = new Hourly  ("Mary", "Kay", "H", 31.55); //4 input properties test FName, LName, PayType and Hourly w output incuding HrlyRate and bonus
-      Salary   Emp7 = new Salary(); //default properties test Salary      
-      Salary   Emp5 = new Salary  ("Jimmy", "Jones", "S", 100000.00); //4 input properties test FName, LName, PayType and Salary w output incuding Salary and bonus
-
-      Console.WriteLine(Emp1);  // test Employee Class defaullts
-      Console.WriteLine(Emp2);  // test Employee Class w three variables
-      Console.WriteLine(Emp3);  // test Hourly Class w three variables     
-      Console.WriteLine(Emp4);  // test Hourly Class w three variables
-      Console.WriteLine(Emp5);  // test Salary Class w four variables
-      Console.WriteLine(Emp6);  // test Hourly Class defaullts
-      Console.WriteLine(Emp7);  // test Salary Class defaullts
-     
-      Console.WriteLine();
-
-        // Declare and instantiate the array of Restaurant objects
-        Employee[] EmpArray=new Employee[25];
-// Create an array of employees and initialize
-        for (int index = 0; index < EmpArray.Length; index++)
-        {
-            EmpArray[index] = new Employee();
-        }
-
-        // Load in some test data to test both ways to assign values
-
-        EmpArray[1] = Emp1;
-        EmpArray[2] = Emp2;
-        EmpArray[3] = Emp3;
-        EmpArray[4] = Emp4;
-        EmpArray[5] = Emp5;
-        EmpArray[6] = Emp6;
-
-
-        // print each Employee to test the property gets and the toString
-
-        for (int index = 0; index < EmpArray.Length; index++)
-        {
-            if (!((EmpArray[index].LName) == null))
-            {
-
-             Console.WriteLine("index item: " + index + "  " + EmpArray[index]);   
-            }
-                
-        }
-
-       }
-       */
