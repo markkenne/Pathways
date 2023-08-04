@@ -157,6 +157,7 @@ namespace EmployeeApp
                  // string? inpStrAmt = "0";
                   double  inpAmount = 0;
                   string dollarAmount = "0";
+                  int userow = 0;
 //string doubleInput = "25.25";
 //double doubleValue = 0;
 
@@ -171,7 +172,9 @@ namespace EmployeeApp
             {
 
              Console.WriteLine("index item: " + index + "  " + EmpArray[index]); 
-             Console.WriteLine("Found null at index "+ index);
+             userow = index;
+             Console.WriteLine("Found null at index "+ userow);
+            // userow = index;
              break;  
             }
              Console.WriteLine();
@@ -198,8 +201,9 @@ namespace EmployeeApp
               Console.WriteLine("The amount is: " + inpAmount);
 
               // now create row to save to array using Salary
-              Salary  Emp1 = new Salary  (inpFName, inpLName, inpPayType, inpAmount);
-              Console.WriteLine(Emp1);  // test print Hourly Class w three variables                
+              Salary  EmpTemp = new Salary  (inpFName, inpLName, inpPayType, inpAmount);
+              Console.WriteLine(EmpTemp);  // test print Hourly Class w three variables
+              EmpArray[userow] = EmpTemp;                
              }
              if (inpPayType=="H" || inpPayType=="h")
              {
@@ -209,12 +213,13 @@ namespace EmployeeApp
               Console.WriteLine("The amount is: " + inpAmount);
 
               // now create row to save to array using Hourly
-              Hourly  Emp2 = new Hourly  (inpFName, inpLName, inpPayType, inpAmount);
-              Console.WriteLine(Emp2);  // test print Hourly Class w three variables  
+              Hourly  EmpTemp = new Hourly  (inpFName, inpLName, inpPayType, inpAmount);
+              Console.WriteLine(EmpTemp);  // test print Hourly Class w three variables  
+              EmpArray[userow] = EmpTemp;
              }
 
             // now save to array
-  
+            
 
     }  // End of c area      
 
