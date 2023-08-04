@@ -87,9 +87,9 @@ namespace EmployeeApp
               if (userChoiceString=="I" || userChoiceString=="i")
 
                { // Begin I execution here
-                  Console.WriteLine("In the I/i area");
-                 //above again Employee[] EmpArray=new Employee[25];
-                  // Create an array of employees and initialize
+                 // Console.WriteLine("In the I/i area");
+                 // above again Employee[] EmpArray=new Employee[25];
+                 // Create an array of employees and initialize
                   for (int index = 0; index < EmpArray.Length; index++)
                    {
                      EmpArray[index] = new Employee();
@@ -112,7 +112,7 @@ namespace EmployeeApp
               else if (userChoiceString=="L" || userChoiceString=="l")
 
                { // Begin L execution here
-                  Console.WriteLine("In the L/l area");
+                  Console.WriteLine("In the L/l area, nothing here yet.");
                } // end of L area
 
               //  TODO: Else if the option is a S or s then save the array to text file
@@ -126,7 +126,7 @@ namespace EmployeeApp
 
               else if (userChoiceString=="C" || userChoiceString=="c")
                { // Begin C execution here
-                    Console.WriteLine("In the C/c area");
+                 // Console.WriteLine("In the C/c area");
 
                 // init variables for Create
                    string? inpFName = "";
@@ -216,7 +216,7 @@ namespace EmployeeApp
 
               else if (userChoiceString=="U" || userChoiceString=="u")
                { // Begin U execution here
-                 Console.WriteLine("In the U/u area");
+               // Console.WriteLine("In the U/u area");
 
                // Search for a Last name and update any piece of data 
 
@@ -229,67 +229,65 @@ namespace EmployeeApp
                   double  inpAmount = 0;
                   string dollarAmount = "0";
                   int userow = 0;                
-              // input a last name string   
-                 Console.WriteLine("Input a Last name to Update:" );
-                 searchname = Console.ReadLine();
+               // input a last name string   
+                  Console.WriteLine("Input a Last name to Update:" );
+                  searchname = Console.ReadLine();
 
+               // Search the array for Last Name input
                  for (int i = 0; i < EmpArray.Length; i++)
                    {
-                  //   Console.WriteLine(i + " - " +  EmpArray.Length);
                      if (EmpArray[i].LName == searchname)
                         {
                          foundrow = true; 
                          userow = i;
                          Console.WriteLine(EmpArray[i].LName + " at row: " + i);
                         } 
-                  //   else foundrow = false;
-
+                  //   When not found, tell user
                    }
                     if (foundrow == false)
                      {
                        Console.WriteLine("Last Name of " + searchname + " was not found." );
                      }    
-               
-               // now do the updates when name is found
-                Console.WriteLine("foundrow = " + foundrow);
-               if (foundrow == true)
-                {
-               Console.WriteLine("The Last Name is currently : " + EmpArray[userow].LName + " Enter the correct LAST name or ENTER to move on.");
-               newLName = Console.ReadLine();
-               Console.WriteLine("The First Name is currently : " + EmpArray[userow].FName + " Enter the correct FIRST name or ENTER to move on.");
-               newFName = Console.ReadLine();
-               Console.WriteLine("The Pay Type is currently : " + EmpArray[userow].PayType + " Enter the correct PAY TYPE as (H)ourly or (S)alary or ENTER to move on.");
-               newPayType = Console.ReadLine();
-                }
+               // Do the updates when name is found
+                  Console.WriteLine("foundrow = " + foundrow);
+                  if (foundrow == true)
+                   {
+                    Console.WriteLine("The Last Name is currently : " + EmpArray[userow].LName + " Enter the correct LAST name or ENTER to move on.");
+                    newLName = Console.ReadLine();
+                    Console.WriteLine("The First Name is currently : " + EmpArray[userow].FName + " Enter the correct FIRST name or ENTER to move on.");
+                    newFName = Console.ReadLine();
+                    Console.WriteLine("The Pay Type is currently : " + EmpArray[userow].PayType + " Enter the correct PAY TYPE as (H)ourly or (S)alary or ENTER to move on.");
+                    newPayType = Console.ReadLine();
+                   }
                // TODO the ENTER routine needs to be coded above
 
                // Take care of the child for Salary Class
-                   if (newPayType=="S" || newPayType=="s")
-                     {
-                      Console.WriteLine("Please input the new Employee's Annual Salary: ");
-                      dollarAmount = Console.ReadLine();
-                      inpAmount = double.Parse(dollarAmount);
-                      Console.WriteLine("The amount is: " + inpAmount);
+                  if (newPayType=="S" || newPayType=="s")
+                   {
+                    Console.WriteLine("Please input the new Employee's Annual Salary: ");
+                    dollarAmount = Console.ReadLine();
+                    inpAmount = double.Parse(dollarAmount);
+                    Console.WriteLine("The amount is: " + inpAmount);
 
-                      // now create row to save to array using Salary
-                      Salary  EmpTemp = new Salary  (newFName, newLName, newPayType, inpAmount);
-                      Console.WriteLine(EmpTemp);  // test print Hourly Class w three variables
-                      EmpArray[userow] = EmpTemp;                
-                     }
+                 // now create row to save to array using Salary
+                    Salary  EmpTemp = new Salary  (newFName, newLName, newPayType, inpAmount);
+                    Console.WriteLine(EmpTemp);  // test print Hourly Class w three variables
+                    EmpArray[userow] = EmpTemp;                
+                   }
 
                 // Take care of the child for Hourly Class
-                   if (newPayType=="H" || newPayType=="h")
-                     {
-                      Console.WriteLine("Please input the new Employee's Hourly Rate: ");
-                      dollarAmount = Console.ReadLine();
-                      inpAmount = double.Parse(dollarAmount);
-                      Console.WriteLine("The amount is: " + inpAmount);
+                  if (newPayType=="H" || newPayType=="h")
+                   {
+                    Console.WriteLine("Please input the new Employee's Hourly Rate: ");
+                    dollarAmount = Console.ReadLine();
+                    inpAmount = double.Parse(dollarAmount);
+                    Console.WriteLine("The amount is: " + inpAmount);
 
-                // now create row to save to array using Hourly
-                      Hourly  EmpTemp = new Hourly  (newFName, newLName, newPayType, inpAmount);
-                      Console.WriteLine(EmpTemp);  // test print Hourly Class w three variables  
-                      EmpArray[userow] = EmpTemp;
-                     }
+                // create row to save to array using Hourly
+                    Hourly  EmpTemp = new Hourly  (newFName, newLName, newPayType, inpAmount);
+                    Console.WriteLine(EmpTemp);  // test print Hourly Class w three variables  
+                    EmpArray[userow] = EmpTemp;
+                   }
 
                } // end of U area
 
@@ -297,61 +295,49 @@ namespace EmployeeApp
 
               else if (userChoiceString=="D" || userChoiceString=="d")
                { // Begin D execution here
-                 Console.WriteLine("In the D/d area");
-              // delete variables
-              string? deletename = "";
-              bool deleterowfound = false;
-              int delrow = 0;
+                 // Console.WriteLine("In the D/d area");
 
-             // input a last name string to delete row  
+                // delete variables
+                   string? deletename = "";
+                   bool deleterowfound = false;
+                   int delrow = 0;
+                   string? stryn = "n";
+
+               // input a last name string to delete row  
                  Console.WriteLine("Input an Employee Last Name to Delete:" );
                  deletename = Console.ReadLine();
 
                  for (int i = 0; i < EmpArray.Length; i++)
                    {
-                  //   Console.WriteLine(i + " - " +  EmpArray.Length);
-                     if (EmpArray[i].LName == deletename)
+                   // Search for Last name to delete
+                      if (EmpArray[i].LName == deletename)
                         {
                          deleterowfound = true; 
                          delrow = i;
-                        //Console.WriteLine(EmpArray[i].LName + " at row: " + i);
-                         // clear the line using default method
-
-
-                  Console.WriteLine("Row " + i + ", named " + deletename + ", has been found,  and will be deleted.");
-                  Console.WriteLine("Are you sure? y/n");
-                  string stryn = Console.ReadLine();
-                  if (stryn == "y"|| stryn=="Y")
-                  {
-                // push these deletes to the array
-                Console.WriteLine(EmpArray[i].LName + " at row: " + i);
-                     // array[result,0]= null;
-                     // array[result,1]= null;
+                         Console.WriteLine("Row " + i + ", named " + deletename + ", has been found,  and will be deleted.");
+                        // Make sure user wants to delete
+                           Console.WriteLine("Are you sure? y/n");
+                           stryn = Console.ReadLine();
+                            if (stryn == "y"|| stryn=="Y")
+                             {
+                            // Delete by initializing the line using default method
+                               Console.WriteLine("Deleted "+ EmpArray[i].LName + " at row: " + i);
+                               EmpArray[delrow] = new Employee();
+                             }
+                          else //user cancels delete
+                         {
+                           Console.WriteLine("Canceled Delete");
+                         }
+                     
+                       } 
+                    //  This last name not found
                   }
-                  else 
-                  {
-                    Console.WriteLine("Canceled Delete");
-                  }
-
-
-
-
-
-                         EmpArray[delrow] = new Employee();
-                        } 
-                  //   else foundrow = false;
-
-                   }
                     if (deleterowfound == false)
                      {
                        Console.WriteLine("Last Name of " + deletename + " was not found." );
                      }    
-
-
-
-
-
                } //end of D area               
+
 
               //  TODO: Else if the option is a Q or q then quit the program
 
