@@ -151,7 +151,15 @@ namespace EmployeeApp
             // init variables
                  // bool foundnull = false;
                  // string? findspace = "test";
-                 // string? inputname = "";
+                  string? inpFName = "";
+                  string? inpLName = "";
+                  string? inpPayType = "";
+                 // string? inpStrAmt = "0";
+                  double  inpAmount = 0;
+                  string dollarAmount = "0";
+//string doubleInput = "25.25";
+//double doubleValue = 0;
+
                  // string searchname = ""; //added for val
                  // int intrating = 0;
                  // string? inputrating = "";
@@ -167,11 +175,48 @@ namespace EmployeeApp
              break;  
             }
              Console.WriteLine();
+
+
         }
+            // Input Employee data to Create an entry
+             Console.WriteLine("Please input the new Employee's First Name");
+             inpFName = Console.ReadLine();
+             Console.WriteLine(inpFName);
+             Console.WriteLine("Please input the new Employee's Last Name");
+             inpLName = Console.ReadLine();
+             Console.WriteLine(inpLName);   
+             Console.WriteLine("Please input an Employee Type as S for Salary or H for Hourly, or ENTER for unknown.");
+             inpPayType = Console.ReadLine();
+             Console.WriteLine(inpPayType);
 
+             // Now take care of the children
+             if (inpPayType=="S" || inpPayType=="s")
+             {
+              Console.WriteLine("Please input the new Employee's Annual Salary: ");
+              dollarAmount = Console.ReadLine();
+              inpAmount = double.Parse(dollarAmount);
+              Console.WriteLine("The amount is: " + inpAmount);
 
-                      
-    }          // End of c area      
+              // now create row to save to array using Salary
+              Salary  Emp1 = new Salary  (inpFName, inpLName, inpPayType, inpAmount);
+              Console.WriteLine(Emp1);  // test print Hourly Class w three variables                
+             }
+             if (inpPayType=="H" || inpPayType=="h")
+             {
+              Console.WriteLine("Please input the new Employee's Hourly Rate: ");
+              dollarAmount = Console.ReadLine();
+              inpAmount = double.Parse(dollarAmount);
+              Console.WriteLine("The amount is: " + inpAmount);
+
+              // now create row to save to array using Hourly
+              Hourly  Emp2 = new Hourly  (inpFName, inpLName, inpPayType, inpAmount);
+              Console.WriteLine(Emp2);  // test print Hourly Class w three variables  
+             }
+
+            // now save to array
+  
+
+    }  // End of c area      
 
 
 
