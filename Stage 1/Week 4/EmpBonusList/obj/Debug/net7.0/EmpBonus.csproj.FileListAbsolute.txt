@@ -1,0 +1,15 @@
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\EmpBonus\obj\Debug\net7.0\EmpBonus.csproj.AssemblyReference.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\EmpBonus\obj\Debug\net7.0\EmpBonus.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\EmpBonus\obj\Debug\net7.0\EmpBonus.AssemblyInfoInputs.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\EmpBonus\obj\Debug\net7.0\EmpBonus.AssemblyInfo.cs
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\EmpBonus\obj\Debug\net7.0\EmpBonus.csproj.CoreCompileInputs.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\EmpBonus\bin\Debug\net7.0\EmpBonus.exe
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\EmpBonus\bin\Debug\net7.0\EmpBonus.deps.json
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\EmpBonus\bin\Debug\net7.0\EmpBonus.runtimeconfig.json
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\EmpBonus\bin\Debug\net7.0\EmpBonus.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\EmpBonus\bin\Debug\net7.0\EmpBonus.pdb
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\EmpBonus\obj\Debug\net7.0\EmpBonus.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\EmpBonus\obj\Debug\net7.0\refint\EmpBonus.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\EmpBonus\obj\Debug\net7.0\EmpBonus.pdb
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\EmpBonus\obj\Debug\net7.0\EmpBonus.genruntimeconfig.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\EmpBonus\obj\Debug\net7.0\ref\EmpBonus.dll

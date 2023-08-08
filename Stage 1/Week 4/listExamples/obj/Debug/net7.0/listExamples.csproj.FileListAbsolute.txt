@@ -1,0 +1,15 @@
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 4\listExamples\bin\Debug\net7.0\listExamples.exe
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 4\listExamples\bin\Debug\net7.0\listExamples.deps.json
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 4\listExamples\bin\Debug\net7.0\listExamples.runtimeconfig.json
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 4\listExamples\bin\Debug\net7.0\listExamples.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 4\listExamples\bin\Debug\net7.0\listExamples.pdb
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 4\listExamples\obj\Debug\net7.0\listExamples.csproj.AssemblyReference.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 4\listExamples\obj\Debug\net7.0\listExamples.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 4\listExamples\obj\Debug\net7.0\listExamples.AssemblyInfoInputs.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 4\listExamples\obj\Debug\net7.0\listExamples.AssemblyInfo.cs
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 4\listExamples\obj\Debug\net7.0\listExamples.csproj.CoreCompileInputs.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 4\listExamples\obj\Debug\net7.0\listExamples.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 4\listExamples\obj\Debug\net7.0\refint\listExamples.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 4\listExamples\obj\Debug\net7.0\listExamples.pdb
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 4\listExamples\obj\Debug\net7.0\listExamples.genruntimeconfig.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 4\listExamples\obj\Debug\net7.0\ref\listExamples.dll

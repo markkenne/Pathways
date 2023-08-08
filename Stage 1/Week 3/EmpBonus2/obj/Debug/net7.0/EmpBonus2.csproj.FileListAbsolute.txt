@@ -1,0 +1,5 @@
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\EmpBonus2\obj\Debug\net7.0\EmpBonus2.csproj.AssemblyReference.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\EmpBonus2\obj\Debug\net7.0\EmpBonus2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\EmpBonus2\obj\Debug\net7.0\EmpBonus2.AssemblyInfoInputs.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\EmpBonus2\obj\Debug\net7.0\EmpBonus2.AssemblyInfo.cs
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 3\EmpBonus2\obj\Debug\net7.0\EmpBonus2.csproj.CoreCompileInputs.cache
