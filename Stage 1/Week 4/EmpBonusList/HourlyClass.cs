@@ -1,50 +1,69 @@
 using System;
 
-namespace EmployeeApp
+namespace listAbstractClass
 {
- 
-
-  class Hourly: Employee
-    {        
-
-  // set a constant for bonus hours to pay
-  const double bonusHrs = 80;
-
-        // This is the automatic property variable.  The get and set methods are being created too.
-        public double HourlyRate  // property
+    class HourlyEmployee : Employee
+    {
+        public double hourlyRate  // property
             { get; set; }
-        
 
 
-
-        // This is the default constructor when no values are being passed.
-        public Hourly () : base()  // use the parent constructor for the name and rating
+        public HourlyEmployee() : base()      // default constructor
         {
-            HourlyRate = 0;
-
+            hourlyRate =  0.0;
         }
 
-        // This is the constructor when three values are passed.
-        public Hourly (string FName, string LName, string PayType, double newHourlyRate) : base(FName,LName,PayType) // use the parent constructor for the name and rating
+        public HourlyEmployee(string newLastName, string newFirstName, string newEmployeeType, double newHourlyRate) : base (newLastName, newFirstName, newEmployeeType)       // another constructor
         {
-            HourlyRate = newHourlyRate;
-        }
-        
-        // The following method demonstrates polymorphism.  This is the child class method that overrides the parent
-        public override double bonusAmt()
-        {
-            return HourlyRate * bonusHrs;
+            hourlyRate = newHourlyRate;
         }
 
-
-
-        // This overrides ToString so an object can be printed out with the WriteLine.
+        public override double GetBonus() // implementation of abstract method
+        {
+            return hourlyRate * 80;
+        }
 
         public override string ToString()
         {
-         //   return base.ToString() + " with an Hourly Rate of $" + HourlyRate + " and a Bonus of $"+ HourlyRate * bonusHrs;
-            return base.ToString() + ", " + HourlyRate + ", " + HourlyRate * bonusHrs;
+            return base.ToString() + " | Hourly rate: $" + hourlyRate + " | Bonus: $" + GetBonus();
         }
 
-    }// class Hourly
-}// namespace EmployeeApp
+    }  // end class
+
+}  // end namespace
+
+/* array version
+using System;
+
+namespace listAbstractClass
+{
+    class HourlyEmployee : Employee
+    {
+        public double hourlyRate  // property
+            { get; set; }
+
+
+        public HourlyEmployee() : base()      // default constructor
+        {
+            hourlyRate =  0.0;
+        }
+
+        public HourlyEmployee(string newLastName, string newFirstName, string newEmployeeType, double newHourlyRate) : base (newLastName, newFirstName, newEmployeeType)       // another constructor
+        {
+            hourlyRate = newHourlyRate;
+        }
+
+        public override double GetBonus() // implementation of abstract method
+        {
+            return hourlyRate * 80;
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + " | Hourly rate: $" + hourlyRate + " | Bonus: $" + GetBonus();
+        }
+
+    }  // end class
+
+}  // end namespace
+*/

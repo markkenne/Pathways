@@ -1,11 +1,71 @@
-﻿/* Employee Bonus Calculator
+﻿using System;
+using System.Collections.Generic;   // needed for Lists
+
+namespace listAbstractClass
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+
+        // Create a list of Employees
+        List<Employee> employeeList = new List<Employee>();
+        // Add an hourly employee
+        employeeList.Add(new HourlyEmployee("Enge", "J.S.", "H", 25.00));
+        // Add a salary employee
+        employeeList.Add(new SalaryEmployee("Enge", "Alec", "S", 15000));
+        // Add an employee? - Nope
+        // employeeList.Add(new Employee("Test", "test", "test"));
+
+        // Create a list of Hourly Employees
+        List<HourlyEmployee> hourlyEmployeeList = new List<HourlyEmployee>();  
+        // And, create a list of Salary Employees to test
+        List<SalaryEmployee> salaryEmployeeList = new List<SalaryEmployee>();  
+
+        // Add a couple of hourly employees to the hourly list to test
+        hourlyEmployeeList.Add(new HourlyEmployee ("Enge", "Colin", "H", 15.75));
+        hourlyEmployeeList.Add(new HourlyEmployee ("Enge", "Elle", "H", 25.73));
+
+        // Add a couple of salary employees to the salary list to test
+        salaryEmployeeList.Add(new SalaryEmployee ("Enge", "Anthony", "S", 45250));
+        salaryEmployeeList.Add(new SalaryEmployee ("Enge", "Molly", "S", 60000));
+
+        // Print the employee list
+        foreach (Employee anEmployee in employeeList)
+            {
+                Console.WriteLine(anEmployee);
+            }  // end foreach  
+
+        // Print the hourly list
+        foreach (HourlyEmployee anEmployee in hourlyEmployeeList)
+        {
+            Console.WriteLine(anEmployee);
+        }  // end foreach  
+
+        // Print the salary list
+        foreach (SalaryEmployee anEmployee in salaryEmployeeList)
+        {
+            Console.WriteLine(anEmployee);
+        }  // end foreach          
+
+    } // end Main
+
+  }  // end class Program
+
+}  // end nameSspace
+
+
+
+
+
+/* Employee Bonus Calculator - List Version
    Programmer: Mark Kenne
-   First - Last Update:  08/03/2023 - 08/07/2023
+   First - Last Update:  08/08/2023
    Program Description -  Demonstrate use of Class inheritance and polymorphism using a parent class of Employee and two child Classes (Hourly and Salary).
   
    Requirements:                      
-  (1) An array of Employees with a length of 25
-  (2) Array holds values of Employee's first name, last name, and Pay Type in each case and a pay rate or amount based on PayType
+  (1) An list of Employees
+  (2) List holds values of Employee's first name, last name, and Pay Type in each case and a pay rate or amount based on PayType
   (3) Ability to calculate the annual bonus based on the Type. If H then 80 hours times rate, if Salary then 10% of salary amount
   (4) Ability to print the hourly rate or salary amount with bonus using the ToString method
   (5) A menu to operate the CRUD method (Create, Read, Update, and Delete) in regards to the array.
@@ -99,7 +159,7 @@
     (14d) return to menu
 
 
-*/
+
 using System;
 using System.IO;
 using System.Text;
@@ -488,3 +548,5 @@ namespace EmployeeApp
        } // end main
    }  // end program
 } // end namespace
+
+*/

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dpdmak\\Desktop\\Pathways\\Stage 1\\Week 3\\EmpBonus\\EmpBonus.csproj",
+      "projectUniqueName": "C:\\Users\\dpdmak\\Desktop\\Pathways\\Stage 1\\Week 4\\EmpBonusList\\EmpBonus.csproj",
       "projectName": "EmpBonus",
-      "projectPath": "C:\\Users\\dpdmak\\Desktop\\Pathways\\Stage 1\\Week 3\\EmpBonus\\EmpBonus.csproj",
+      "projectPath": "C:\\Users\\dpdmak\\Desktop\\Pathways\\Stage 1\\Week 4\\EmpBonusList\\EmpBonus.csproj",
       "packagesPath": "C:\\Users\\dpdmak\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dpdmak\\Desktop\\Pathways\\Stage 1\\Week 3\\EmpBonus\\obj\\",
+      "outputPath": "C:\\Users\\dpdmak\\Desktop\\Pathways\\Stage 1\\Week 4\\EmpBonusList\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\dpdmak\\AppData\\Roaming\\NuGet\\NuGet.Config",
