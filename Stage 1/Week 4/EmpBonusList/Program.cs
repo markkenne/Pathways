@@ -104,8 +104,8 @@ case "C":  // TODO CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
               inpAmount = Convert.ToInt32(inpStrAmt);
                Console.WriteLine(inpStrAmt);
 
-            salaryEmployeeList.Add(new SalaryEmployee (inpLName, inpFName, inpPayType, inpAmount));
-            Console.WriteLine("Salaried Employee: " + inpLName + ", "+ inpFName + " set to " + inpAmount);
+              salaryEmployeeList.Add(new SalaryEmployee (inpLName, inpFName, inpPayType, inpAmount));
+              Console.WriteLine("Salaried Employee: " + inpLName + ", "+ inpFName + " with Salary set to " + inpAmount);
 
              }  //end of (S)alary section
              
@@ -122,7 +122,10 @@ case "C":  // TODO CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
                 }
               inpAmount = Convert.ToInt32(inpStrAmt);
               Console.WriteLine(inpStrAmt);
-             }
+              hourlyEmployeeList.Add(new HourlyEmployee (inpLName, inpFName, inpPayType, inpAmount));
+              Console.WriteLine("Hourly Employee: " + inpLName + ", "+ inpFName + " with Rate set to " + inpAmount);
+
+             } //end of (H)ourly section
 
 
 
