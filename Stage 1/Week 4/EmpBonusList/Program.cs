@@ -74,8 +74,72 @@ switch (menuchoiceUp)
 case "C":  // TODO CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
     // Create a new item.
      Console.WriteLine("In the Create area");
-        // Create a list of Employees
-  
+        // Create a new Employee
+        // Create new emp variables
+            string? inpFName = "";
+            string? inpLName = "";
+            string? inpPayType = "";
+            string? inpStrAmt = "0";
+            double inpAmount = 0;
+
+ // Input Employee data to Create an entry
+             Console.WriteLine("Please input the new Employee's First Name");
+             inpFName = Console.ReadLine();
+             Console.WriteLine(inpFName);
+             Console.WriteLine("Please input the new Employee's Last Name");
+             inpLName = Console.ReadLine();
+             Console.WriteLine(inpLName);   
+             Console.WriteLine("Please input an Employee Type as S for Salary or H for Hourly, or ENTER for unknown.");
+             inpPayType = Console.ReadLine();
+             Console.WriteLine(inpPayType);
+             
+             if (inpPayType=="S" || inpPayType=="s")
+             {
+              Console.WriteLine("Please input the new Employee's Annual Salary: ");
+              inpStrAmt = Console.ReadLine();
+              if (inpStrAmt == "")
+                {
+                inpStrAmt = "0";
+                }
+              inpAmount = Convert.ToInt32(inpStrAmt);
+               Console.WriteLine(inpStrAmt);
+
+            salaryEmployeeList.Add(new SalaryEmployee (inpLName, inpFName, inpPayType, inpAmount));
+            Console.WriteLine("Salaried Employee: " + inpLName + ", "+ inpFName + " set to " + inpAmount);
+
+             }  //end of (S)alary section
+             
+
+
+
+             if (inpPayType=="H" || inpPayType=="h")
+             {
+              Console.WriteLine("Please input the new Employee's Hourly Rate: ");
+              inpStrAmt = Console.ReadLine();
+              if (inpStrAmt == "")
+                {
+                inpStrAmt = "0";
+                }
+              inpAmount = Convert.ToInt32(inpStrAmt);
+              Console.WriteLine(inpStrAmt);
+             }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     Console.WriteLine();
     break;   // end of Create
