@@ -1,0 +1,7 @@
+Employee: Enge, J.S. | Type: H | Hourly rate: $25 | Bonus: $2000
+Employee: Enge, Alec | Type: S | Annual salary: $15000 | Bonus: $1500
+Employee: Enge, Colin | Type: H | Hourly rate: $15.75 | Bonus: $1260
+Employee: Enge, Elle | Type: H | Hourly rate: $25.73 | Bonus: $2058.4
+Employee: Enge, Anthony | Type: S | Annual salary: $45250 | Bonus: $4525
+Employee: Enge, Molly | Type: S | Annual salary: $60000 | Bonus: $6000
+Employee: Twain, Mark | Type: s | Annual salary: $211211 | Bonus: $21121.100000000002

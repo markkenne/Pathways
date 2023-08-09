@@ -1,0 +1,15 @@
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 4\listInterfaceCRUD\bin\Debug\net7.0\listInterfaceCRUD.exe
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 4\listInterfaceCRUD\bin\Debug\net7.0\listInterfaceCRUD.deps.json
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 4\listInterfaceCRUD\bin\Debug\net7.0\listInterfaceCRUD.runtimeconfig.json
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 4\listInterfaceCRUD\bin\Debug\net7.0\listInterfaceCRUD.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 4\listInterfaceCRUD\bin\Debug\net7.0\listInterfaceCRUD.pdb
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 4\listInterfaceCRUD\obj\Debug\net7.0\listInterfaceCRUD.csproj.AssemblyReference.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 4\listInterfaceCRUD\obj\Debug\net7.0\listInterfaceCRUD.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 4\listInterfaceCRUD\obj\Debug\net7.0\listInterfaceCRUD.AssemblyInfoInputs.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 4\listInterfaceCRUD\obj\Debug\net7.0\listInterfaceCRUD.AssemblyInfo.cs
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 4\listInterfaceCRUD\obj\Debug\net7.0\listInterfaceCRUD.csproj.CoreCompileInputs.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 4\listInterfaceCRUD\obj\Debug\net7.0\listInterfaceCRUD.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 4\listInterfaceCRUD\obj\Debug\net7.0\refint\listInterfaceCRUD.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 4\listInterfaceCRUD\obj\Debug\net7.0\listInterfaceCRUD.pdb
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 4\listInterfaceCRUD\obj\Debug\net7.0\listInterfaceCRUD.genruntimeconfig.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 4\listInterfaceCRUD\obj\Debug\net7.0\ref\listInterfaceCRUD.dll
