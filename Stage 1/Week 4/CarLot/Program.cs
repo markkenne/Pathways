@@ -34,6 +34,7 @@ namespace VehicleApp
         {
             Console.Write(aVehicle);
             Console.WriteLine(", and by the way, Commission was " + aVehicle.GetCommission());
+
         }  // end foreach  
 
 

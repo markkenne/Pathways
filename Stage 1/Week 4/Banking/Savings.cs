@@ -37,6 +37,10 @@ namespace BankApp
         {
             return 0; //no Annual Fee
         }
+        public override double GetPenalty() // implementation of abstract method
+        {
+            return 0; //no penalty
+        }
 
 
         public override string ToString()

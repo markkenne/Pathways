@@ -24,6 +24,7 @@ namespace BankApp
         {
             Console.WriteLine(anAccount);
             Console.WriteLine("Annual Interest would be " + anAccount.GetInterest());
+            Console.WriteLine("Early withdrawal Penalty would be " + anAccount.GetPenalty());
         }  // end foreach  
 
 

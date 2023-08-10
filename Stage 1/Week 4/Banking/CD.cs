@@ -4,6 +4,8 @@ namespace BankApp
 {
     class CD : Account 
     {
+     
+        const double cdIntRate = .0475;  // constant for CD interest rate
         public string cdAcctID  // property for checking account ID
             { get; set; }
 
@@ -30,11 +32,15 @@ namespace BankApp
 
         public override double GetInterest() // implementation of abstract method
         {
-            return curBal * .0475;
+            return curBal * cdIntRate;
         }
         public override double GetFee() // implementation of abstract method
         {
             return 0; // No Annual Fee for CD
+        }
+        public override double GetPenalty() // implementation of abstract method
+        {
+            return curBal * cdIntRate / 2; // Penalty for early withdraw is 6 months interest
         }
         public override string ToString()
         {

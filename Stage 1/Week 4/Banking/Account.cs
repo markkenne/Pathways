@@ -23,6 +23,7 @@ namespace BankApp
 
         public abstract double GetInterest();  // this is the abstract method that all children must implement (not used in checking)
         public abstract double GetFee();  // this is the abstract method that all children must implement (only used in checking)
+        public abstract double GetPenalty();  // this is the abstract method that all children must implement (only used in CDs)  
 
         public override string ToString()
         {
