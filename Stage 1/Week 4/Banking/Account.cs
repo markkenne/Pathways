@@ -25,7 +25,7 @@ namespace BankApp
 
         public override string ToString()
         {
-            return "Account: " + accountID;
+            return "Bank Account: " + accountID;
         }
 
     }  // end class Account

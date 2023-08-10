@@ -11,8 +11,9 @@ namespace BankApp
         // Create a list of Accounts
         List<Account> accountsList = new List<Account>();
         // Add an Account or two...
-       accountsList.Add(new Savings("MK00002", "MK00002S", "S", 5000));
-      // accountsList.Add(new Account("MK00002"));
+       accountsList.Add(new Savings("MK00002", "MK00002S", "S", 5023.55));
+       accountsList.Add(new Checking("MK00002", "MK00002C", "C", 2532.22));
+       accountsList.Add(new CD("MK00002", "MK00002CD", "CD", 12000.00));
         // Add an account only
       //  accountsList.Add(new HourlyEmployee("Enge", "J.S.", "H", 25.00));
         // Add a salary employee
@@ -21,7 +22,7 @@ namespace BankApp
                 // Print the list
         foreach (Account anAccount in accountsList)
         {
-            Console.Write(anAccount);
+            Console.WriteLine(anAccount);
          //   Console.WriteLine(", and by the way, Commission was " + aVehicle.GetCommission());
         }  // end foreach  
 
