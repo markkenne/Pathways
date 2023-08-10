@@ -19,6 +19,58 @@ namespace BankApp
         accountsList.Add(new Checking("MK003","MK003C", "C", 832.22));
         accountsList.Add(new CD("MK003", "MK003CD", "CD", 4202.90));        
 
+        bool userChoice;
+        string userChoiceString;
+
+
+ // Repeat main loop
+      do
+      {
+
+        // TODO: Get a valid input
+            do
+            {
+                //  Initialize variables
+
+                userChoice = false;
+
+                //  TODO: Provide the user a menu of options
+
+                Console.WriteLine("What's your pleasure? ");
+                Console.WriteLine("L: Load the data file into an array.");
+                Console.WriteLine("S: Save the array to the data file.");
+                Console.WriteLine("C: Add a name to the array.");
+                Console.WriteLine("R: Read a name from the array.");
+                Console.WriteLine("U: Update a name in the array.");
+                Console.WriteLine("D: Delete a name from the array.");
+                Console.WriteLine("Q: Quit the program.");
+
+                //  TODO: Get a user option (valid means its on the menu)
+
+                userChoiceString = Console.ReadLine();
+
+                userChoice = (userChoiceString=="L" || userChoiceString=="l" ||
+                            userChoiceString == "S" || userChoiceString == "s" ||
+                            userChoiceString == "C" || userChoiceString == "c" ||
+                            userChoiceString == "R" || userChoiceString == "r" ||
+                            userChoiceString == "U" || userChoiceString == "u" ||
+                            userChoiceString == "D" || userChoiceString == "d" ||
+                            userChoiceString == "Q" || userChoiceString == "q");
+
+                if (!userChoice)
+                {
+                    Console.WriteLine("Please enter a valid option.");
+                }
+
+            } while (!userChoice);
+
+        //  TODO: If the option is L or l then load the text file (names.txt) into the array of strings (nameArray)
+
+            if (userChoiceString=="L" || userChoiceString=="l")
+
+
+
+
        // Print the list
        //double totBal = 0;
         foreach (Account anAccount in accountsList)
@@ -75,6 +127,19 @@ namespace BankApp
              
         }   Console.WriteLine("Total Balance = $" + totBal);
        }
+
+
+        //  TODO: Else if the option is a Q or q then quit the program
+
+            else 
+            {
+                Console.WriteLine("Good-bye!");
+            }
+        } while (!(userChoiceString=="Q") && !(userChoiceString=="q"));
+
+
+
+
     } // end of Main
   }  // end of class program
 } //end of namespace
