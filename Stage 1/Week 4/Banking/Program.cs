@@ -71,9 +71,9 @@ namespace BankApp
                Console.WriteLine("Early withdrawal Penalty would be " + anAccount.GetPenalty());
                totBal = totBal + anAccount.GetBalance();
              }
-             Console.WriteLine("Total Balance = $" + totBal);
+           //  Console.WriteLine("Total Balance = $" + totBal);
              
-        }  
+        }   Console.WriteLine("Total Balance = $" + totBal);
        }
     } // end of Main
   }  // end of class program

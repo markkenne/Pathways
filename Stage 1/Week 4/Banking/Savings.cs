@@ -45,6 +45,11 @@ namespace BankApp
         {
             return curBal; // balance
         }
+        public void Deposit(double depAmt) // Deposit method
+        {
+            curBal += depAmt; // balance
+        }  
+      
 
         public override string ToString()
         {

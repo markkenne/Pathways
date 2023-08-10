@@ -46,6 +46,10 @@ namespace BankApp
         {
             return curBal; // balance
         }        
+        public void Deposit(double depAmt) // Deposit method
+        {
+            curBal += depAmt; // balance
+        }       
         public override string ToString()
         {
             return base.ToString() + " | CD Account ID: " + cdAcctID + " | Current Balance: $" + curBal;

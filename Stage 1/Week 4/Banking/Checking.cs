@@ -48,6 +48,10 @@ namespace BankApp
         {
             return base.ToString() + " | Checking Account ID: " + checkAcctID + " | Current Balance: $" + curBal + " | with an Annual Fee of: $" + GetFee();
         }
+        public void Deposit(double depAmt) // Deposit method
+        {
+            curBal += depAmt; // balance
+        }      
 
     }  // end class
 
