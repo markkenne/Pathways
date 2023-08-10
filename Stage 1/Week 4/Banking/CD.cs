@@ -23,11 +23,11 @@ namespace BankApp
             curBal =  0.0;            
         }
 
-        public CD(string newaccountID, string newcdAcctID, string newAcctType, double newCurBal) : base (newaccountID)       // another constructor
+        public CD(string newaccountIDM, string newcdAcctID, string newAcctType, double newCurBal) : base(newaccountIDM)//  another constructor
         {
             cdAcctID = newcdAcctID;
             acctType = newAcctType;
-            curBal = newCurBal;
+            curBal   = newCurBal;
         }
 
         public override double GetInterest() // implementation of abstract method

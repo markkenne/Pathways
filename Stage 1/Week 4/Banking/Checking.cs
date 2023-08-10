@@ -21,7 +21,7 @@ namespace BankApp
             curBal =  0.0;            
         }
 
-        public Checking(string newaccountID, string newcheckAcctID, string newAcctType, double newCurBal) : base (newaccountID)       // another constructor
+        public Checking(string newaccountIDM, string newcheckAcctID, string newAcctType, double newCurBal) : base(newaccountIDM)//  another constructor
         {
             checkAcctID = newcheckAcctID;
             acctType = newAcctType;

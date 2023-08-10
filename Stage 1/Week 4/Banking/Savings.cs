@@ -21,7 +21,7 @@ namespace BankApp
             curBal =  0.0;            
         }
 
-        public Savings(string newaccountID, string newSavAcctID, string newAcctType, double newCurBal) : base (newaccountID)       // another constructor
+       public Savings(string newaccountIDM, string newSavAcctID, string newAcctType, double newCurBal) : base(newaccountIDM)        // another constructor
         {
             savAcctID = newSavAcctID;
             acctType = newAcctType;

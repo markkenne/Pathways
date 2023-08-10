@@ -6,20 +6,21 @@ namespace BankApp
     abstract class Account : IGetInterest, IGetFee // : IIntRate, ICDPenalty // this is an abstract class so it can't be instantiated (objects of this type can't be created)
 
     {
-        public string accountID  // property
+        public string accountIDM  // property account ID for primary account
         { get; set; }
+        
 
-        public Account()       // default constructor
+        public Account()       // default constructor, but not usable as abstract
         {
-            accountID = "";
+            accountIDM = ""; 
+
         }
 
-        public Account(string newaccountID)   // another constructor
+        public Account(string newaccountIDM)   // another constructor , inherited by children
         {
-            accountID = newaccountID;
+            accountIDM = newaccountIDM;
+
         }
-
-
 
         public abstract double GetInterest();  // this is the abstract method that all children must implement (not used in checking)
         public abstract double GetFee();  // this is the abstract method that all children must implement (only used in checking)
@@ -27,7 +28,7 @@ namespace BankApp
 
         public override string ToString()
         {
-            return "Bank Account: " + accountID;
+            return "Bank Account ID: " + accountIDM;
         }
 
     }  // end class Account

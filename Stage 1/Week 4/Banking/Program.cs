@@ -13,7 +13,7 @@ namespace BankApp
         
         // Add an Account or two...
         accountsList.Add(new Savings("MK00002", "MK00002S", "S", 5023.55));
-        accountsList.Add(new Checking("MK00002", "MK00002C", "C", 2532.22));
+        accountsList.Add(new Checking("MK00002","MK00002C", "C", 2532.22));
         accountsList.Add(new CD("MK00002", "MK00002CD", "CD", 12000.00));
 
        // Print the list
@@ -26,34 +26,36 @@ namespace BankApp
 
 
         // Find an Account in the list
+        bool found = false;   // set a variable to change to true on found acct
+        string? findAcct = ""; // set an input variable to empty
         Console.Write("Please enter an Account ID to access: ");
-        string findAcct = Console.ReadLine();
-        bool found = false;
+        findAcct = Console.ReadLine();
+        Console.WriteLine(findAcct);
         foreach (Account anAccount in accountsList)
-        {
-            if (anAccount.accountID == findAcct)
-            {
-           //     Console.WriteLine();
-           //     Console.WriteLine("The search was successful and returned these Account details:");
-           //     Console.WriteLine(anAccount);
-                found = true;
-            }
-        }  // end foreach  
-        if (!(found))
-        {
+          {
+           //  Console.WriteLine(anAccount.accountIDM);
+             
+             if (anAccount.accountIDM == findAcct)
+              { found = true;
+                // debug use Console.WriteLine("Name WAS found." + found);
+              } //just set a found flag. do more later
+      
+          }  // end foreach  
+        if (!(found))  // no account matches input, so let user know
+          {
             Console.WriteLine("Name was not found.");
-        }
-        Console.WriteLine();
+            Console.WriteLine();
+          }
+
        if ((found))
-       {
-          Console.WriteLine();
-          Console.WriteLine("The search was successful and returned these Account details:");
-       
-        foreach (Account anAccount in accountsList)
-        {
-            if (anAccount.accountID == findAcct)
+         {
+            Console.WriteLine();
+            Console.WriteLine("The search was successful and returned these Account details:"); // let user know account was found
+          foreach (Account anAccount in accountsList)  //loop thru accounts
+           {
+            if (anAccount.accountIDM == findAcct) // that match input acct
              {             
-               Console.WriteLine(anAccount);
+               Console.WriteLine(anAccount); // print the tostrings
              }
         }
        }
