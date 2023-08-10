@@ -42,6 +42,10 @@ namespace BankApp
         {
             return curBal * cdIntRate / 2; // Penalty for early withdraw is 6 months interest
         }
+        public override double GetBalance() // implementation of abstract method
+        {
+            return curBal; // balance
+        }        
         public override string ToString()
         {
             return base.ToString() + " | CD Account ID: " + cdAcctID + " | Current Balance: $" + curBal;

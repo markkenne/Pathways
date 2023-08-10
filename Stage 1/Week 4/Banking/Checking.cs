@@ -40,7 +40,10 @@ namespace BankApp
         {
             return 0; //no penalty
         }
-
+        public override double GetBalance() // implementation of abstract method
+        {
+            return curBal; // balance
+        }
         public override string ToString()
         {
             return base.ToString() + " | Checking Account ID: " + checkAcctID + " | Current Balance: $" + curBal + " | with an Annual Fee of: $" + GetFee();
