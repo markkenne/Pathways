@@ -23,7 +23,7 @@ namespace BankApp
         foreach (Account anAccount in accountsList)
         {
             Console.WriteLine(anAccount);
-         //   Console.WriteLine(", and by the way, Commission was " + aVehicle.GetCommission());
+            Console.WriteLine("Annual Interest would be " + anAccount.GetInterest());
         }  // end foreach  
 
 

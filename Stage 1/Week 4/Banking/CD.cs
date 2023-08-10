@@ -2,7 +2,7 @@ using System;
 
 namespace BankApp
 {
-    class CD : Account
+    class CD : Account 
     {
         public string cdAcctID  // property for checking account ID
             { get; set; }
@@ -27,12 +27,15 @@ namespace BankApp
             acctType = newAcctType;
             curBal = newCurBal;
         }
-/*
+
         public override double GetInterest() // implementation of abstract method
         {
-            return curBal * .0002;
+            return curBal * .0475;
         }
-*/
+        public override double GetFee() // implementation of abstract method
+        {
+            return 0; // No Annual Fee for CD
+        }
         public override string ToString()
         {
             return base.ToString() + " | CD Account ID: " + cdAcctID + " | Current Balance: $" + curBal;

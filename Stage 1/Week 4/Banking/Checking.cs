@@ -27,15 +27,20 @@ namespace BankApp
             acctType = newAcctType;
             curBal = newCurBal;
         }
-/*
+
         public override double GetInterest() // implementation of abstract method
         {
-            return curBal * .0002;
+            return curBal * 0; //checking has no interest in this scenario
         }
-*/
+        public override double GetFee() // implementation of abstract method
+        {
+            return 60; // Annual Fee of $60
+        }
+
+
         public override string ToString()
         {
-            return base.ToString() + " | Checking Account ID: " + checkAcctID + " | Current Balance: $" + curBal;
+            return base.ToString() + " | Checking Account ID: " + checkAcctID + " | Current Balance: $" + curBal + " | with an Annual Fee of: $" + GetFee();
         }
 
     }  // end class
