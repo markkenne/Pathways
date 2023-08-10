@@ -10,16 +10,13 @@ namespace BankApp
 
         // Create a list of Accounts
         List<Account> accountsList = new List<Account>();
+        
         // Add an Account or two...
-       accountsList.Add(new Savings("MK00002", "MK00002S", "S", 5023.55));
-       accountsList.Add(new Checking("MK00002", "MK00002C", "C", 2532.22));
-       accountsList.Add(new CD("MK00002", "MK00002CD", "CD", 12000.00));
-        // Add an account only
-      //  accountsList.Add(new HourlyEmployee("Enge", "J.S.", "H", 25.00));
-        // Add a salary employee
-      //  employeeList.Add(new SalaryEmployee("Enge", "Alec", "S", 15000));
+        accountsList.Add(new Savings("MK00002", "MK00002S", "S", 5023.55));
+        accountsList.Add(new Checking("MK00002", "MK00002C", "C", 2532.22));
+        accountsList.Add(new CD("MK00002", "MK00002CD", "CD", 12000.00));
 
-                // Print the list
+       // Print the list
         foreach (Account anAccount in accountsList)
         {
             Console.WriteLine(anAccount);
@@ -28,6 +25,38 @@ namespace BankApp
         }  // end foreach  
 
 
+        // Find an Account in the list
+        Console.Write("Please enter an Account ID to access: ");
+        string findAcct = Console.ReadLine();
+        bool found = false;
+        foreach (Account anAccount in accountsList)
+        {
+            if (anAccount.accountID == findAcct)
+            {
+           //     Console.WriteLine();
+           //     Console.WriteLine("The search was successful and returned these Account details:");
+           //     Console.WriteLine(anAccount);
+                found = true;
+            }
+        }  // end foreach  
+        if (!(found))
+        {
+            Console.WriteLine("Name was not found.");
+        }
+        Console.WriteLine();
+       if ((found))
+       {
+          Console.WriteLine();
+          Console.WriteLine("The search was successful and returned these Account details:");
+       
+        foreach (Account anAccount in accountsList)
+        {
+            if (anAccount.accountID == findAcct)
+             {             
+               Console.WriteLine(anAccount);
+             }
+        }
+       }
     } // end of Main
   }  // end of class program
 } //end of namespace
