@@ -36,13 +36,10 @@ namespace BankApp
 
                 //  TODO: Provide the user a menu of options
 
-                Console.WriteLine("What's your pleasure? ");
-                Console.WriteLine("L: Load the data file into an array.");
-                Console.WriteLine("S: Save the array to the data file.");
-                Console.WriteLine("C: Add a name to the array.");
-                Console.WriteLine("R: Read a name from the array.");
-                Console.WriteLine("U: Update a name in the array.");
-                Console.WriteLine("D: Delete a name from the array.");
+                Console.WriteLine("What is your Banking pleasure? ");
+                Console.WriteLine("L: List all of the accounts.");
+                Console.WriteLine("D: Make a Deposit Transaction.");
+                Console.WriteLine("W: Make a Withdrawal Transaction.");
                 Console.WriteLine("Q: Quit the program.");
 
                 //  TODO: Get a user option (valid means its on the menu)
@@ -50,11 +47,8 @@ namespace BankApp
                 userChoiceString = Console.ReadLine();
 
                 userChoice = (userChoiceString=="L" || userChoiceString=="l" ||
-                            userChoiceString == "S" || userChoiceString == "s" ||
-                            userChoiceString == "C" || userChoiceString == "c" ||
-                            userChoiceString == "R" || userChoiceString == "r" ||
-                            userChoiceString == "U" || userChoiceString == "u" ||
-                            userChoiceString == "D" || userChoiceString == "d" ||
+                            userChoiceString == "D" || userChoiceString == "d" ||                
+                            userChoiceString == "W" || userChoiceString == "w" ||
                             userChoiceString == "Q" || userChoiceString == "q");
 
                 if (!userChoice)
@@ -64,11 +58,11 @@ namespace BankApp
 
             } while (!userChoice);
 
-        //  TODO: If the option is L or l then load the text file (names.txt) into the array of strings (nameArray)
+//  TODO: If the option is L or l then List all accounts
 
             if (userChoiceString=="L" || userChoiceString=="l")
-
-
+   {         
+             Console.WriteLine("In the L/l area");
 
 
        // Print the list
@@ -83,7 +77,14 @@ namespace BankApp
          //   Console.WriteLine(totBal);
         }  // end foreach  
         //Console.WriteLine("Total Balance = $" + totBal);
+   } // end of L area
 
+
+//  TODO: Else if the option is a D or d then add a name to the array (if there's room)
+
+            else if (userChoiceString=="D" || userChoiceString=="d")
+   {
+                Console.WriteLine("In the D/d area");
 
 
         // Find an Account in the list
@@ -127,7 +128,7 @@ namespace BankApp
              
         }   Console.WriteLine("Total Balance = $" + totBal);
        }
-
+   }  // end of D area 
 
         //  TODO: Else if the option is a Q or q then quit the program
 
