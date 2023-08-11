@@ -69,9 +69,9 @@ namespace BankApp
        //double totBal = 0;
         foreach (Account anAccount in accountsList)
         {
-            Console.WriteLine(anAccount);
-            Console.WriteLine("Annual Interest would be " + anAccount.GetInterest());
-            Console.WriteLine("Early withdrawal Penalty would be " + anAccount.GetPenalty());
+            Console.Write(anAccount);
+            Console.Write(" with Annual Interest of " + anAccount.GetInterest());
+            Console.WriteLine(" with Early Withdrawal Penalty of " + anAccount.GetPenalty());
 
         //    totBal = totBal + anAccount.GetBalance();
          //   Console.WriteLine(totBal);
@@ -80,11 +80,12 @@ namespace BankApp
    } // end of L area
 
 
-//  TODO: Else if the option is a D or d then Delete an Account DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+//  TODO: Else if the option is a D or d then do a Deposit Transaction DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
 
             else if (userChoiceString=="D" || userChoiceString=="d")
    {
-                Console.WriteLine("In the D/d area");
+                Console.WriteLine("Welcome to the Deposit Depot!");
+                Console.WriteLine();
 
 
         // Find an Account in the list
@@ -114,21 +115,56 @@ namespace BankApp
          {
             Console.WriteLine();
              double totBal = 0;
-            Console.WriteLine("The search was successful and returned these Account details:"); // let user know account was found
+            Console.WriteLine("The search was successful and revealed these Account details:"); // let user know account was found
           foreach (Account anAccount in accountsList)  //loop thru accounts
            {
             if (anAccount.accountIDM == findAcct) // that match input acct
              {             
-               Console.WriteLine(anAccount); // print the tostrings
-               Console.WriteLine("Annual Interest would be " + anAccount.GetInterest());
-               Console.WriteLine("Early withdrawal Penalty would be " + anAccount.GetPenalty());
+               Console.Write(anAccount); // print the tostrings
+               Console.Write("w/ Annual Interest of " + anAccount.GetInterest());
+               Console.Write("w /Early withdrawal Penalty of " + anAccount.GetPenalty());
                totBal = totBal + anAccount.GetBalance();
              }
            //  Console.WriteLine("Total Balance = $" + totBal);
              
         }   Console.WriteLine("Total Balance = $" + totBal);
-       }
-   }  // end of D area 
+       
+        string depChoice;
+        string choiceUC;
+     do
+            {
+                Console.WriteLine();
+                Console.WriteLine("Please choose one of the following Deposit destinations:");
+                Console.WriteLine("C ) Checking Account");
+                Console.WriteLine("S ) Savings Account");
+                Console.WriteLine("CD) Certificate of Deposit");
+                Console.WriteLine("E ) Exit Deposit Transactions");
+
+                depChoice = Console.ReadLine();
+                choiceUC = depChoice.ToUpper();
+
+                if (choiceUC == "C" || choiceUC == "S" || choiceUC == "CD")
+                {
+                    Console.WriteLine("You chose {0}.", choiceUC);
+                }
+                else if (choiceUC == "E")
+                {
+                    Console.WriteLine("You chose {0}.", choiceUC);
+                    Console.WriteLine("Exiting Deposit...");
+                    Console.WriteLine();
+                }
+                else
+                {
+                    Console.WriteLine("Invalid choice. Please try again.");
+                }
+            } while (choiceUC != "E" );
+             // Console.WriteLine("Deposit Area Exit");
+        }
+     }    
+   
+
+
+     // end of D area 
 
 
 //  TODO: If the option is W or w then make a withdrawal transaction WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
@@ -155,7 +191,7 @@ namespace BankApp
 
         //  TODO: Else if the option is a Q or q then quit the program  QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
 
-            else 
+            else if (userChoiceString=="Q" || userChoiceString=="q")
             {
                 Console.WriteLine("Good-bye!");
             }
