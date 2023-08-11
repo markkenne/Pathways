@@ -117,8 +117,11 @@ namespace BankApp
           foreach (Account anAccount in accountsList)  //loop thru accounts
            {
             if (anAccount.accountIDM == findAcct) // that match input acct
-             {             
+             {         
+  
                Console.WriteLine();
+               //Console.Write("Row number: {0}", anAccount.ItemIndex);
+               Console.Write("  -  ");
                Console.Write(anAccount); // print the tostrings
                Console.Write(" | Annual Interest: " + anAccount.GetInterest());
                if (anAccount.GetPenalty()!=0)
@@ -126,8 +129,7 @@ namespace BankApp
                     Console.Write(" | Early Withdrawal Penalty: " + anAccount.GetPenalty());
                    }
                totBal = totBal + anAccount.GetBalance();
-               anAccount.Deposit();
-                Console.Write(" | Annual Interest: " + anAccount.Deposit());
+        
              }
                        
            }  Console.WriteLine();  
@@ -169,19 +171,13 @@ namespace BankApp
                 Console.WriteLine("You entered: " + newdepAmt + "  Is that correct?: ") ;
                 Console.WriteLine();
                 
+                   accountsList[0].Deposit(newdepAmt);
+               
+/*
+            // Make some deposits and withdrawals
+            accountsList[0].Deposit(500);
 
-                /*
-
-
-            // Make a deposit to the account
-               foreach (Account anAccount in accountsList)
-              {
-                if (anAccount.accountIDM == findAcct) // that match input acct
-                   {             
-                     anAccount.Deposit(newdepAmt);
-                  }
-               }
-               */
+*/
                 }
                 else if (choiceUC == "E")
                 {
@@ -217,6 +213,14 @@ namespace BankApp
             Console.WriteLine(anAccount);
             Console.WriteLine("Annual Interest would be " + anAccount.GetInterest());
             Console.WriteLine("Early withdrawal Penalty would be " + anAccount.GetPenalty());
+
+
+/*
+            // Make some deposits and withdrawals
+               accountsList[1].Withdraw(200);
+               accountsList[2].Withdraw(7000);
+*/
+
 
         //    totBal = totBal + anAccount.GetBalance();
          //   Console.WriteLine(totBal);

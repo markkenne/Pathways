@@ -4,7 +4,8 @@ namespace BankApp
 {
     class CD : Account 
     {
-     
+        private int  earlyWithdrawalFee = 50;
+
         const double cdIntRate = .0475;  // constant for CD interest rate
         public string cdAcctID  // property for checking account ID
             { get; set; }
@@ -46,11 +47,23 @@ namespace BankApp
         {
             return curBal; // balance
         }        
-        public override double Deposit() // implementation of abstract method
+
+        public override void Deposit(double amount)
         {
-            return curBal * 1; //checking has no interest in this scenario
+            curBal += amount;
         }
-    
+
+        public override void Withdraw(double amount)
+        {
+            if (curBal < amount + earlyWithdrawalFee)
+            {
+                throw new Exception("Insufficient funds");
+            }
+
+            curBal -= amount;
+        }
+
+
         public override string ToString()
         {
             return base.ToString() + " |      CD ID: " + cdAcctID + " | Balance: $" + curBal;

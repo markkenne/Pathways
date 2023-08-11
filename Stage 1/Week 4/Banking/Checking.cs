@@ -29,18 +29,20 @@ namespace BankApp
         }
 
 
-/*
-        public void Deposit(string newaccountIDM, string newcheckAcctID, double newdepAmt ) : base(newaccountIDM)// 
-        //public Deposit(string newcheckAcctID, double newdepAmt) : base(newaccountIDM) // Deposit method
-        {
-           curBal += newdepAmt; // balance
 
-        }     
-*/
-
-        public override double Deposit() // implementation of abstract method
+        public override void Deposit(double amount)
         {
-            return curBal * 1; //checking has no interest in this scenario
+            curBal += amount;
+        }
+
+        public override void Withdraw(double amount)
+        {
+            if (curBal < amount)
+            {
+                throw new Exception("Insufficient funds");
+            }
+
+            curBal -= amount;
         }
 
 

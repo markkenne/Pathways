@@ -26,7 +26,11 @@ namespace BankApp
         public abstract double GetFee();  // this is the abstract method that all children must implement (only used in checking)
         public abstract double GetPenalty();  // this is the abstract method that all children must implement (only used in CDs)  
         public abstract double GetBalance();  // this is the abstract method that all children must implement (only used in all)  
-        public abstract double Deposit();  // this is the abstract method that all children must implement (only used in all)  
+
+        public abstract void Deposit(double amount); // this is the abstract method that all children must implement (only used in all)  
+        public abstract void Withdraw(double amount); // this is the abstract method that all children must implement (only used in all)  
+
+
         public override string ToString()
         {
             return "Acct ID: " + accountIDM;

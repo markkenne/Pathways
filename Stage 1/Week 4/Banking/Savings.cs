@@ -45,11 +45,21 @@ namespace BankApp
         {
             return curBal; // balance
         }
-        public override double Deposit() // implementation of abstract method
+
+        public override void Deposit(double amount)
         {
-            return curBal * 1; //checking has no interest in this scenario
+            curBal += amount;
         }
 
+        public override void Withdraw(double amount)
+        {
+            if (curBal < amount + 5)
+            {
+                throw new Exception("Insufficient funds");
+            }
+
+            curBal -= amount;
+        }
       
 
         public override string ToString()
