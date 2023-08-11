@@ -20,7 +20,7 @@ namespace BankApp
         accountsList.Add(new CD("MK003", "MK003CD", "CD", 4202.90));        
 
         bool userChoice;
-        string userChoiceString;
+        string? userChoiceString = "X";
 
 
  // Repeat main loop
@@ -98,12 +98,10 @@ namespace BankApp
         foreach (Account anAccount in accountsList)
           {
            //  Console.WriteLine(anAccount.accountIDM);
-             
              if (anAccount.accountIDM == findAcct)
               { found = true;
                 // debug use Console.WriteLine("Name WAS found." + found);
               } //just set a found flag. do more later
-      
           }  // end foreach  
         if (!(found))  // no account matches input, so let user know
           {
@@ -128,14 +126,17 @@ namespace BankApp
                     Console.Write(" | Early Withdrawal Penalty: " + anAccount.GetPenalty());
                    }
                totBal = totBal + anAccount.GetBalance();
+               anAccount.Deposit();
+                Console.Write(" | Annual Interest: " + anAccount.Deposit());
              }
                        
            }  Console.WriteLine();  
               Console.Write("                    Total Balance All Accounts: $" + totBal);
               Console.WriteLine();  
        
-        string depChoice;
-        string choiceUC;
+        string? depChoice = "";
+        string? choiceUC = "";
+        string? childAcct = "";
      do
             {
                 Console.WriteLine();
@@ -146,11 +147,41 @@ namespace BankApp
                 Console.WriteLine("E ) Exit Deposit Transactions");
 
                 depChoice = Console.ReadLine();
-                choiceUC = depChoice.ToUpper();
-
+                choiceUC = depChoice!.ToUpper();
+                
                 if (choiceUC == "C" || choiceUC == "S" || choiceUC == "CD")
                 {
                     Console.WriteLine("You chose {0}.", choiceUC);
+                    Console.WriteLine(findAcct);
+                    childAcct = findAcct + choiceUC;
+                    Console.WriteLine(childAcct);
+               
+                // A valid deposit account was chosen so make sure we can leave when done
+                   choiceUC = "E";
+
+
+                // That out of the way, make a deposit transaction here
+                double newdepAmt = 0;
+                string? depAmt = "0";
+                Console.WriteLine("Please enter a Deposit Amount: ") ;
+                depAmt = Console.ReadLine();
+                newdepAmt = Convert.ToDouble(depAmt);
+                Console.WriteLine("You entered: " + newdepAmt + "  Is that correct?: ") ;
+                Console.WriteLine();
+                
+
+                /*
+
+
+            // Make a deposit to the account
+               foreach (Account anAccount in accountsList)
+              {
+                if (anAccount.accountIDM == findAcct) // that match input acct
+                   {             
+                     anAccount.Deposit(newdepAmt);
+                  }
+               }
+               */
                 }
                 else if (choiceUC == "E")
                 {

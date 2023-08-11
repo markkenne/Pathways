@@ -46,10 +46,11 @@ namespace BankApp
         {
             return curBal; // balance
         }        
-        public void Deposit(double depAmt) // Deposit method
+        public override double Deposit() // implementation of abstract method
         {
-            curBal += depAmt; // balance
-        }       
+            return curBal * 1; //checking has no interest in this scenario
+        }
+    
         public override string ToString()
         {
             return base.ToString() + " |      CD ID: " + cdAcctID + " | Balance: $" + curBal;

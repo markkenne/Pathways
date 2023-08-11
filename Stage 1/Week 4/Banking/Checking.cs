@@ -28,6 +28,22 @@ namespace BankApp
             curBal = newCurBal;
         }
 
+
+/*
+        public void Deposit(string newaccountIDM, string newcheckAcctID, double newdepAmt ) : base(newaccountIDM)// 
+        //public Deposit(string newcheckAcctID, double newdepAmt) : base(newaccountIDM) // Deposit method
+        {
+           curBal += newdepAmt; // balance
+
+        }     
+*/
+
+        public override double Deposit() // implementation of abstract method
+        {
+            return curBal * 1; //checking has no interest in this scenario
+        }
+
+
         public override double GetInterest() // implementation of abstract method
         {
             return curBal * 0; //checking has no interest in this scenario
@@ -48,10 +64,7 @@ namespace BankApp
         {
             return base.ToString() + " | Checking ID: " + checkAcctID + " | Balance: $" + curBal + " | with Annual Fee of: $" + GetFee();
         }
-        public void Deposit(double depAmt) // Deposit method
-        {
-            curBal += depAmt; // balance
-        }      
+ 
 
     }  // end class
 
