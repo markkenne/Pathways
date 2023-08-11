@@ -58,7 +58,7 @@ namespace BankApp
 
             } while (!userChoice);
 
-//  TODO: If the option is L or l then List all accounts
+//  TODO: If the option is L or l then List all accounts  LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL
 
             if (userChoiceString=="L" || userChoiceString=="l")
    {         
@@ -80,7 +80,7 @@ namespace BankApp
    } // end of L area
 
 
-//  TODO: Else if the option is a D or d then add a name to the array (if there's room)
+//  TODO: Else if the option is a D or d then Delete an Account DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
 
             else if (userChoiceString=="D" || userChoiceString=="d")
    {
@@ -130,7 +130,30 @@ namespace BankApp
        }
    }  // end of D area 
 
-        //  TODO: Else if the option is a Q or q then quit the program
+
+//  TODO: If the option is W or w then make a withdrawal transaction WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+
+            if (userChoiceString=="W" || userChoiceString=="w")
+   {         
+             Console.WriteLine("In the W/w area");
+
+
+       // Print the list
+       //double totBal = 0;
+        foreach (Account anAccount in accountsList)
+        {
+            Console.WriteLine(anAccount);
+            Console.WriteLine("Annual Interest would be " + anAccount.GetInterest());
+            Console.WriteLine("Early withdrawal Penalty would be " + anAccount.GetPenalty());
+
+        //    totBal = totBal + anAccount.GetBalance();
+         //   Console.WriteLine(totBal);
+        }  // end foreach  
+        //Console.WriteLine("Total Balance = $" + totBal);
+   } // end of W area
+
+
+        //  TODO: Else if the option is a Q or q then quit the program  QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
 
             else 
             {
