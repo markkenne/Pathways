@@ -46,7 +46,7 @@ namespace BankApp
         }
         public override string ToString()
         {
-            return base.ToString() + " | Checking Account ID: " + checkAcctID + " | Current Balance: $" + curBal + " | with an Annual Fee of: $" + GetFee();
+            return base.ToString() + " | Checking ID: " + checkAcctID + " | Balance: $" + curBal + " | with Annual Fee of: $" + GetFee();
         }
         public void Deposit(double depAmt) // Deposit method
         {

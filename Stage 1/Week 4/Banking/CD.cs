@@ -52,7 +52,7 @@ namespace BankApp
         }       
         public override string ToString()
         {
-            return base.ToString() + " | CD Account ID: " + cdAcctID + " | Current Balance: $" + curBal;
+            return base.ToString() + " |      CD ID: " + cdAcctID + " | Balance: $" + curBal;
         }
 
     }  // end class

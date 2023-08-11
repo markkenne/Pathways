@@ -29,7 +29,7 @@ namespace BankApp
      //   public abstract double Deposit();  // this is the abstract method that all children must implement (only used in all)  
         public override string ToString()
         {
-            return "Bank Account ID: " + accountIDM;
+            return "Acct ID: " + accountIDM;
         }
 
     }  // end class Account

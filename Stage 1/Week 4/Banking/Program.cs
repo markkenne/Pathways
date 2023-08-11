@@ -120,14 +120,19 @@ namespace BankApp
            {
             if (anAccount.accountIDM == findAcct) // that match input acct
              {             
+               Console.WriteLine();
                Console.Write(anAccount); // print the tostrings
-               Console.Write("w/ Annual Interest of " + anAccount.GetInterest());
-               Console.Write("w /Early withdrawal Penalty of " + anAccount.GetPenalty());
+               Console.Write(" | Annual Interest: " + anAccount.GetInterest());
+               if (anAccount.GetPenalty()!=0)
+                   {
+                    Console.Write(" | Early Withdrawal Penalty: " + anAccount.GetPenalty());
+                   }
                totBal = totBal + anAccount.GetBalance();
              }
-           //  Console.WriteLine("Total Balance = $" + totBal);
-             
-        }   Console.WriteLine("Total Balance = $" + totBal);
+                       
+           }  Console.WriteLine();  
+              Console.Write("                    Total Balance All Accounts: $" + totBal);
+              Console.WriteLine();  
        
         string depChoice;
         string choiceUC;

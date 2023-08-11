@@ -53,7 +53,7 @@ namespace BankApp
 
         public override string ToString()
         {
-            return base.ToString() + " | Savings Account ID: " + savAcctID + " | Current Balance: $" + curBal;
+            return base.ToString() + " |  Savings ID: " + savAcctID + " | Balance: $" + curBal;
         }
 
     }  // end class
