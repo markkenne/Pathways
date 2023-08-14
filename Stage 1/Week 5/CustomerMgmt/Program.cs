@@ -84,6 +84,23 @@ namespace CustomerMgmt
        membershipList.Add(new NonProfit("M006", "N", "rfields@nonprofit.net", 300, 6666.00));
        membershipList.Add(new Corporate("M007", "C", "mbags@corprus.com", 400, 7777.00));
        membershipList.Add(new Corporate("M008", "C", "slimey@bigcorp.com", 400, 8888.00));           
+     // Create the menus as lists
+       List<string> menuOptionsMain = new List<string>();
+       menuOptionsMain.Add("A - Admin Menu");
+       menuOptionsMain.Add("M - Member Menu");
+       menuOptionsMain.Add("Q - Quit");
+       List<string> menuOptionsAdmin = new List<string>();
+       menuOptionsAdmin.Add("C - Create a new Membership");
+       menuOptionsAdmin.Add("R - Read all Memberships");
+       menuOptionsAdmin.Add("U - Update an Exiting Membership");
+       menuOptionsAdmin.Add("D - Delete and Existing Membership");       
+       menuOptionsAdmin.Add("X - eXit to Main Menu");
+       List<string> menuOptionsMember = new List<string>();
+       menuOptionsMember.Add("A - Admin Menu");
+       menuOptionsMember.Add("M - Member Menu");
+       menuOptionsMember.Add("Q - Quit");
+    
+    
      // Print the memberships in the list
         foreach (Membership aMember in membershipList)
            {
@@ -91,49 +108,88 @@ namespace CustomerMgmt
             }  // end foreach  
 
 
-      List<string> menuOptionsAdmin = new List<string>();
+bool isMainMenuLooping = true;
 
-    
-      menuOptionsAdmin.Add("A - Admin Menu");
-      menuOptionsAdmin.Add("M - Member Menu");
-      menuOptionsAdmin.Add("Q - Quit");
+while (isMainMenuLooping)
+ {
+    Console.WriteLine("Please select an option:");
+    foreach (var option in menuOptionsMain)
+    {
+     Console.WriteLine(option);
+    }
+    string? mainmenuchoice = Console.ReadLine();
+    // Console.WriteLine(menuchoice);
+    string? mainmenuchoiceUp = mainmenuchoice!.ToUpper();
+    // direct the program to the menu choice using switch/case
 
-bool isMenuLooping = true;
-
-while (isMenuLooping)
-{
-
-     Console.WriteLine("Please select an option:");
-     foreach (var option in menuOptionsAdmin)
-          {
-        Console.WriteLine(option);
-          }
-string menuchoice = Console.ReadLine();
-// Console.WriteLine(menuchoice);
-string menuchoiceUp = menuchoice.ToUpper();
-// direct the program to the menu choice using switch/case
-switch (menuchoiceUp)
-{
-  case "A":  // TODO AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+switch (mainmenuchoiceUp)
+ {
+    case "A":  // TODO AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
     // Create a new item.
-     Console.WriteLine("In the Admin area");
-   break;
-  case "M":  // TODO MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+    Console.WriteLine("In the Admin area");
+      bool isAdminMenuLooping = true;
+      while (isAdminMenuLooping)
+      {
+                    Console.WriteLine("Please select an Admin option:");
+                    foreach (var Adminoption in menuOptionsAdmin)
+                    {
+                    Console.WriteLine(Adminoption);
+                    }
+                    string? adminmenuchoice = Console.ReadLine();
+                    // Console.WriteLine(Adminmenuchoice);
+                    string? Adminmenuchoice = adminmenuchoice!.ToUpper();
+                  
+      
+      switch (Adminmenuchoice)
+        {
+        case "C": // TODO CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+                  // Create a new membership as Admin.
+                     Console.WriteLine("In the Admin Create area");
+                     break;
+        case "R": // TODO RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+                  // Read the List as Admin.
+                     Console.WriteLine("In the Admin Read area");
+                     break;
+        case "U": // TODO UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+                  // Update the Membership as Admin.
+                     Console.WriteLine("In the Admin Update area");
+                     break;
+        case "D": // TODO DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+                  // Delete a membership as Admin.
+                     Console.WriteLine("In the Admin Delete area");
+                     break;
+        case "X": // TODO XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                  // Quit the Admin menu.
+                     Console.WriteLine("In the eXit area");
+                     isAdminMenuLooping = false; // user chose X so quit the looping Admin menu
+                     Console.WriteLine("You chose eXit. back to Main...");
+                     break;
+        default:
+                 // Invalid option. Loop to Admin menu choices.
+                    Console.WriteLine("Invalid Option. Please try again.");
+                    break;
+        }        // end admin menu switch
+      }          // end admin menu while
+   // end main menu switch
+      break;
+    
+    case "M":  // TODO MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
     // Read an existing item.
     Console.WriteLine("In the Member area");
     break;
-  case "Q": // TODO QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+    case "Q": // TODO QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
     // Quit the application.
-  //  Console.WriteLine("In the Q/q area");
-    isMenuLooping = false; // user chose Q so quit the looping
+    //  Console.WriteLine("In the Q/q area");
+    isMainMenuLooping = false; // user chose Q so quit the looping
     Console.WriteLine("You chose Quit. Good Bye...");
     break;
-  default:
+    default:
     // Invalid option. Loop to menu choices.
     Console.WriteLine("Invalid Option. Please try again.");
     break;
-} // end main menu switch
-} // end main menu while
+      
+  } // end main menu switch
+ } // end main menu while
     }   // end Main area
   }  // end class Program
 } //end namespace
