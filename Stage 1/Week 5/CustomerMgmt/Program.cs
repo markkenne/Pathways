@@ -55,6 +55,10 @@ Algorithm:
    (6a) Create a constructor to pull Corporate Membership detail
    (6a) Create a list reader for Corporate using constructor
    (6b) Create test rows in main and test Corporate Class in print to screen   
+  (7) Create a two-tiered menu 
+    (7a) Administration with CRUDQ for memberships
+    (7b) User with LPTAQ
+
 
 
   */ // end of comments section
@@ -80,9 +84,6 @@ namespace CustomerMgmt
        membershipList.Add(new NonProfit("M006", "N", "rfields@nonprofit.net", 300, 6666.00));
        membershipList.Add(new Corporate("M007", "C", "mbags@corprus.com", 400, 7777.00));
        membershipList.Add(new Corporate("M008", "C", "slimey@bigcorp.com", 400, 8888.00));           
-       
-
-
      // Print the memberships in the list
         foreach (Membership aMember in membershipList)
            {
@@ -90,8 +91,49 @@ namespace CustomerMgmt
             }  // end foreach  
 
 
+      List<string> menuOptionsAdmin = new List<string>();
 
+    
+      menuOptionsAdmin.Add("A - Admin Menu");
+      menuOptionsAdmin.Add("M - Member Menu");
+      menuOptionsAdmin.Add("Q - Quit");
 
+bool isMenuLooping = true;
+
+while (isMenuLooping)
+{
+
+     Console.WriteLine("Please select an option:");
+     foreach (var option in menuOptionsAdmin)
+          {
+        Console.WriteLine(option);
+          }
+string menuchoice = Console.ReadLine();
+// Console.WriteLine(menuchoice);
+string menuchoiceUp = menuchoice.ToUpper();
+// direct the program to the menu choice using switch/case
+switch (menuchoiceUp)
+{
+  case "A":  // TODO AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    // Create a new item.
+     Console.WriteLine("In the Admin area");
+   break;
+  case "M":  // TODO MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+    // Read an existing item.
+    Console.WriteLine("In the Member area");
+    break;
+  case "Q": // TODO QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+    // Quit the application.
+  //  Console.WriteLine("In the Q/q area");
+    isMenuLooping = false; // user chose Q so quit the looping
+    Console.WriteLine("You chose Quit. Good Bye...");
+    break;
+  default:
+    // Invalid option. Loop to menu choices.
+    Console.WriteLine("Invalid Option. Please try again.");
+    break;
+} // end main menu switch
+} // end main menu while
     }   // end Main area
   }  // end class Program
 } //end namespace
