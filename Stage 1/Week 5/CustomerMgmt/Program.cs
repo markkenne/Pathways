@@ -14,6 +14,34 @@
   (4) A purchase method 
   (5) A return method
   (6) A cashback reward method (print information and zero Cashback amount)
+  (7) Menus for both Admin and Transaction Use driven by Main menu choice
+    (7a) An option to Quit from this menu.
+  (8) Admin menu needs these options:
+   (8a) C - Create a new membership as Admin.
+      (8a1) Validation to prevent duplicate IDs
+   (8b) R - Print the memberships in the list to screen
+   (8c) U - Update the Membership details
+   (8d) D - Delete a membership
+   (8e) X - eXit to main menu 
+  (9) Transaction menu needs these options:
+   (9a) L - List all membership with all info
+   (9b) P - Perform Purchase Transaction
+     (9b1) amount of the purchase must be > 0
+     (9b2) must be valid ID for purchase
+     (9b3) current monthly purchases increases by purchase amount
+   (9c) T - Perform Return Transaction
+     (9c1) amount of the purchase returned must be > 0
+     (9c2) must be valid ID for purchase
+     (9c3) current monthly purchases decreases by purchase return amount
+   (9d) A - Apply Cash Back Rewards
+     (9d1) Must input a valid ID
+     (9d2) Passes request to rewards system
+        (9d2a) Console message "Cash-back reward request for membership xxxxxx in the amount of $yyyy has been made."
+        (9d2b) Zero the (Cashback?) balance
+   (9e) X - eXit to main menu 
+   
+  
+  
 
   (3) Ability to calculate the annual bonus based on the Type. If H then 80 hours times rate, if Salary then 10% of salary amount
   (4) Ability to print the hourly rate or salary amount with bonus using the ToString method
@@ -55,9 +83,24 @@ Algorithm:
    (6a) Create a constructor to pull Corporate Membership detail
    (6a) Create a list reader for Corporate using constructor
    (6b) Create test rows in main and test Corporate Class in print to screen   
-  (7) Create a two-tiered menu 
-    (7a) Administration with CRUDQ for memberships
-    (7b) User with LPTAQ
+  (7) Create a two-tiered menu with a Quit option. Each tier is another menu
+    (7a) A = Administration with CRUDQ for memberships
+    (7b) T = Transaction with LPTAQ
+    (7c) Q = Quit
+  (8) Create menuOptionsMain List for items in 7 above
+  (9) Create menuOptionsAdmin for use in A with these options:
+   (9a) C - Create a new Membership
+   (9b) R - Read all Memberships
+   (9c) U - Update an Exiting Membership
+   (9d) D - Delete and Existing Membership
+   (9e) X - eXit to Main Menu
+  (10) Create menuOptionsAdmin for use in A with these options:
+   (10a) L - List all membership with all info
+   (10b) P - Perform Purchase Transaction
+   (10c) T - Perform Return Transaction
+   (10d) A - Apply Cash Back Rewards
+   (10e) X - eXit to Main Menu   
+  (11)  Create Admin process C for a new user 
 
 
 
