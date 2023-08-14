@@ -136,7 +136,7 @@ namespace CustomerMgmt
        List<string> menuOptionsAdmin = new List<string>();
        menuOptionsAdmin.Add("C - Create a new Membership");
        menuOptionsAdmin.Add("R - Read all Memberships");
-       menuOptionsAdmin.Add("U - Update an Exiting Membership");
+       menuOptionsAdmin.Add("U - Update an Existing Membership");
        menuOptionsAdmin.Add("D - Delete and Existing Membership");       
        menuOptionsAdmin.Add("X - eXit to Main Menu");
        // Choices for Members
@@ -218,39 +218,30 @@ switch (mainmenuchoiceUp)
                      {
                       Console.WriteLine(aMember);
                      }
-
-        Console.Write("Please enter n Membership ID to DELETE: ");
+        Console.WriteLine();
+        Console.Write("Please enter a Membership ID to DELETE: ");
         findID = Console.ReadLine();
-       //debug use Console.WriteLine(findID);
-     
-     //   foreach (Membership aMember in membershipList)
-       //   {
-             //  Console.WriteLine(anAccount.accountIDM);
-   //          if (aMember.membershipID == findID)
-         //     { found = true;
-                // debug use Console.WriteLine("Name WAS found." + found);
-    //              Console.WriteLine("findID has been found,  and will be deleted.");
-    //              Console.WriteLine("Are you sure? y/n");
-          //        string stryn = Console.ReadLine();
-          //        if (stryn == "y"|| stryn=="Y")
-           //       membershipList.Remove(findID);
-
-
-
         for (int index = 0; index < membershipList.Count; index++)
            {
             if (membershipList[index].membershipID == findID)
             {
            // Console.WriteLine(membershipList(index));
 
-                membershipList.RemoveAt(index);
-                found = true;
+                 // Console.WriteLine(findID+  " has been found,  and will be deleted.");
+                  Console.WriteLine("Are you sure you want to DELETE " + findID + "? y/n");
+                  string stryn = "n";
+                  stryn = Console.ReadLine();
+                  if (stryn == "y"|| stryn=="Y")
+                  {
+                   membershipList.RemoveAt(index);
+                   found = true;
+                  }
               }
            }  // end foreach  
         if (found)
             Console.WriteLine("Employee was deleted.  I hope that is what you wanted!");
         else
-            Console.WriteLine("Employee not found.  No one was deleted.");
+            Console.WriteLine("Okay, not deleted.");
         // print the list again
 
 
