@@ -1,0 +1,15 @@
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 5\CustomerMgmt\obj\Debug\net7.0\CustomerMgmt.csproj.AssemblyReference.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 5\CustomerMgmt\obj\Debug\net7.0\CustomerMgmt.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 5\CustomerMgmt\obj\Debug\net7.0\CustomerMgmt.AssemblyInfoInputs.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 5\CustomerMgmt\obj\Debug\net7.0\CustomerMgmt.AssemblyInfo.cs
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 5\CustomerMgmt\obj\Debug\net7.0\CustomerMgmt.csproj.CoreCompileInputs.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 5\CustomerMgmt\bin\Debug\net7.0\CustomerMgmt.exe
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 5\CustomerMgmt\bin\Debug\net7.0\CustomerMgmt.deps.json
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 5\CustomerMgmt\bin\Debug\net7.0\CustomerMgmt.runtimeconfig.json
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 5\CustomerMgmt\bin\Debug\net7.0\CustomerMgmt.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 5\CustomerMgmt\bin\Debug\net7.0\CustomerMgmt.pdb
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 5\CustomerMgmt\obj\Debug\net7.0\CustomerMgmt.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 5\CustomerMgmt\obj\Debug\net7.0\refint\CustomerMgmt.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 5\CustomerMgmt\obj\Debug\net7.0\CustomerMgmt.pdb
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 5\CustomerMgmt\obj\Debug\net7.0\CustomerMgmt.genruntimeconfig.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 1\Week 5\CustomerMgmt\obj\Debug\net7.0\ref\CustomerMgmt.dll
