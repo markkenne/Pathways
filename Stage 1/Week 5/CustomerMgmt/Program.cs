@@ -39,8 +39,23 @@ Algorithm:
   (2) In Program.cs, test the Membership Class and construct objects by doing some basic set-up:
    (2a) Create a staic void Main section in Class Program
    (2b) Initialize a list for use to hold the data (as membershipList)
-   (2c) Create a couple rows of test data for membership and make sure they dont work (abstract)
   (3) Create a Child membership class called Regular for regular members
+   (3a) Create a constructor to pull Membership detail
+   (3b) Create a list reader for Regular using constructor
+   (3c) Create test rows in main and test Regular Class in print to screen
+  (4) Create a Child membership class called Executive
+   (4a) Create a constructor to pull Membership detail
+   (4a) Create a list reader for Executive using constructor
+   (4b) Create test rows in main and test Executive Class in print to screen
+  (5) Create a Child membership class called NonProfit
+   (5a) Create a constructor to pull NonProfit Membership detail
+   (5a) Create a list reader for NonProfit using constructor
+   (5b) Create test rows in main and test NonProfit Class in print to screen
+  (6) Create a Child membership class called Corporate
+   (6a) Create a constructor to pull Corporate Membership detail
+   (6a) Create a list reader for Corporate using constructor
+   (6b) Create test rows in main and test Corporate Class in print to screen   
+
 
   */ // end of comments section
 
@@ -56,29 +71,24 @@ namespace CustomerMgmt
         // Initialize Lists
         // Create a list of Membership
         List<Membership> membershipList = new List<Membership>();
-    // Add a Membership to test default
-      // membershipList.Add (new Membership()); nope this is abstract
-       membershipList.Add(new Regular("M001", "mkenne@lincoln.ne.gov.", 100, 2255.00));
-       membershipList.Add(new Regular("M002", "tblinker@lincoln.ne.gov.", 100, 255.00));
+      // Add a Regular to test 
+       membershipList.Add(new Regular("M001", "R", "mkenne00@lincoln.ne.gov.", 100, 111.00));
+       membershipList.Add(new Regular("M002", "R", "tblinker@lincoln.ne.gov.", 100, 222.00));
+       membershipList.Add(new Executive("M003", "E", "ablanker@lincoln.ne.gov.", 100, 3333.00));
+       membershipList.Add(new Executive("M004", "E", "reddward@lincoln.ne.gov.", 100, 4444.00));       
 
        
 
 
-        // Create a list of CustomerMgmt
-      //  List<HourlyEmployee> hourlyEmployeeList = new List<HourlyEmployee>();  
-        // And, create a list of Salary Employees
-        //List<SalaryEmployee> salaryEmployeeList = new List<SalaryEmployee>();   
-    
-
-        // Print the membership in the list
-        foreach (Regular aMember in membershipList)
-            {
-                Console.WriteLine(aMember);
+     // Print the memberships in the list
+        foreach (Membership aMember in membershipList)
+           {
+              Console.WriteLine(aMember);
             }  // end foreach  
 
 
 
 
-    } // end Main area
-  }   // end class Program
+    }   // end Main area
+  }  // end class Program
 } //end namespace
