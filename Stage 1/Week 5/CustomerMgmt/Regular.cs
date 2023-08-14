@@ -1,4 +1,4 @@
-// Membership Class - used to hold MembershipID, Contact email, annual cost and current monthly purchases in dollars
+// Regular Child Class
 
 using System;
 
@@ -14,7 +14,7 @@ namespace CustomerMgmt
             cashback = 0;
         }
 */
-        public Regular(string membershipID, string contactEmail, double annualCost, double currentMonthlyPurchases): base(membershipID, contactEmail, annualCost, currentMonthlyPurchases)
+        public Regular(string membershipID, string type, string contactEmail, double annualCost, double currentMonthlyPurchases): base(membershipID, type, contactEmail, annualCost, currentMonthlyPurchases)
         {
           //  newMembershipID = membershipID;
           //  newContactEmail = contactEmail;
@@ -27,7 +27,7 @@ namespace CustomerMgmt
 
         public override string ToString()
         {
-            return $"ID: {membershipID}, Email: {contactEmail}, Annual Fee: {annualCost}, Current Purch:  {currentMonthlyPurchases}, Cashback: {cashback}";
+            return $"ID: {membershipID}, Type: {type}, Email: {contactEmail}, Annual Fee: {annualCost}, Current Purch:  {currentMonthlyPurchases}, Cashback: {cashback}";
         }
     }
 }

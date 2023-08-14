@@ -72,11 +72,12 @@ namespace CustomerMgmt
         // Create a list of Membership
         List<Membership> membershipList = new List<Membership>();
       // Add a Regular to test 
-       membershipList.Add(new Regular("M001", "R", "mkenne00@lincoln.ne.gov.", 100, 111.00));
-       membershipList.Add(new Regular("M002", "R", "tblinker@lincoln.ne.gov.", 100, 222.00));
-       membershipList.Add(new Executive("M003", "E", "ablanker@lincoln.ne.gov.", 100, 3333.00));
-       membershipList.Add(new Executive("M004", "E", "reddward@lincoln.ne.gov.", 100, 4444.00));       
-
+       membershipList.Add(new Regular("M001", "R", "mkenne00@lincoln.ne.gov", 100, 111.00));
+       membershipList.Add(new Regular("M002", "R", "tblinker@lincoln.ne.gov", 100, 222.00));
+       membershipList.Add(new Executive("M003", "E", "ablanker@lincoln.ne.gov", 100, 3333.00));
+       membershipList.Add(new Executive("M004", "E", "reddward@lincoln.ne.gov", 100, 4444.00));       
+       membershipList.Add(new NonProfit("M003", "N", "mbanks@nonprofit.net", 100, 5555.00));
+       membershipList.Add(new NonProfit("M004", "N", "rfields@nonprofit.net", 100, 6666.00));    
        
 
 
