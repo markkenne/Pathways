@@ -209,7 +209,61 @@ switch (mainmenuchoiceUp)
         
         case "D": // TODO ADMIN DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
                   // Delete a membership as Admin.
-                     Console.WriteLine("In the Admin Delete area");
+                  //   Console.WriteLine("In the Admin Delete area");
+
+       // Find an Membership to delete  in the list
+        bool found = false;   // set a variable to change to true on found acct
+        string? findID = ""; // set an input variable to empty
+                            foreach (Membership aMember in membershipList)
+                     {
+                      Console.WriteLine(aMember);
+                     }
+
+        Console.Write("Please enter n Membership ID to DELETE: ");
+        findID = Console.ReadLine();
+       //debug use Console.WriteLine(findID);
+     
+     //   foreach (Membership aMember in membershipList)
+       //   {
+             //  Console.WriteLine(anAccount.accountIDM);
+   //          if (aMember.membershipID == findID)
+         //     { found = true;
+                // debug use Console.WriteLine("Name WAS found." + found);
+    //              Console.WriteLine("findID has been found,  and will be deleted.");
+    //              Console.WriteLine("Are you sure? y/n");
+          //        string stryn = Console.ReadLine();
+          //        if (stryn == "y"|| stryn=="Y")
+           //       membershipList.Remove(findID);
+
+
+
+        for (int index = 0; index < membershipList.Count; index++)
+           {
+            if (membershipList[index].membershipID == findID)
+            {
+           // Console.WriteLine(membershipList(index));
+
+                membershipList.RemoveAt(index);
+                found = true;
+              }
+           }  // end foreach  
+        if (found)
+            Console.WriteLine("Employee was deleted.  I hope that is what you wanted!");
+        else
+            Console.WriteLine("Employee not found.  No one was deleted.");
+        // print the list again
+
+
+
+      //            {  } //just set a found flag. do more later
+        //  }  // end foreach  
+       //   if (!(found))  // no account matches input, so let user know
+        //   {
+        //    Console.WriteLine("Membership ID was not found. DELETE CANCELED");
+       //     Console.WriteLine();
+        //   }
+
+
                      break;
         
         case "X": // TODO ADMIN XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
