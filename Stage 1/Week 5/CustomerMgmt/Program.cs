@@ -105,18 +105,15 @@ namespace CustomerMgmt
        menuOptionsTrx.Add("X - eXit to Main Menu");
     
     
-     // Print the memberships in the list
-        foreach (Membership aMember in membershipList)
-           {
-              Console.WriteLine(aMember);
-            }  // end foreach  
+
 
 
 bool isMainMenuLooping = true;
 
 while (isMainMenuLooping)
  {
-    Console.WriteLine("Please select an option:");
+    Console.WriteLine();
+    Console.WriteLine("MAIN MENU - Please select an option:");
     foreach (var option in menuOptionsMain)
     {
      Console.WriteLine(option);
@@ -128,13 +125,14 @@ while (isMainMenuLooping)
 
 switch (mainmenuchoiceUp)
  {
-    case "A":  // TODO AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    case "A":  // TODO MAIN AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
     // View the Admin Menu
-      Console.WriteLine("In the Admin area");
+      // debug use Console.WriteLine("In the Admin area");
       bool isAdminMenuLooping = true;
       while (isAdminMenuLooping)
       {
-                    Console.WriteLine("Please select an Admin option:");
+                    Console.WriteLine();
+                    Console.WriteLine("ADMIN MENU - Please select an option:");
                     foreach (var Adminoption in menuOptionsAdmin)
                     {
                     Console.WriteLine(Adminoption);
@@ -146,23 +144,32 @@ switch (mainmenuchoiceUp)
       
       switch (Adminmenuchoice)  //   TODO ADMINMENU_ADMINMENU_ADMINMENU_ADMINMENU_ADMINMENU_ADMINMENU_ADMINMENU_ADMINMENU_ADMINMENU_ADMINMENU
         {
-        case "C": // TODO CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        case "C": // TODO ADMIN CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
                   // Create a new membership as Admin.
                      Console.WriteLine("In the Admin Create area");
                      break;
-        case "R": // TODO RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+       
+        case "R": // TODO ADMIN RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
                   // Read the List as Admin.
-                     Console.WriteLine("In the Admin Read area");
+                     Console.WriteLine("Membership List:");
+                  // Print the memberships in the list
+                     foreach (Membership aMember in membershipList)
+                     {
+                      Console.WriteLine(aMember);
+                     }  // end foreach  
                      break;
-        case "U": // TODO UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+
+        case "U": // TODO ADMIN UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
                   // Update the Membership as Admin.
                      Console.WriteLine("In the Admin Update area");
                      break;
-        case "D": // TODO DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+        
+        case "D": // TODO ADMIN DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
                   // Delete a membership as Admin.
                      Console.WriteLine("In the Admin Delete area");
                      break;
-        case "X": // TODO XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+        
+        case "X": // TODO ADMIN XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                   // Quit the Admin menu.
                      Console.WriteLine("In the eXit area");
                      isAdminMenuLooping = false; // user chose X so quit the looping Admin menu
@@ -177,14 +184,15 @@ switch (mainmenuchoiceUp)
    // end main menu switch
       break;
     
-    case "T":  // TODO MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+    case "T":  // TODO MAIN TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
     // View the Transaction menu
     // View the Admin Menu
     Console.WriteLine("In the Member Transaction area");
       bool isTrxMenuLooping = true;
       while (isTrxMenuLooping)
       {
-                    Console.WriteLine("Please select an Mmber Transaction option:");
+                    Console.WriteLine();
+                    Console.WriteLine("TRANSACTION MENU - Please select an option:");
                     foreach (var Trxoption in menuOptionsTrx)
                     {
                     Console.WriteLine(Trxoption);
@@ -194,25 +202,36 @@ switch (mainmenuchoiceUp)
                     string? Trxmenuchoice = trxmenuchoice!.ToUpper();
                   
       
-      switch (Trxmenuchoice)
+      switch (Trxmenuchoice) // TODO TRX_MENU_TRX_MENU_TRX_MENU_TRX_MENU_TRX_MENU_TRX_MENU_TRX_MENU_TRX_MENU_TRX_MENU_TRX_MENU_TRX_MENU_TRX_MENU 
         {
-        case "L": // TODO CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        case "L": // TODO TRX LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL
                   // L - List all membership with all info
-                     Console.WriteLine("In the Admin Create area");
+                  // Read the List as Admin.
+                     Console.WriteLine("Membership List:");
+                  // Print the memberships in the list
+                     foreach (Membership aMember in membershipList)
+                     {
+                      Console.WriteLine(aMember);
+                     }  // end foreach  
+                    
                      break;
-        case "P": // TODO RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+        
+        case "P": // TODO TRX PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP
                   // P - Perform Purchase Transaction
                      Console.WriteLine("In the Admin Read area");
                      break;
-        case "T": // TODO UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+        
+        case "T": // TODO TRX TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
                   // T - Perform Return Transaction
                      Console.WriteLine("In the Admin Update area");
                      break;
-        case "A": // TODO DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+        
+        case "A": // TODO TRX AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
                   // A - Apply Cash Back Rewards
                      Console.WriteLine("In the Admin Delete area");
                      break;
-        case "X": // TODO XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+        
+        case "X": // TODO TRX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                   // Quit the Admin menu.
                      Console.WriteLine("In the eXit area");
                      isTrxMenuLooping = false; // user chose X so quit the looping Admin menu
@@ -223,17 +242,11 @@ switch (mainmenuchoiceUp)
                     Console.WriteLine("Invalid Option. Please try again.");
                     break;
         }        // end trx menu switch
-      }          // end trx menu while
+      }        // end trx menu while
    // end main menu switch
       break;
     
-    
-    
-    
-    
-    
-    
-    case "Q": // TODO QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+    case "Q": // TODO MAIN QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
     // Quit the application.
     //  Console.WriteLine("In the Q/q area");
     isMainMenuLooping = false; // user chose Q so quit the looping
@@ -243,9 +256,9 @@ switch (mainmenuchoiceUp)
     // Invalid option. Loop to menu choices.
     Console.WriteLine("Invalid Option. Please try again.");
     break;
-      
   } // end main menu switch
  } // end main menu while
+
     }   // end Main area
   }  // end class Program
 } //end namespace
