@@ -520,7 +520,8 @@ switch (mainmenuchoiceUp)
                   // Print the memberships in the list
                      foreach (Membership aMember in membershipList)
                      {
-                      Console.WriteLine(aMember);
+                      Console.Write(aMember);
+                      Console.WriteLine("Cashback Rewards Value: $" + aMember.GetReward());
                      }  // end foreach  
                     
                      break;

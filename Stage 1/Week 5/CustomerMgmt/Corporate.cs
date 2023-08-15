@@ -42,9 +42,9 @@ namespace CustomerMgmt
             currentMonthlyPurchases = 0; // just zero it out
         }
 
-        public override double GetReward() // implementation of abstract method
+        public override double GetReward() // implementation of abstract method for Corporate
         {
-            return currentMonthlyPurchases; // balance x 1 for Regular
+            return (currentMonthlyPurchases * 1.12); // flat rate of 12%
         }
         public override double GetCMP() // implementation of abstract method
         {
