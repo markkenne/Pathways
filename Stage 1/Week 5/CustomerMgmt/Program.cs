@@ -123,10 +123,10 @@ namespace CustomerMgmt
        membershipList.Add(new Regular("M002", "R", "tblinker@lincoln.ne.gov", 100, 222.00));
        membershipList.Add(new Executive("M003", "E", "ablanker@lincoln.ne.gov", 200, 3333.00));
        membershipList.Add(new Executive("M004", "E", "reddward@lincoln.ne.gov", 200, 4444.00));       
-       membershipList.Add(new NonProfit("M005", "N", "mbanks@nonprofit.net", 300, 5555.00));
-       membershipList.Add(new NonProfit("M006", "N", "rfields@nonprofit.net", 300, 6666.00));
-       membershipList.Add(new Corporate("M007", "C", "mbags@corprus.com", 400, 7777.00));
-       membershipList.Add(new Corporate("M008", "C", "slimey@bigcorp.com", 400, 8888.00));           
+       membershipList.Add(new NonProfit("M005", "N", "mbanks@nonprofit.net", 60, 5555.00, "Y"));
+       membershipList.Add(new NonProfit("M006", "N", "rfields@nonprofit.net", 60, 6666.00, "N"));
+       membershipList.Add(new Corporate("M007", "C", "mbags@corprus.com", 3000, 7777.00));
+       membershipList.Add(new Corporate("M008", "C", "slimey@bigcorp.com", 3000, 8888.00));           
      // Create the menus as lists
        List<string> menuOptionsMain = new List<string>();
        menuOptionsMain.Add("A - Admin Menu");
@@ -223,6 +223,7 @@ switch (mainmenuchoiceUp)
                     else
                         {
                         string newMembershipID = findNewID;
+                        string newMilEdu = "N";
                         // prompt for an email addr
                         Console.Write("Please enter a contact Email address: ");
                         string newContactEmail = Console.ReadLine();
@@ -232,7 +233,8 @@ switch (mainmenuchoiceUp)
                         Console.WriteLine("E) Executive");
                         Console.WriteLine("N) Non-Profit");
                         Console.WriteLine("C) Corporation");
-                        string newType = Console.ReadLine();
+                        string newTypeAnyCase = Console.ReadLine(); //input string for Membership type
+                        string newType = newTypeAnyCase!.ToUpper(); //convert Membership type to uppercase
                         double newAnnualCost = 0;
                         if (newType == "R")
                          {
@@ -252,7 +254,7 @@ switch (mainmenuchoiceUp)
                           Console.Write("Is this Non-Profit Military or Educational? y/n: ");
                           string ynstring = "n";  // yes/no variable for check
                           // default to not being Mil or Ed
-                          string newMilEdu = "N";
+                          // move to higher context  string newMilEdu = "N";
                           ynstring = Console.ReadLine(); // set variable to input
                           if (ynstring == "y"|| ynstring=="Y") // treat anything but y or Y as a no 
                            {
@@ -262,11 +264,31 @@ switch (mainmenuchoiceUp)
 
                         Console.Write("Please enter a Current Purchase Balance: ");
                         double newCurrentMonthlyPurchases = Convert.ToDouble(Console.ReadLine());
-                        // Create a list item based on Memnership Type
+
+                        // Create a new list item based on Memnership Type
                         if (newType == "R") 
+                        {
                         membershipList.Add(new Regular(newMembershipID, newType, newContactEmail, newAnnualCost, newCurrentMonthlyPurchases));
-                         Console.WriteLine("Added new Membership for: " + newMembershipID);
+                         Console.WriteLine("Added new Regular Membership for: " + newMembershipID);
                         }
+                        // Create a new list item based on Memnership Type
+                        if (newType == "E") 
+                        {
+                        membershipList.Add(new Executive(newMembershipID, newType, newContactEmail, newAnnualCost, newCurrentMonthlyPurchases));
+                         Console.WriteLine("Added new Executive Membership for: " + newMembershipID);
+                        }
+                        if (newType == "C") 
+                        {
+                        membershipList.Add(new Corporate(newMembershipID, newType, newContactEmail, newAnnualCost, newCurrentMonthlyPurchases));
+                         Console.WriteLine("Added new Corporate Membership for: " + newMembershipID);
+                        }
+                        if (newType == "N") 
+                        {
+                        membershipList.Add(new NonProfit(newMembershipID, newType, newContactEmail, newAnnualCost, newCurrentMonthlyPurchases, newMilEdu));
+                         Console.WriteLine("Added new Non-Profit Membership for: " + newMembershipID);
+                        }
+
+                       } // end of not found so create loop
                     break; // end of Create
 
        
