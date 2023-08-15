@@ -46,11 +46,6 @@ namespace CustomerMgmt
         {
             return (currentMonthlyPurchases * 1.12); // flat rate of 12%
         }
-        public override double GetCMP() // implementation of abstract method
-        {
-            return currentMonthlyPurchases; // balance
-        }
-
         public override string ToString()
         {
             return $"ID: {membershipID}, Type: {type}, Email: {contactEmail}, Annual Fee: ${annualCost}, Cur.Mon.Purchases: ${currentMonthlyPurchases}";

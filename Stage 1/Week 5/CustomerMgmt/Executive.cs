@@ -52,11 +52,6 @@ namespace CustomerMgmt
             return currentMonthlyPurchases; // 100% for balance under 1000 for Executive
         }
 
-        public override double GetCMP() // implementation of abstract method
-        {
-            return currentMonthlyPurchases; // balance
-        }
-
         public override string ToString()
         {
             return $"ID: {membershipID}, Type: {type}, Email: {contactEmail}, Annual Fee: ${annualCost}, Cur.Mon.Purchases: ${currentMonthlyPurchases}";
