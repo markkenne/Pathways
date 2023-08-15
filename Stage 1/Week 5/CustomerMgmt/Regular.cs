@@ -31,9 +31,9 @@ namespace CustomerMgmt
             {
             string limitText = "The Return must be more than 0.";
             Console.WriteLine(limitText);
-            currentMonthlyPurchases += 0;
+            currentMonthlyPurchases -= 0;
             }           
-            currentMonthlyPurchases += amount;
+            currentMonthlyPurchases -= amount;
         }
 
         public override void Purchase(double amount)
@@ -42,9 +42,9 @@ namespace CustomerMgmt
             {
             string limitText = "The Purchase must be more than 0.";
             Console.WriteLine(limitText);
-            currentMonthlyPurchases -= 0;
+            currentMonthlyPurchases += 0;
             }
-            currentMonthlyPurchases -= amount;
+            currentMonthlyPurchases += amount;
         }
 
 

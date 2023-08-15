@@ -544,8 +544,63 @@ switch (mainmenuchoiceUp)
         
         case "P": // TODO TRX PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP
                   // P - Perform Purchase Transaction
-                     Console.WriteLine("In the Admin Read area");
-                     break;
+                  // Console.WriteLine("In the Trx Purchase area");
+  {
+                     Console.WriteLine("Welcome to Customer Service - PURCHASES");
+                     Console.WriteLine();   
+
+                  // Find an Membership ID  in the list
+                     bool purIDFound = false;   // set a variable to change to true on found ID
+                     string  purFindID = ""; // set an input variable to empty
+
+                     Console.Write("Please enter a valid Membership ID: ");
+                     purFindID = (Console.ReadLine());
+
+                    // linear search thru the membership list
+                    int purRow = 0;
+                    for (int index = 0; index < membershipList.Count; index++)
+                    {
+                       if (membershipList[index].membershipID == purFindID) // we found a ID matching input
+                        {
+                           purIDFound = true; // used for message below
+                           purRow = index;
+                        }
+                    }
+                    if (purIDFound!=true)  // no account matches input, so let user know
+                     {
+                      Console.WriteLine("Membership ID was not found.");
+                      Console.WriteLine();
+                     }
+        
+                    if (purIDFound==true)
+                     {
+                     // Now we have an Member ID, make a Purchase transaction here, find out how much
+                     string? purAmt = "0"; // string variable for deposit input 
+                     // That out of the way, get the amount and make a Purchase transaction here
+                     double newpurAmt = 0; // variable to hold Purchase amount
+               
+                     Console.WriteLine("Please enter a Purchase Amount: ");
+                     purAmt = Console.ReadLine();
+                     newpurAmt = Convert.ToDouble(purAmt);
+                     Console.WriteLine("You entered: " + newpurAmt + "  Is that correct?: ") ;
+                 
+                     string? purchaseYN = "n";  // yes/no variable for check
+                     purchaseYN = Console.ReadLine(); // set variable to input
+                     if (purchaseYN == "y"|| purchaseYN=="Y") // treat anything but y or Y as a no 
+                         {
+                          membershipList[purRow].Purchase(newpurAmt); // make the Purchase
+                           Console.WriteLine("Purchase of " + newpurAmt + " made to " + purFindID) ;
+                         }
+                     else
+                     {
+                       Console.WriteLine("Purchase cancelled.") ;  
+                     }
+                     
+                     Console.WriteLine();
+             }  
+        } //end found loop
+
+                     break; // end of Purchases
         
         case "T": // TODO TRX TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
                   // T - Perform Return Transaction
@@ -553,7 +608,6 @@ switch (mainmenuchoiceUp)
   {
                      Console.WriteLine("Welcome to Customer Service - RETURNS");
                      Console.WriteLine();   
-
 
                   // Find an Membership ID  in the list
                      bool retIDFound = false;   // set a variable to change to true on found ID
@@ -605,12 +659,8 @@ switch (mainmenuchoiceUp)
                      Console.WriteLine();
              }  
         } //end found loop
-   // }  // end of D area 
 
-
-
-
-                     break;
+                     break; // end of returns
         
         case "A": // TODO TRX AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
                   // A - Apply Cash Back Rewards
