@@ -17,7 +17,7 @@ namespace CustomerMgmt
         public Regular(string membershipID, string type, string contactEmail, double annualCost, double currentMonthlyPurchases): base(membershipID, type, contactEmail, annualCost, currentMonthlyPurchases)
         {
           //  newMembershipID = membershipID;
-          //  newContactEmail = contactEmail;
+          //  newContactEMail = contactEmail;
           //  newAnnualCost = annualCost;
           //  newCurrentMonthlyPurchases = currentMonthlyPurchases;
            //  cashback = 0;
