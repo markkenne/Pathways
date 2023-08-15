@@ -295,6 +295,7 @@ switch (mainmenuchoiceUp)
                         {
                         membershipList.Add(new NonProfit(newMembershipID, newType, newContactEMail, newAnnualCost, newCurrentMonthlyPurchases, newMilEdu));
                          Console.WriteLine("Added new Non-Profit Membership for: " + newMembershipID);
+                         Console.WriteLine("newMilEdu was set to" + newMilEdu);
                         }
 
                        } // end of not found so create loop
@@ -342,7 +343,7 @@ switch (mainmenuchoiceUp)
                     if (updatefound==true)
                          {
                        // don't change ID  string newMembershipID = findUpdateID;
-                        string updateMilEdu = "";
+                       // string updateMilEdu = "";
                         string? updateContactEMail = "";
                         // prompt for an email addr
                         // debug use Console.Write(membershipList[updateRow].contactEmail);
@@ -680,7 +681,7 @@ switch (mainmenuchoiceUp)
                     if (cashbackIDFound==true)
                      {
                      // Now we have an Member ID, make a cashback transaction here, find out how much
-                     string? cashbackAmt = "0"; // string variable for deposit input 
+                     // string? cashbackAmt = "0"; // string variable for deposit input 
                      // That out of the way, get the amount and make a cashback transaction here
                      double newcashbackAmt = 0; // variable to hold cashback amount
                
