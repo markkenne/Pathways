@@ -37,7 +37,7 @@
      (9d1) Must input a valid ID
      (9d2) Passes request to rewards system
         (9d2a) Console message "Cash-back reward request for membership xxxxxx in the amount of $yyyy has been made."
-        (9d2b) Zero the (Cashback?) balance
+        (9d2b) Zero the (monthly purchases spending amount) balance
    (9e) X - eXit to main menu 
    
   
@@ -190,9 +190,87 @@ switch (mainmenuchoiceUp)
         case "C": // TODO ADMIN CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
                   // Create a new membership as Admin.
                      Console.WriteLine("In the Admin Create area");
-                     break;
+
+
+   // Experiment with Creating (adding) an employee to the list
+        //======================================================================
+ // TODO for now, just manually enter an ID , later pick the next valid number automatically
+
+                     bool newfound = false;   // set a variable to change to true on found ID
+                     string findNewID = ""; // set an input variable to empty
+                     // show a list to make deleting easier
+                     foreach (Membership aMember in membershipList)
+                     {
+                      Console.WriteLine(aMember);
+                     }
+                    Console.WriteLine();
+                    Console.Write("Please enter a unique Membership ID to ADD: "); //prompt for ID
+                    findNewID = Console.ReadLine(); // set findNewID to input
+                    // linear search thru the membership list
+                    for (int index = 0; index < membershipList.Count; index++)
+                    {
+                       if (membershipList[index].membershipID == findNewID) // we found a ID matching input
+                        {
+                           newfound = true; // used for message below
+                        }
+                    }
+                     // end for loop  
+                    if (newfound==true)
+                        { 
+                         Console.WriteLine(findNewID + " was already being used. Please Try again."); // message
+                         break;
+                        }
+                    else
+                        {
+                        string newMembershipID = findNewID;
+                        // prompt for an email addr
+                        Console.Write("Please enter a contact Email address: ");
+                        string newContactEmail = Console.ReadLine();
+                        // prompt for a membership type
+                        Console.WriteLine("Please enter a Membership Type from these choices: ");
+                        Console.WriteLine("R) Regular");
+                        Console.WriteLine("E) Executive");
+                        Console.WriteLine("N) Non-Profit");
+                        Console.WriteLine("C) Corporation");
+                        string newType = Console.ReadLine();
+                        double newAnnualCost = 0;
+                        if (newType == "R")
+                         {
+                          newAnnualCost =  120;
+                         }
+                        else if (newType == "E")
+                         {
+                          newAnnualCost =  200;
+                         }
+                        else if (newType == "C")
+                         {
+                          newAnnualCost =  3000;
+                         }
+                        else if (newType == "N") //ask for military or educational
+                         {
+                          newAnnualCost =  60;
+                          Console.Write("Is this Non-Profit Military or Educational? y/n: ");
+                          string ynstring = "n";  // yes/no variable for check
+                          // default to not being Mil or Ed
+                          string newMilEdu = "N";
+                          ynstring = Console.ReadLine(); // set variable to input
+                          if (ynstring == "y"|| ynstring=="Y") // treat anything but y or Y as a no 
+                           {
+                            newMilEdu = "Y"; //used for cashback calculation of Non-Profit
+                           }
+                         }   
+
+                        Console.Write("Please enter a Current Purchase Balance: ");
+                        double newCurrentMonthlyPurchases = Convert.ToDouble(Console.ReadLine());
+                        // Create a list item based on Memnership Type
+                        if (newType == "R") 
+                        membershipList.Add(new Regular(newMembershipID, newType, newContactEmail, newAnnualCost, newCurrentMonthlyPurchases));
+                         Console.WriteLine("Added new Membership for: " + newMembershipID);
+                        }
+                    break; // end of Create
+
        
-        case "R": // TODO ADMIN RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+        case "R": // ADMIN RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
                   // Read the List as Admin.
                      Console.WriteLine("Membership List:");
                   // Print the memberships in the list
@@ -207,57 +285,46 @@ switch (mainmenuchoiceUp)
                      Console.WriteLine("In the Admin Update area");
                      break;
         
-        case "D": // TODO ADMIN DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+        case "D": // ADMIN DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
                   // Delete a membership as Admin.
-                  //   Console.WriteLine("In the Admin Delete area");
-
-       // Find an Membership to delete  in the list
-        bool found = false;   // set a variable to change to true on found acct
-        string? findID = ""; // set an input variable to empty
-                            foreach (Membership aMember in membershipList)
+                  // Find a Membership to delete in the list
+                     bool found = false;   // set a variable to change to true on found ID
+                     string? findID = ""; // set an input variable to empty
+                     // show a list to make deleting easier
+                     foreach (Membership aMember in membershipList)
                      {
                       Console.WriteLine(aMember);
                      }
-        Console.WriteLine();
-        Console.Write("Please enter a Membership ID to DELETE: ");
-        findID = Console.ReadLine();
-        for (int index = 0; index < membershipList.Count; index++)
-           {
-            if (membershipList[index].membershipID == findID)
-            {
-           // Console.WriteLine(membershipList(index));
-
-                 // Console.WriteLine(findID+  " has been found,  and will be deleted.");
-                  Console.WriteLine("Are you sure you want to DELETE " + findID + "? y/n");
-                  string stryn = "n";
-                  stryn = Console.ReadLine();
-                  if (stryn == "y"|| stryn=="Y")
-                  {
-                   membershipList.RemoveAt(index);
-                   found = true;
-                  }
-              }
-           }  // end foreach  
-        if (found)
-            Console.WriteLine("Employee was deleted.  I hope that is what you wanted!");
-        else
-            Console.WriteLine("Okay, not deleted.");
-        // print the list again
-
-
-
-      //            {  } //just set a found flag. do more later
-        //  }  // end foreach  
-       //   if (!(found))  // no account matches input, so let user know
-        //   {
-        //    Console.WriteLine("Membership ID was not found. DELETE CANCELED");
-       //     Console.WriteLine();
-        //   }
-
-
-                     break;
+                    Console.WriteLine();
+                    Console.Write("Please enter a Membership ID to DELETE: "); //prompt for ID
+                    findID = Console.ReadLine(); // set findID to input
+                    // linear search thru the membership list
+                    for (int index = 0; index < membershipList.Count; index++)
+                    {
+                       if (membershipList[index].membershipID == findID) // we found a ID matching input
+                        {
+                          // double check before delete
+                          Console.WriteLine("Are you sure you want to DELETE " + findID + "? y/n");
+                         string stryn = "n";  // yes/no variable for check
+                         stryn = Console.ReadLine(); // set variable to input
+                        if (stryn == "y"|| stryn=="Y") // treat anything but y or Y as a no 
+                         {
+                           membershipList.RemoveAt(index); // remove that index# line from list
+                           found = true; // used for message below
+                         }
+                        }
+                    } // end for loop  
+                    if (found)
+                        { 
+                         Console.WriteLine(findID + " was DELETED."); // message
+                        }
+                    else
+                        {
+                         Console.WriteLine("Nothing got deleted. Try again.");
+                        }
+                    break; // end of Delete
         
-        case "X": // TODO ADMIN XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+        case "X": // ADMIN XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                   // Quit the Admin menu.
                      Console.WriteLine("In the eXit area");
                      isAdminMenuLooping = false; // user chose X so quit the looping Admin menu
