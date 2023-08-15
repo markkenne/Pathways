@@ -580,18 +580,28 @@ switch (mainmenuchoiceUp)
         
                     if (retIDFound==true)
                      {
-                    // Now we have an Member ID, make a Return transaction here, find out how much
-                    string? retAmt = "0"; // string variable for deposit input 
-                  // That out of the way, make a deposit transaction here
-                     double newRetAmt = 0;
+                     // Now we have an Member ID, make a Return transaction here, find out how much
+                     string? retAmt = "0"; // string variable for deposit input 
+                     // That out of the way, get the amount and make a return transaction here
+                     double newRetAmt = 0; // variable to hold return amount
                
-                     Console.WriteLine("Please enter a Return Amount: ") ;
+                     Console.WriteLine("Please enter a Return Amount: ");
                      retAmt = Console.ReadLine();
                      newRetAmt = Convert.ToDouble(retAmt);
                      Console.WriteLine("You entered: " + newRetAmt + "  Is that correct?: ") ;
-                     Console.WriteLine();
-                
-                     membershipList[retRow].Return(newRetAmt);
+                 
+                     string? returnYN = "n";  // yes/no variable for check
+                     returnYN = Console.ReadLine(); // set variable to input
+                     if (returnYN == "y"|| returnYN=="Y") // treat anything but y or Y as a no 
+                         {
+                          membershipList[retRow].Return(newRetAmt); // make the return
+                           Console.WriteLine("RETURN of " + newRetAmt + " made to " + retFindID) ;
+                         }
+                     else
+                     {
+                       Console.WriteLine("RETURN cancelled.") ;  
+                     }
+                     
                      Console.WriteLine();
              }  
         } //end found loop

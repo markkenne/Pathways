@@ -24,7 +24,6 @@ namespace CustomerMgmt
             this.currentMonthlyPurchases = currentMonthlyPurchases;
         }
         public abstract double GetBalance();  // this is the abstract method that all children must implement (only used in all)        
-
         public abstract void Purchase(double amount);
         public abstract void Return(double amount);
 

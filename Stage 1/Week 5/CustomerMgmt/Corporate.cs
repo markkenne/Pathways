@@ -45,7 +45,7 @@ namespace CustomerMgmt
 
         public override string ToString()
         {
-            return $"ID: {membershipID}, Type: {type}, Email: {contactEmail}, Annual Fee: {annualCost}, Current Purch:  {currentMonthlyPurchases}, Cashback: {cashback}";
+            return $"ID: {membershipID}, Type: {type}, Email: {contactEmail}, Ann Fee: {annualCost}, Cur.Mon.Purchases: {currentMonthlyPurchases}, Cashback: {cashback}";
         }
     }
 }
