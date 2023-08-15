@@ -23,10 +23,13 @@ namespace CustomerMgmt
             this.annualCost = annualCost;
             this.currentMonthlyPurchases = currentMonthlyPurchases;
         }
-        public abstract double GetBalance();  // this is the abstract method that all children must implement (only used in all)        
+       // public abstract double GetBalance();  // this is the abstract method that all children must implement (only used in all)        
         public abstract void Purchase(double amount);
         public abstract void Return(double amount);
+        public abstract void Cashback(string membershipID, double amount);
 
+        public abstract double GetReward();  // this is the abstract method that all children must implement (not used in checking)
+        public abstract double GetCMP();  // this is the abstract method that all children must implement (only used in all)  
        /* 
         public abstract double GetInterest();  // this is the abstract method that all children must implement (not used in checking)
         public abstract double GetFee();  // this is the abstract method that all children must implement (only used in checking)

@@ -35,9 +35,24 @@ namespace CustomerMgmt
             }
             currentMonthlyPurchases += amount;
         }
+        public override void Cashback(string membershipID, double amount)
+        {
+            Console.WriteLine("Cash-back reward request for Membership ID " + membershipID + " in the amount of $" + amount + " has been made.");
+            currentMonthlyPurchases = 0; // just zero it out
+        }
 
 
-        public override double GetBalance() // implementation of abstract method
+        public override double GetReward() // implementation of abstract method for Executive
+        {
+            if (currentMonthlyPurchases > 1000)
+            { 
+                return (1000 + ((currentMonthlyPurchases - 1000) * 1.1 )); // 100 % amt under 1000  + 110% amount over 1000
+            }
+            else
+            return currentMonthlyPurchases; // 100% for balance under 1000 for Executive
+        }
+
+        public override double GetCMP() // implementation of abstract method
         {
             return currentMonthlyPurchases; // balance
         }

@@ -36,9 +36,17 @@ namespace CustomerMgmt
             currentMonthlyPurchases += amount;
         }
 
+        public override void Cashback(string membershipID, double amount)
+        {
+            Console.WriteLine("Cash-back reward request for Membership ID " + membershipID + " in the amount of $" + amount + " has been made.");
+            currentMonthlyPurchases = 0; // just zero it out
+        }
 
-
-        public override double GetBalance() // implementation of abstract method
+        public override double GetReward() // implementation of abstract method
+        {
+            return currentMonthlyPurchases; // balance x 1 for Regular
+        }
+        public override double GetCMP() // implementation of abstract method
         {
             return currentMonthlyPurchases; // balance
         }

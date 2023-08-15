@@ -102,8 +102,6 @@ Algorithm:
    (10e) X - eXit to Main Menu   
   (11)  Create Admin process C for a new user 
 
-
-
   */ // end of comments section
 
 using System;
@@ -148,11 +146,7 @@ namespace CustomerMgmt
        menuOptionsTrx.Add("T - Perform Return Transaction");
        menuOptionsTrx.Add("A - Apply Cash Back Rewards");       
        menuOptionsTrx.Add("X - eXit to Main Menu");
-    
-    
-
-
-
+   
 bool isMainMenuLooping = true;
 
 while (isMainMenuLooping)
@@ -187,7 +181,7 @@ switch (mainmenuchoiceUp)
                     string? Adminmenuchoice = adminmenuchoice!.ToUpper();
                   
       
-      switch (Adminmenuchoice)  //   TODO ADMINMENU_ADMINMENU_ADMINMENU_ADMINMENU_ADMINMENU_ADMINMENU_ADMINMENU_ADMINMENU_ADMINMENU_ADMINMENU
+      switch (Adminmenuchoice)  // ADMINMENU_ADMINMENU_ADMINMENU_ADMINMENU_ADMINMENU_ADMINMENU_ADMINMENU_ADMINMENU_ADMINMENU_ADMINMENU_ADMINMENU
         {
         case "C": // ADMIN CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
                   // Create a new membership as Admin.
@@ -305,7 +299,6 @@ switch (mainmenuchoiceUp)
 
                        } // end of not found so create loop
                     break; // end of Create
-
        
         case "R": // ADMIN RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
                   // Read the List as Admin.
@@ -431,24 +424,15 @@ switch (mainmenuchoiceUp)
                           updateCurrentMonthlyPurchases = Convert.ToDouble(cpBal);
                          }
                         Console.WriteLine(updateCurrentMonthlyPurchases);
-                       //save updates to list
-                       membershipList[updateRow].currentMonthlyPurchases = updateCurrentMonthlyPurchases;
-
-
+                        //save updates to list
+                        membershipList[updateRow].currentMonthlyPurchases = updateCurrentMonthlyPurchases;
                         Console.WriteLine();
                         // show the list again
                          foreach (Membership aMember in membershipList)
                          {
                           Console.WriteLine(aMember);
                          }
-                       
-
                        } // end of not found so create loop
-                        
-                        
-                        
-                        
-
                     else  //
                                                { 
                          Console.WriteLine(findUpdateID + " was not found. Please Try again."); // message
@@ -511,9 +495,8 @@ switch (mainmenuchoiceUp)
       break;
     
     case "T":  // MAIN TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
-    // View the Transaction menu
-    // View the Admin Menu
-    Console.WriteLine("In the Member Transaction area");
+   // View the Transaction menu
+      Console.WriteLine("In the Member Transaction area");
       bool isTrxMenuLooping = true;
       while (isTrxMenuLooping)
       {
@@ -528,9 +511,9 @@ switch (mainmenuchoiceUp)
                     string? Trxmenuchoice = trxmenuchoice!.ToUpper();
                   
       
-      switch (Trxmenuchoice) // TODO TRX_MENU_TRX_MENU_TRX_MENU_TRX_MENU_TRX_MENU_TRX_MENU_TRX_MENU_TRX_MENU_TRX_MENU_TRX_MENU_TRX_MENU_TRX_MENU 
+      switch (Trxmenuchoice) //  TRX_MENU_TRX_MENU_TRX_MENU_TRX_MENU_TRX_MENU_TRX_MENU_TRX_MENU_TRX_MENU_TRX_MENU_TRX_MENU_TRX_MENU_TRX_MENU 
         {
-        case "L": // TODO TRX LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL
+        case "L": // TRX LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL
                   // L - List all membership with all info
                   // Read the List as Admin.
                      Console.WriteLine("Membership List:");
@@ -542,7 +525,7 @@ switch (mainmenuchoiceUp)
                     
                      break;
         
-        case "P": // TODO TRX PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP
+        case "P": // TRX PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP
                   // P - Perform Purchase Transaction
                   // Console.WriteLine("In the Trx Purchase area");
   {
@@ -602,9 +585,9 @@ switch (mainmenuchoiceUp)
 
                      break; // end of Purchases
         
-        case "T": // TODO TRX TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+        case "T": // TRX TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
                   // T - Perform Return Transaction
-                  // Console.WriteLine("In the Admin Update area");
+                  // Console.WriteLine("In the Trx Update area");
   {
                      Console.WriteLine("Welcome to Customer Service - RETURNS");
                      Console.WriteLine();   
@@ -664,12 +647,67 @@ switch (mainmenuchoiceUp)
         
         case "A": // TODO TRX AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
                   // A - Apply Cash Back Rewards
-                     Console.WriteLine("In the Admin Delete area");
-                     break;
+                  // Console.WriteLine("In the Trx Cashback area");
+  {
+                     Console.WriteLine("Welcome to Customer Service - CASHBACK REWARDS!");
+                     Console.WriteLine();   
+
+                  // Find an Membership ID  in the list
+                     bool cashbackIDFound = false;   // set a variable to change to true on found ID
+                     string  cashbackFindID = ""; // set an input variable to empty
+
+                     Console.Write("Please enter a valid Membership ID: ");
+                     cashbackFindID = (Console.ReadLine());
+
+                    // linear search thru the membership list
+                    int cashbackRow = 0;
+                    for (int index = 0; index < membershipList.Count; index++)
+                    {
+                       if (membershipList[index].membershipID == cashbackFindID) // we found a ID matching input
+                        {
+                           cashbackIDFound = true; // used for message below
+                           cashbackRow = index;
+                        }
+                    }
+                    if (cashbackIDFound!=true)  // no account matches input, so let user know
+                     {
+                      Console.WriteLine("Membership ID was not found.");
+                      Console.WriteLine();
+                     }
         
-        case "X": // TODO TRX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+                    if (cashbackIDFound==true)
+                     {
+                     // Now we have an Member ID, make a cashback transaction here, find out how much
+                     string? cashbackAmt = "0"; // string variable for deposit input 
+                     // That out of the way, get the amount and make a cashback transaction here
+                     double newcashbackAmt = 0; // variable to hold cashback amount
+               
+                 //    Console.WriteLine("Please enter a Cashback Amount to Redeem: ");
+                 //    cashbackAmt = Console.ReadLine();
+                 //    newcashbackAmt = Convert.ToDouble(cashbackAmt);
+                     Console.WriteLine("Would you like to redeem your cashback reward? y/n:") ;
+                 
+                     string? cashbackYN = "n";  // yes/no variable for check
+                     cashbackYN = Console.ReadLine(); // set variable to input
+                     if (cashbackYN == "y"|| cashbackYN=="Y") // treat anything but y or Y as a no 
+                         {
+                        newcashbackAmt =  membershipList[cashbackRow].GetReward(); // make the cashback
+                           Console.WriteLine("cashback of " + newcashbackAmt + " made to " + cashbackFindID) ;
+                         }
+                     else
+                     {
+                       Console.WriteLine("cashback cancelled.") ;  
+                     }
+                     
+                     Console.WriteLine();
+             }  
+        } //end found loop
+
+                     break; // end of cashbacks
+        
+        case "X": // TRX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                   // Quit the Admin menu.
-                     Console.WriteLine("In the eXit area");
+                  // Console.WriteLine("In the Trx eXit area");
                      isTrxMenuLooping = false; // user chose X so quit the looping Admin menu
                      Console.WriteLine("You chose eXit. back to Main...");
                      break;
@@ -682,7 +720,7 @@ switch (mainmenuchoiceUp)
    // end main menu switch
       break;
     
-    case "Q": // TODO MAIN QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+    case "Q": // MAIN QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
     // Quit the application.
     //  Console.WriteLine("In the Q/q area");
     isMainMenuLooping = false; // user chose Q so quit the looping
