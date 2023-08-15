@@ -139,7 +139,7 @@ namespace CustomerMgmt
        menuOptionsAdmin.Add("C - Create a new Membership");
        menuOptionsAdmin.Add("R - Read all Memberships");
        menuOptionsAdmin.Add("U - Update an Existing Membership");
-       menuOptionsAdmin.Add("D - Delete and Existing Membership");       
+       menuOptionsAdmin.Add("D - Delete an Existing Membership");       
        menuOptionsAdmin.Add("X - eXit to Main Menu");
        // Choices for Members
        List<string> menuOptionsTrx = new List<string>();
@@ -170,7 +170,7 @@ while (isMainMenuLooping)
 
 switch (mainmenuchoiceUp)
  {
-    case "A":  // TODO MAIN AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    case "A":  // MAIN AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
     // View the Admin Menu
       // debug use Console.WriteLine("In the Admin area");
       bool isAdminMenuLooping = true;
@@ -317,7 +317,7 @@ switch (mainmenuchoiceUp)
                      }  // end foreach  
                      break;
 
-        case "U": // TODO ADMIN UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
+        case "U": // ADMIN UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
                   // Update the Membership as Admin.
                      Console.WriteLine("In the Admin Update area");
                                      bool updatefound = false;   // set a variable to change to true on found ID
@@ -384,10 +384,6 @@ switch (mainmenuchoiceUp)
                        membershipList[updateRow].type = updateType;
                        Console.WriteLine();
 
-
-
-
-
                         double updateAnnualCost = 0;
                         if (updateType == "R")
                          {
@@ -418,11 +414,8 @@ switch (mainmenuchoiceUp)
                            }
                            */
                          }   
-                       //save annual cost updates to list
-                       membershipList[updateRow].annualCost = updateAnnualCost;
-
-
-
+                        // save annual cost updates to list
+                        membershipList[updateRow].annualCost = updateAnnualCost;
 
                         double updateCurrentMonthlyPurchases = 0;
                         string cpBal = "";
@@ -517,7 +510,7 @@ switch (mainmenuchoiceUp)
    // end main menu switch
       break;
     
-    case "T":  // TODO MAIN TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+    case "T":  // MAIN TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
     // View the Transaction menu
     // View the Admin Menu
     Console.WriteLine("In the Member Transaction area");
@@ -556,7 +549,57 @@ switch (mainmenuchoiceUp)
         
         case "T": // TODO TRX TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
                   // T - Perform Return Transaction
-                     Console.WriteLine("In the Admin Update area");
+                  // Console.WriteLine("In the Admin Update area");
+  {
+                     Console.WriteLine("Welcome to Customer Service - RETURNS");
+                     Console.WriteLine();   
+
+
+                  // Find an Membership ID  in the list
+                     bool retIDFound = false;   // set a variable to change to true on found ID
+                     string  retFindID = ""; // set an input variable to empty
+
+                     Console.Write("Please enter a valid Membership ID: ");
+                     retFindID = (Console.ReadLine());
+
+                    // linear search thru the membership list
+                    int retRow = 0;
+                    for (int index = 0; index < membershipList.Count; index++)
+                    {
+                       if (membershipList[index].membershipID == retFindID) // we found a ID matching input
+                        {
+                           retIDFound = true; // used for message below
+                           retRow = index;
+                        }
+                    }
+                    if (retIDFound!=true)  // no account matches input, so let user know
+                     {
+                      Console.WriteLine("Membership ID was not found.");
+                      Console.WriteLine();
+                     }
+        
+                    if (retIDFound==true)
+                     {
+                    // Now we have an Member ID, make a Return transaction here, find out how much
+                    string? retAmt = "0"; // string variable for deposit input 
+                  // That out of the way, make a deposit transaction here
+                     double newRetAmt = 0;
+               
+                     Console.WriteLine("Please enter a Return Amount: ") ;
+                     retAmt = Console.ReadLine();
+                     newRetAmt = Convert.ToDouble(retAmt);
+                     Console.WriteLine("You entered: " + newRetAmt + "  Is that correct?: ") ;
+                     Console.WriteLine();
+                
+                     membershipList[retRow].Return(newRetAmt);
+                     Console.WriteLine();
+             }  
+        } //end found loop
+   // }  // end of D area 
+
+
+
+
                      break;
         
         case "A": // TODO TRX AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA

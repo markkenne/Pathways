@@ -13,6 +13,36 @@ namespace CustomerMgmt
         {
         }
 
+
+         public override void Return(double amount)
+        {
+           if (!(amount > 0))
+            {
+            string limitText = "The Return must be more than 0.";
+            Console.WriteLine(limitText);
+            currentMonthlyPurchases += 0;
+            }           
+            currentMonthlyPurchases += amount;
+        }
+
+        public override void Purchase(double amount)
+        {
+            if (!(amount > 0))
+            {
+            string limitText = "The Purchase must be more than 0.";
+            Console.WriteLine(limitText);
+            currentMonthlyPurchases -= 0;
+            }
+            currentMonthlyPurchases -= amount;
+        }
+
+
+
+        public override double GetBalance() // implementation of abstract method
+        {
+            return currentMonthlyPurchases; // balance
+        }
+
         public override string ToString()
         {
             return $"ID: {membershipID}, Type: {type}, Email: {contactEmail}, Annual Fee: {annualCost}, Current Purch:  {currentMonthlyPurchases}, Cashback: {cashback}";
