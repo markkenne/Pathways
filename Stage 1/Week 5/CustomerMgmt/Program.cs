@@ -378,22 +378,22 @@ switch (mainmenuchoiceUp)
                         Console.WriteLine(updateType);
                         Console.WriteLine();
 
-                        double newAnnualCost = 0;
+                        double updateAnnualCost = 0;
                         if (updateType == "R")
                          {
-                          newAnnualCost =  120;
+                          updateAnnualCost =  120;
                          }
                         else if (updateType == "E")
                          {
-                          newAnnualCost =  200;
+                          updateAnnualCost =  200;
                          }
                         else if (updateType == "C")
                          {
-                          newAnnualCost =  3000;
+                          updateAnnualCost =  3000;
                          }
                         else if (updateType == "N") //ask for military or educational
                          {
-                          newAnnualCost =  60;
+                          updateAnnualCost =  60;
                           Console.Write("Is this Non-Profit Military or Educational? y/n: ");
                           string? ynstring = "n";  // yes/no variable for check
                           // default to not being Mil or Ed
@@ -405,9 +405,23 @@ switch (mainmenuchoiceUp)
                             updateMilEdu = "Y"; //used for cashback calculation of Non-Profit
                            }
                          }   
+                        double updateCurrentMonthlyPurchases = 0;
+                        string cpBal = "";
+                        Console.WriteLine("Please enter a Current Purchase Balance or 'Enter' to keep: " + membershipList[updateRow].currentMonthlyPurchases);
+                       
+                        cpBal = Console.ReadLine();
+                        if (cpBal=="")
+                         {
+                          updateCurrentMonthlyPurchases = membershipList[updateRow].currentMonthlyPurchases;  
+                         }
+                        if (cpBal!="")
+                         {
+                          updateCurrentMonthlyPurchases = Convert.ToDouble(cpBal);
+                         }
+                        Console.WriteLine(updateCurrentMonthlyPurchases);
+                        Console.WriteLine();
+                        Console.WriteLine("Ready to save to list!!!");
 
-                        Console.Write("Please enter a Current Purchase Balance: ");
-                        double newCurrentMonthlyPurchases = Convert.ToDouble(Console.ReadLine());
 /*
                         // Create a new list item based on Memnership Type
                         if (newType == "R") 
