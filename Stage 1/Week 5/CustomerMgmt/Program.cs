@@ -306,7 +306,8 @@ switch (mainmenuchoiceUp)
                   // Print the memberships in the list
                      foreach (Membership aMember in membershipList)
                      {
-                      Console.WriteLine(aMember);
+                      Console.Write(aMember);
+                      Console.WriteLine(" | Cashback Rewards Value: $" + aMember.GetReward());
                      }  // end foreach  
                      break;
 
@@ -521,7 +522,7 @@ switch (mainmenuchoiceUp)
                      foreach (Membership aMember in membershipList)
                      {
                       Console.Write(aMember);
-                      Console.WriteLine("Cashback Rewards Value: $" + aMember.GetReward());
+                      Console.WriteLine(" | Cashback Rewards Value: $" + aMember.GetReward());
                      }  // end foreach  
                     
                      break;
@@ -693,7 +694,9 @@ switch (mainmenuchoiceUp)
                      if (cashbackYN == "y"|| cashbackYN=="Y") // treat anything but y or Y as a no 
                          {
                         newcashbackAmt =  membershipList[cashbackRow].GetReward(); // make the cashback
-                           Console.WriteLine("cashback of " + newcashbackAmt + " made to " + cashbackFindID) ;
+                        Console.WriteLine("cashback of " + newcashbackAmt + " made to " + cashbackFindID) ;
+                        // now zero the currentMonthlyPurchases ######################################################################
+                        membershipList[cashbackRow].currentMonthlyPurchases = 0;
                          }
                      else
                      {
