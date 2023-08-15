@@ -358,9 +358,13 @@ switch (mainmenuchoiceUp)
                         updateContactEMail = (Console.ReadLine());
                         if (updateContactEMail=="") 
                         {
-                            updateContactEMail = membershipList[updateRow].contactEmail;
+                         updateContactEMail = membershipList[updateRow].contactEmail;
                         }
                         Console.WriteLine(updateContactEMail);
+                       //save email update to list
+                       membershipList[updateRow].contactEmail = updateContactEMail;
+                       Console.WriteLine();
+                        
                         Console.WriteLine();
                         // prompt for a membership type
                         Console.WriteLine("Please enter a Membership Type from these choices or 'Enter' to keep current: " + membershipList[updateRow].type);
@@ -376,7 +380,13 @@ switch (mainmenuchoiceUp)
                         }
 
                         Console.WriteLine(updateType);
-                        Console.WriteLine();
+                       //save type update to list
+                       membershipList[updateRow].type = updateType;
+                       Console.WriteLine();
+
+
+
+
 
                         double updateAnnualCost = 0;
                         if (updateType == "R")
@@ -394,6 +404,8 @@ switch (mainmenuchoiceUp)
                         else if (updateType == "N") //ask for military or educational
                          {
                           updateAnnualCost =  60;
+
+                       /* removed this Military or Educational are not going to change, right Air Force now doing commercial flights...                          
                           Console.Write("Is this Non-Profit Military or Educational? y/n: ");
                           string? ynstring = "n";  // yes/no variable for check
                           // default to not being Mil or Ed
@@ -404,7 +416,14 @@ switch (mainmenuchoiceUp)
                            {
                             updateMilEdu = "Y"; //used for cashback calculation of Non-Profit
                            }
+                           */
                          }   
+                       //save annual cost updates to list
+                       membershipList[updateRow].annualCost = updateAnnualCost;
+
+
+
+
                         double updateCurrentMonthlyPurchases = 0;
                         string cpBal = "";
                         Console.WriteLine("Please enter a Current Purchase Balance or 'Enter' to keep: " + membershipList[updateRow].currentMonthlyPurchases);
@@ -419,34 +438,17 @@ switch (mainmenuchoiceUp)
                           updateCurrentMonthlyPurchases = Convert.ToDouble(cpBal);
                          }
                         Console.WriteLine(updateCurrentMonthlyPurchases);
+                       //save updates to list
+                       membershipList[updateRow].currentMonthlyPurchases = updateCurrentMonthlyPurchases;
+
+
                         Console.WriteLine();
-                        Console.WriteLine("Ready to save to list!!!");
-
-/*
-                        // Create a new list item based on Memnership Type
-                        if (newType == "R") 
-                        {
-                        membershipList.Add(new Regular(newMembershipID, newType, newContactEMail, newAnnualCost, newCurrentMonthlyPurchases));
-                         Console.WriteLine("Added new Regular Membership for: " + newMembershipID);
-                        }
-                        // Create a new list item based on Memnership Type
-                        if (newType == "E") 
-                        {
-                        membershipList.Add(new Executive(newMembershipID, newType, newContactEMail, newAnnualCost, newCurrentMonthlyPurchases));
-                         Console.WriteLine("Added new Executive Membership for: " + newMembershipID);
-                        }
-                        if (newType == "C") 
-                        {
-                        membershipList.Add(new Corporate(newMembershipID, newType, newContactEMail, newAnnualCost, newCurrentMonthlyPurchases));
-                         Console.WriteLine("Added new Corporate Membership for: " + newMembershipID);
-                        }
-                        if (newType == "N") 
-                        {
-                        membershipList.Add(new NonProfit(newMembershipID, newType, newContactEMail, newAnnualCost, newCurrentMonthlyPurchases, newMilEdu));
-                         Console.WriteLine("Added new Non-Profit Membership for: " + newMembershipID);
-                        }
-*/
-
+                        // show the list again
+                         foreach (Membership aMember in membershipList)
+                         {
+                          Console.WriteLine(aMember);
+                         }
+                       
 
                        } // end of not found so create loop
                         
