@@ -108,7 +108,9 @@ Algorithm:
 
 using System;
 using System.Collections.Generic;   // needed for Lists
-
+using System.Data;
+using System.IO;
+using System.Net;
 namespace CustomerMgmt
 {
   class Program
@@ -187,17 +189,18 @@ switch (mainmenuchoiceUp)
       
       switch (Adminmenuchoice)  //   TODO ADMINMENU_ADMINMENU_ADMINMENU_ADMINMENU_ADMINMENU_ADMINMENU_ADMINMENU_ADMINMENU_ADMINMENU_ADMINMENU
         {
-        case "C": // TODO ADMIN CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+        case "C": // ADMIN CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
                   // Create a new membership as Admin.
                      Console.WriteLine("In the Admin Create area");
 
 
    // Experiment with Creating (adding) an employee to the list
         //======================================================================
- // TODO for now, just manually enter an ID , later pick the next valid number automatically
+ // TODO for now, just manually enter an ID and validate it is not in use, later pick the next valid number automatically
 
                      bool newfound = false;   // set a variable to change to true on found ID
-                     string findNewID = ""; // set an input variable to empty
+                     string? findNewID = ""; // set an input variable to empty
+                     
                      // show a list to make deleting easier
                      foreach (Membership aMember in membershipList)
                      {
@@ -206,6 +209,10 @@ switch (mainmenuchoiceUp)
                     Console.WriteLine();
                     Console.Write("Please enter a unique Membership ID to ADD: "); //prompt for ID
                     findNewID = Console.ReadLine(); // set findNewID to input
+                    if (findNewID == null) 
+                       { 
+                        findNewID = "Nothing Entered Here";
+                       }
                     // linear search thru the membership list
                     for (int index = 0; index < membershipList.Count; index++)
                     {
@@ -224,16 +231,23 @@ switch (mainmenuchoiceUp)
                         {
                         string newMembershipID = findNewID;
                         string newMilEdu = "N";
+                        string? newContactEMail;
                         // prompt for an email addr
                         Console.Write("Please enter a contact Email address: ");
-                        string newContactEmail = Console.ReadLine();
+                        
+                        newContactEMail = (Console.ReadLine());
+                        if (newContactEMail=="") 
+                        {
+                            newContactEMail ="None Provided";
+                        }
+                        
                         // prompt for a membership type
                         Console.WriteLine("Please enter a Membership Type from these choices: ");
                         Console.WriteLine("R) Regular");
                         Console.WriteLine("E) Executive");
                         Console.WriteLine("N) Non-Profit");
                         Console.WriteLine("C) Corporation");
-                        string newTypeAnyCase = Console.ReadLine(); //input string for Membership type
+                        string? newTypeAnyCase = Console.ReadLine(); //input string for Membership type
                         string newType = newTypeAnyCase!.ToUpper(); //convert Membership type to uppercase
                         double newAnnualCost = 0;
                         if (newType == "R")
@@ -252,9 +266,10 @@ switch (mainmenuchoiceUp)
                          {
                           newAnnualCost =  60;
                           Console.Write("Is this Non-Profit Military or Educational? y/n: ");
-                          string ynstring = "n";  // yes/no variable for check
+                          string? ynstring = "n";  // yes/no variable for check
                           // default to not being Mil or Ed
                           // move to higher context  string newMilEdu = "N";
+                          
                           ynstring = Console.ReadLine(); // set variable to input
                           if (ynstring == "y"|| ynstring=="Y") // treat anything but y or Y as a no 
                            {
@@ -268,23 +283,23 @@ switch (mainmenuchoiceUp)
                         // Create a new list item based on Memnership Type
                         if (newType == "R") 
                         {
-                        membershipList.Add(new Regular(newMembershipID, newType, newContactEmail, newAnnualCost, newCurrentMonthlyPurchases));
+                        membershipList.Add(new Regular(newMembershipID, newType, newContactEMail, newAnnualCost, newCurrentMonthlyPurchases));
                          Console.WriteLine("Added new Regular Membership for: " + newMembershipID);
                         }
                         // Create a new list item based on Memnership Type
                         if (newType == "E") 
                         {
-                        membershipList.Add(new Executive(newMembershipID, newType, newContactEmail, newAnnualCost, newCurrentMonthlyPurchases));
+                        membershipList.Add(new Executive(newMembershipID, newType, newContactEMail, newAnnualCost, newCurrentMonthlyPurchases));
                          Console.WriteLine("Added new Executive Membership for: " + newMembershipID);
                         }
                         if (newType == "C") 
                         {
-                        membershipList.Add(new Corporate(newMembershipID, newType, newContactEmail, newAnnualCost, newCurrentMonthlyPurchases));
+                        membershipList.Add(new Corporate(newMembershipID, newType, newContactEMail, newAnnualCost, newCurrentMonthlyPurchases));
                          Console.WriteLine("Added new Corporate Membership for: " + newMembershipID);
                         }
                         if (newType == "N") 
                         {
-                        membershipList.Add(new NonProfit(newMembershipID, newType, newContactEmail, newAnnualCost, newCurrentMonthlyPurchases, newMilEdu));
+                        membershipList.Add(new NonProfit(newMembershipID, newType, newContactEMail, newAnnualCost, newCurrentMonthlyPurchases, newMilEdu));
                          Console.WriteLine("Added new Non-Profit Membership for: " + newMembershipID);
                         }
 
@@ -305,7 +320,132 @@ switch (mainmenuchoiceUp)
         case "U": // TODO ADMIN UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
                   // Update the Membership as Admin.
                      Console.WriteLine("In the Admin Update area");
-                     break;
+                                     bool updatefound = false;   // set a variable to change to true on found ID
+                     string? findUpdateID = ""; // set an input variable to empty
+                     int updateRow = 0; 
+                     // show a list to make deleting easier
+                     foreach (Membership aMember in membershipList)
+                     {
+                      Console.WriteLine(aMember);
+                     }
+                    Console.WriteLine();
+                    Console.Write("Please choose a Membership ID to Update: "); //prompt for ID
+                    findUpdateID = Console.ReadLine(); // set findUpdateID to input
+                    if (findUpdateID == null) 
+                       { 
+                        findUpdateID = "Nothing Entered Here";
+                       }
+                    // linear search thru the membership list
+                    for (int index = 0; index < membershipList.Count; index++)
+                    {
+                       if (membershipList[index].membershipID == findUpdateID) // we found a ID matching input
+                        {
+                           updatefound = true; // used for message below
+                           updateRow = index;
+                        }
+                    }
+                     // end for loop  
+                    if (updatefound==true)
+                         {
+                       // don't change ID  string newMembershipID = findUpdateID;
+                        string updateMilEdu = "";
+                        string? updateContactEMail = "";
+                        // prompt for an email addr
+                        // debug use Console.Write(membershipList[updateRow].contactEmail);
+                        Console.WriteLine();
+                        Console.WriteLine("Please enter a contact Email address or 'Enter' to keep current email: " + membershipList[updateRow].contactEmail);
+                        
+                        updateContactEMail = (Console.ReadLine());
+                        if (updateContactEMail=="") 
+                        {
+                            updateContactEMail = membershipList[updateRow].contactEmail;
+                        }
+                        Console.WriteLine(updateContactEMail);
+                        Console.WriteLine();
+                        // prompt for a membership type
+                        Console.WriteLine("Please enter a Membership Type from these choices or 'Enter' to keep current: " + membershipList[updateRow].type);
+                        Console.WriteLine("R) Regular");
+                        Console.WriteLine("E) Executive");
+                        Console.WriteLine("N) Non-Profit");
+                        Console.WriteLine("C) Corporation");
+                        string? updateTypeAnyCase = Console.ReadLine(); //input string for Membership type
+                        string updateType = updateTypeAnyCase!.ToUpper(); //convert Membership type to uppercase
+                        if (updateType=="") 
+                        {
+                            updateType = membershipList[updateRow].type;
+                        }
+
+                        Console.WriteLine(updateType);
+                        Console.WriteLine();
+
+                        double newAnnualCost = 0;
+                        if (updateType == "R")
+                         {
+                          newAnnualCost =  120;
+                         }
+                        else if (updateType == "E")
+                         {
+                          newAnnualCost =  200;
+                         }
+                        else if (updateType == "C")
+                         {
+                          newAnnualCost =  3000;
+                         }
+                        else if (updateType == "N") //ask for military or educational
+                         {
+                          newAnnualCost =  60;
+                          Console.Write("Is this Non-Profit Military or Educational? y/n: ");
+                          string? ynstring = "n";  // yes/no variable for check
+                          // default to not being Mil or Ed
+                          // move to higher context  string newMilEdu = "N";
+                          
+                          ynstring = Console.ReadLine(); // set variable to input
+                          if (ynstring == "y"|| ynstring=="Y") // treat anything but y or Y as a no 
+                           {
+                            updateMilEdu = "Y"; //used for cashback calculation of Non-Profit
+                           }
+                         }   
+
+                        Console.Write("Please enter a Current Purchase Balance: ");
+                        double newCurrentMonthlyPurchases = Convert.ToDouble(Console.ReadLine());
+/*
+                        // Create a new list item based on Memnership Type
+                        if (newType == "R") 
+                        {
+                        membershipList.Add(new Regular(newMembershipID, newType, newContactEMail, newAnnualCost, newCurrentMonthlyPurchases));
+                         Console.WriteLine("Added new Regular Membership for: " + newMembershipID);
+                        }
+                        // Create a new list item based on Memnership Type
+                        if (newType == "E") 
+                        {
+                        membershipList.Add(new Executive(newMembershipID, newType, newContactEMail, newAnnualCost, newCurrentMonthlyPurchases));
+                         Console.WriteLine("Added new Executive Membership for: " + newMembershipID);
+                        }
+                        if (newType == "C") 
+                        {
+                        membershipList.Add(new Corporate(newMembershipID, newType, newContactEMail, newAnnualCost, newCurrentMonthlyPurchases));
+                         Console.WriteLine("Added new Corporate Membership for: " + newMembershipID);
+                        }
+                        if (newType == "N") 
+                        {
+                        membershipList.Add(new NonProfit(newMembershipID, newType, newContactEMail, newAnnualCost, newCurrentMonthlyPurchases, newMilEdu));
+                         Console.WriteLine("Added new Non-Profit Membership for: " + newMembershipID);
+                        }
+*/
+
+
+                       } // end of not found so create loop
+                        
+                        
+                        
+                        
+
+                    else  //
+                                               { 
+                         Console.WriteLine(findUpdateID + " was not found. Please Try again."); // message
+                         break;
+                        }
+                    break; // end of Create
         
         case "D": // ADMIN DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
                   // Delete a membership as Admin.
@@ -327,7 +467,7 @@ switch (mainmenuchoiceUp)
                         {
                           // double check before delete
                           Console.WriteLine("Are you sure you want to DELETE " + findID + "? y/n");
-                         string stryn = "n";  // yes/no variable for check
+                         string? stryn = "n";  // yes/no variable for check
                          stryn = Console.ReadLine(); // set variable to input
                         if (stryn == "y"|| stryn=="Y") // treat anything but y or Y as a no 
                          {
