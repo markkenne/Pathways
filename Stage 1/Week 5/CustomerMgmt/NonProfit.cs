@@ -56,10 +56,14 @@ namespace CustomerMgmt
            }
         }
 
+        public override double GetSpecials() // interface method
+        {
+            return 0; //no special
+        }
 
         public override string ToString()
         {
-            return $"ID: {membershipID}, Type: {type}, Mil or Edu: {milEdu} Email: {contact}, Annual Fee: ${annualCost}, Cur.Mon.Purchases: ${currentMonthlyPurchases}";
+         return $"ID: {membershipID}, Type: {type}, Email: {contact}, Annual Fee: " + ($"{annualCost:C2}") + ", Cur.Mon.Purchases: " + ($"{currentMonthlyPurchases:C2}") + ", Mil or Edu: " + milEdu;
         }
     }
 }
