@@ -40,20 +40,6 @@
         (9d2b) Zero the (monthly purchases spending amount) balance
    (9e) X - eXit to main menu 
    
-  
-  
-
-  (3) Ability to calculate the annual bonus based on the Type. If H then 80 hours times rate, if Salary then 10% of salary amount
-  (4) Ability to print the hourly rate or salary amount with bonus using the ToString method
-  (5) A menu to operate the CRUD method (Create, Read, Update, and Delete) in regards to the array.
-  (6) A menu item Q to exit the program
-  (7) A procedure to Create a new row in the array
-  (8) A procedure to Read all rows in the array and print them without showing null rows
-  (9) A procedure to Update a row in the array
-  (10) A procedure to Delete a row in the array
-
-
-
 Algorithm:
   (1) Create an Membership.cs class file with namepace of CustomerMgmt
     (1a) Create 4 properties using the get-set automatic method
@@ -106,54 +92,61 @@ Algorithm:
 
 using System;
 using System.Collections.Generic;   // needed for Lists
-using System.Data;
-using System.IO;
-using System.Net;
+//using System.Data;
+//using System.IO;
+//using System.Net;
 namespace CustomerMgmt
 {
   class Program
   {
     static void Main(string[] args)
     {
-        // Initialize Lists
-        // Create a list of Membership
-        List<Membership> membershipList = new List<Membership>();
-      // Add a Regular to test 
-       membershipList.Add(new Regular("M001", "R", "mkenne00@lincoln.ne.gov", 100, 111.00));
-       membershipList.Add(new Regular("M002", "R", "tblinker@lincoln.ne.gov", 100, 222.00));
-       membershipList.Add(new Executive("M003", "E", "ablanker@lincoln.ne.gov", 200, 2000.00));
-       membershipList.Add(new Executive("M004", "E", "reddward@lincoln.ne.gov", 200, 3000.00));       
-       membershipList.Add(new NonProfit("M005", "N", "mbanks@nonprofit.net", 60, 1000.00, "Y"));
-       membershipList.Add(new NonProfit("M006", "N", "rfields@nonprofit.net", 60, 1000.00, "N"));
-       membershipList.Add(new Corporate("M007", "C", "mbags@corprus.com", 3000, 2000.00));
-       membershipList.Add(new Corporate("M008", "C", "slimey@bigcorp.com", 3000, 1000.00));           
-     // Create the menus as lists
-       List<string> menuOptionsMain = new List<string>();
-       menuOptionsMain.Add("A - Admin Menu");
-       menuOptionsMain.Add("T - Member Transaction Menu");
-       menuOptionsMain.Add("Q - Quit");
-       //Choices for Admin
-       List<string> menuOptionsAdmin = new List<string>();
-       menuOptionsAdmin.Add("C - Create a new Membership");
-       menuOptionsAdmin.Add("R - Read all Memberships");
-       menuOptionsAdmin.Add("U - Update an Existing Membership");
-       menuOptionsAdmin.Add("D - Delete an Existing Membership");       
-       menuOptionsAdmin.Add("X - eXit to Main Menu");
-       // Choices for Members
-       List<string> menuOptionsTrx = new List<string>();
-       menuOptionsTrx.Add("L - List all membership with all info");
-       menuOptionsTrx.Add("P - Perform Purchase Transaction");
-       menuOptionsTrx.Add("T - Perform Return Transaction");
-       menuOptionsTrx.Add("A - Apply Cash Back Rewards");       
-       menuOptionsTrx.Add("X - eXit to Main Menu");
-   
-bool isMainMenuLooping = true;
+   // Initialize constants for Annual Fees
+      const int aCostReg = 120;  // Regular
+      const int aCostExe = 200;  // Executive
+      const int aCostCor = 3000; // Corporation
+      const int aCostNP  = 60;   // Non-Profit
 
-while (isMainMenuLooping)
+   // Initialize Lists
+   // Create a list of Membership
+      List<Membership> membershipList = new List<Membership>();
+   // Add membershipList data using new method to have some test data 
+      membershipList.Add(new Regular  ("M001", "R", "mkenne00@lincoln.gov",  100, 111.30));
+      membershipList.Add(new Regular  ("M002", "R", "tblinker@lincoln.gov",  100, 222.04));
+      membershipList.Add(new Executive("M003", "E", "ablanker@lincoln.gov",  200, 2000.00));
+      membershipList.Add(new Executive("M004", "E", "reddward@lincoln.gov",  200, 3000.00));       
+      membershipList.Add(new NonProfit("M005", "N", "rinfield@college.edu",   60, 1000.00, "Y"));
+      membershipList.Add(new NonProfit("M006", "N", "fbanks@nonprofit.net",   60, 1000.00, "N"));
+      membershipList.Add(new Corporate("M007", "C", "monybags@corprus.com", 3000, 2000.00));
+      membershipList.Add(new Corporate("M008", "C", "bigbucks@bigcorp.com", 3000, 1000.00));           
+   // Create the menus as lists, starting with Main
+      List<string> menuOptionsMain = new List<string>();
+      menuOptionsMain.Add("A - Admin Menu");
+      menuOptionsMain.Add("T - Transaction Menu for Members");
+      menuOptionsMain.Add("Q - Quit");
+   // Choices for Admin
+      List<string> menuOptionsAdmin = new List<string>();
+      menuOptionsAdmin.Add("C - Create a new Membership");
+      menuOptionsAdmin.Add("R - Read all Memberships");
+      menuOptionsAdmin.Add("U - Update an Existing Membership");
+      menuOptionsAdmin.Add("D - Delete an Existing Membership");       
+      menuOptionsAdmin.Add("X - eXit to Main Menu");
+   // Choices for Members
+      List<string> menuOptionsTrx = new List<string>();
+      menuOptionsTrx.Add("L - List all membership with all info");
+      menuOptionsTrx.Add("P - Purchase Transaction Entry");
+      menuOptionsTrx.Add("T - Transact a Return");
+      menuOptionsTrx.Add("A - Apply Cash Back Rewards");       
+      menuOptionsTrx.Add("X - eXit to Main Menu");
+   
+   // Start the main menu loop 
+      bool isMainMenuLooping = true; // looping flag
+while (isMainMenuLooping)    // loop until (Q)uit
  {
     Console.WriteLine();
     Console.WriteLine("MAIN MENU - Please select an option:");
-    foreach (var option in menuOptionsMain)
+    Console.WriteLine();
+    foreach (var option in menuOptionsMain) // display the main menu options from list
     {
      Console.WriteLine(option);
     }
@@ -162,6 +155,7 @@ while (isMainMenuLooping)
     string? mainmenuchoiceUp = mainmenuchoice!.ToUpper();
     // direct the program to the menu choice using switch/case
 
+// use switch-case to control program flow
 switch (mainmenuchoiceUp)
  {
     case "A":  // MAIN AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -185,13 +179,8 @@ switch (mainmenuchoiceUp)
         {
         case "C": // ADMIN CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
                   // Create a new membership as Admin.
-                     Console.WriteLine("In the Admin Create area");
-
-
-   // Experiment with Creating (adding) an employee to the list
-        //======================================================================
- // TODO for now, just manually enter an ID and validate it is not in use, later pick the next valid number automatically
-
+                  // debug use  Console.WriteLine("In the Admin Create area");
+                  // create variables
                      bool newfound = false;   // set a variable to change to true on found ID
                      string? findNewID = ""; // set an input variable to empty
                      
@@ -200,38 +189,35 @@ switch (mainmenuchoiceUp)
                      {
                       Console.WriteLine(aMember);
                      }
-                    Console.WriteLine();
-                    Console.Write("Please enter a unique Membership ID to ADD: "); //prompt for ID
-                    findNewID = Console.ReadLine(); // set findNewID to input
-                    if (findNewID == null) 
+                     Console.WriteLine();
+                     Console.Write("Please enter a unique Membership ID to ADD: "); //prompt for ID
+                     findNewID = Console.ReadLine(); // set findNewID to input
+                     if (findNewID == null) 
                        { 
                         findNewID = "Nothing Entered Here";
                        }
-                    // linear search thru the membership list
-                    for (int index = 0; index < membershipList.Count; index++)
-                    {
+                     // linear search thru the membership list
+                     for (int index = 0; index < membershipList.Count; index++)
+                      {
                        if (membershipList[index].membershipID == findNewID) // we found a ID matching input
                         {
                            newfound = true; // used for message below
                         }
-                    }
+                      }
                      // end for loop  
-                    if (newfound==true)
+                     if (newfound==true)
                         { 
                          Console.WriteLine(findNewID + " was already being used. Please Try again."); // message
                          break;
                         }
-                    else
+                     else
                         {
                         string newMembershipID = findNewID;
                         string newMilEdu = "N";
-                       // string? newContact;
-                      // string newContact = default;
+
                         // prompt for an email addr
                         Console.WriteLine("Please enter a contact Email address: ");
-                        
                         string? newContact = Console.ReadLine() + " ";
-
                         // prompt for a membership type
                         Console.WriteLine("Please enter a Membership Type from these choices: ");
                         Console.WriteLine("R) Regular");
@@ -241,21 +227,22 @@ switch (mainmenuchoiceUp)
                         string? newTypeAnyCase = Console.ReadLine(); //input string for Membership type
                         string newType = newTypeAnyCase!.ToUpper(); //convert Membership type to uppercase
                         double newAnnualCost = 0;
-                        if (newType == "R")
+                        // set costs from constants
+                        if (newType == "R")  // Regular
                          {
-                          newAnnualCost =  120;
+                          newAnnualCost =  aCostReg;
                          }
-                        else if (newType == "E")
+                        else if (newType == "E") // Executive
                          {
-                          newAnnualCost =  200;
+                          newAnnualCost =  aCostExe;
                          }
-                        else if (newType == "C")
+                        else if (newType == "C") // Corporation
                          {
-                          newAnnualCost =  3000;
+                          newAnnualCost =  aCostCor;
                          }
-                        else if (newType == "N") //ask for military or educational
+                        else if (newType == "N") //Non-Profit, ask for military or educational
                          {
-                          newAnnualCost =  60;
+                          newAnnualCost =  aCostNP;
                           Console.Write("Is this Non-Profit Military or Educational? y/n: ");
                           string? ynstring = "n";  // yes/no variable for check
                           // default to not being Mil or Ed
@@ -267,8 +254,8 @@ switch (mainmenuchoiceUp)
                             newMilEdu = "Y"; //used for cashback calculation of Non-Profit
                            }
                          }   
-
-                        Console.Write("Please enter a Current Purchase Balance: ");
+                        // prompt for starting balance
+                        Console.Write("Please enter a Starting Purchase Balance: ");
                         double newCurrentMonthlyPurchases = Convert.ToDouble(Console.ReadLine());
 
                         // Create a new list item based on Memnership Type
@@ -314,10 +301,10 @@ switch (mainmenuchoiceUp)
         case "U": // ADMIN UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
                   // Update the Membership as Admin.
                      Console.WriteLine("In the Admin Update area");
-                                     bool updatefound = false;   // set a variable to change to true on found ID
+                     bool updatefound = false;   // set a variable to change to true on found ID
                      string? findUpdateID = ""; // set an input variable to empty
                      int updateRow = 0; 
-                     // show a list to make deleting easier
+                  // show a list to make updating easier
                      foreach (Membership aMember in membershipList)
                      {
                       Console.WriteLine(aMember);
@@ -341,11 +328,7 @@ switch (mainmenuchoiceUp)
                      // end for loop  
                     if (updatefound==true)
                          {
-                       // don't change ID  string newMembershipID = findUpdateID;
-                       // string updateMilEdu = "";
-                       // string? updateContact = "";
-                        // prompt for an email addr
-                        // debug use Console.Write(membershipList[updateRow].contact);
+                        // input email addr from user if changes needed
                         Console.WriteLine();
                         Console.WriteLine("Please enter a contact Email address or 'Enter' to keep current email: " + membershipList[updateRow].contact);
                         
@@ -355,13 +338,12 @@ switch (mainmenuchoiceUp)
                          updateContact = membershipList[updateRow].contact;
                         }
                         Console.WriteLine(updateContact);
-                       //save email update to list
-                       string? uContact = updateContact + " ";
-                       membershipList[updateRow].contact = uContact;
-                       Console.WriteLine();
-                        
+                     // save email update to list
+                        string? uContact = updateContact + " ";
+                        membershipList[updateRow].contact = uContact;
                         Console.WriteLine();
-                        // prompt for a membership type
+                        
+                     // prompt for a membership type
                         Console.WriteLine("Please enter a Membership Type from these choices or 'Enter' to keep current: " + membershipList[updateRow].type);
                         Console.WriteLine("R) Regular");
                         Console.WriteLine("E) Executive");
@@ -375,69 +357,58 @@ switch (mainmenuchoiceUp)
                         }
 
                         Console.WriteLine(updateType);
-                       //save type update to list
-                       membershipList[updateRow].type = updateType;
-                       Console.WriteLine();
-
+                     // save type update to list
+                        membershipList[updateRow].type = updateType;
+                        Console.WriteLine();
+                     // initialize an annual cost variable
                         double updateAnnualCost = 0;
-                        if (updateType == "R")
+                     // set costs using constants 
+                        if (updateType == "R") // Regular
                          {
-                          updateAnnualCost =  120;
+                          updateAnnualCost =  aCostReg;
                          }
-                        else if (updateType == "E")
+                        else if (updateType == "E") // Executive
                          {
-                          updateAnnualCost =  200;
+                          updateAnnualCost =  aCostExe;
                          }
-                        else if (updateType == "C")
+                        else if (updateType == "C") // Corporation
                          {
-                          updateAnnualCost =  3000;
+                          updateAnnualCost =  aCostCor;
                          }
-                        else if (updateType == "N") //ask for military or educational
+                        else if (updateType == "N") // Non-Profit, ask for military or educational
                          {
-                          updateAnnualCost =  60;
-
-                       /* removed this Military or Educational are not going to change, right Air Force now doing commercial flights...                          
-                          Console.Write("Is this Non-Profit Military or Educational? y/n: ");
-                          string? ynstring = "n";  // yes/no variable for check
-                          // default to not being Mil or Ed
-                          // move to higher context  string newMilEdu = "N";
-                          
-                          ynstring = Console.ReadLine(); // set variable to input
-                          if (ynstring == "y"|| ynstring=="Y") // treat anything but y or Y as a no 
-                           {
-                            updateMilEdu = "Y"; //used for cashback calculation of Non-Profit
-                           }
-                           */
+                          updateAnnualCost =  aCostNP;
+                     // note: Military or Educational are not going to change, right Air Force now doing commercial flights...                          
+                     // so no point in changing flag
                          }   
                         // save annual cost updates to list
                         membershipList[updateRow].annualCost = updateAnnualCost;
-
                         double updateCurrentMonthlyPurchases = 0;
-
+                     // Prompt to change balance if needed   
                         Console.WriteLine("Please enter a Current Purchase Balance or 'Enter' to keep: " + membershipList[updateRow].currentMonthlyPurchases);
-                       
+                     // get balance string  
                         string? cpBal = Console.ReadLine();
                         if (cpBal=="")
                          {
                           updateCurrentMonthlyPurchases = membershipList[updateRow].currentMonthlyPurchases;  
                          }
-                        if (cpBal!="")
+                        if (cpBal!="") // if you have something...
                          {
-                          updateCurrentMonthlyPurchases = Convert.ToDouble(cpBal);
+                          updateCurrentMonthlyPurchases = Convert.ToDouble(cpBal); // convert to double from string
                          }
-                        Console.WriteLine(updateCurrentMonthlyPurchases);
-                        //save updates to list
+                     // for debug Console.WriteLine(updateCurrentMonthlyPurchases);
+                     // save cmp update to list
                         membershipList[updateRow].currentMonthlyPurchases = updateCurrentMonthlyPurchases;
                         Console.WriteLine();
-                        // show the list again
+                     // show the list again
                          foreach (Membership aMember in membershipList)
                          {
                           Console.WriteLine(aMember);
                          }
                        } // end of not found so create loop
                     else  //
-                                               { 
-                         Console.WriteLine(findUpdateID + " was not found. Please Try again."); // message
+                        { 
+                         Console.WriteLine(findUpdateID + " was not found. Please Try again."); // message when not found
                          break;
                         }
                     break; // end of Create
@@ -446,44 +417,45 @@ switch (mainmenuchoiceUp)
                   // Delete a membership as Admin.
                   // Find a Membership to delete in the list
                      bool found = false;   // set a variable to change to true on found ID
-                     string? findID = ""; // set an input variable to empty
+                     string? findID = "";  // set an input variable to empty
                      // show a list to make deleting easier
                      foreach (Membership aMember in membershipList)
                      {
                       Console.WriteLine(aMember);
                      }
-                    Console.WriteLine();
-                    Console.Write("Please enter a Membership ID to DELETE: "); //prompt for ID
-                    findID = Console.ReadLine(); // set findID to input
-                    // linear search thru the membership list
-                    for (int index = 0; index < membershipList.Count; index++)
-                    {
+                     Console.WriteLine();
+                     Console.Write("Please enter a Membership ID to DELETE: "); //prompt for ID
+                     findID = Console.ReadLine(); // set findID to input
+                  // linear search thru the membership list
+                     for (int index = 0; index < membershipList.Count; index++)
+                      {
                        if (membershipList[index].membershipID == findID) // we found a ID matching input
-                        {
-                          // double check before delete
-                          Console.WriteLine("Are you sure you want to DELETE " + findID + "? y/n");
+                        {              
+                      // double check before delete
+                         Console.WriteLine("Are you sure you want to DELETE " + findID + "? y/n");
                          string? stryn = "n";  // yes/no variable for check
                          stryn = Console.ReadLine(); // set variable to input
-                        if (stryn == "y"|| stryn=="Y") // treat anything but y or Y as a no 
-                         {
+                         if (stryn == "y"|| stryn=="Y") // treat anything but y or Y as a no 
+                          {
                            membershipList.RemoveAt(index); // remove that index# line from list
                            found = true; // used for message below
-                         }
-                        }
+                          }
+                        } //end of membership found
                     } // end for loop  
+                    // add a console message before leaving
                     if (found)
                         { 
-                         Console.WriteLine(findID + " was DELETED."); // message
+                         Console.WriteLine(findID + " was DELETED."); // message about delete
                         }
                     else
                         {
-                         Console.WriteLine("Nothing got deleted. Try again.");
+                         Console.WriteLine("Nothing got deleted. Try again."); // or not deleted
                         }
                     break; // end of Delete
         
         case "X": // ADMIN XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                  // Quit the Admin menu.
-                     Console.WriteLine("In the eXit area");
+                 // Quit the Admin menu.
+                 // debug use  Console.WriteLine("In the eXit area");
                      isAdminMenuLooping = false; // user chose X so quit the looping Admin menu
                      Console.WriteLine("You chose eXit. back to Main...");
                      break;
@@ -491,28 +463,28 @@ switch (mainmenuchoiceUp)
                  // Invalid option. Loop to Admin menu choices.
                     Console.WriteLine("Invalid Option. Please try again.");
                     break;
-        }        // end admin menu switch
-      }          // end admin menu while
+        }     // end admin menu switch
+      }   // end admin menu while
    // end main menu switch
       break;
     
-    case "T":  // MAIN TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+    case "T":  // MAIN TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
    // View the Transaction menu
       Console.WriteLine("In the Member Transaction area");
-      bool isTrxMenuLooping = true;
-      while (isTrxMenuLooping)
+      bool isTrxMenuLooping = true; // flag to use when looping
+      while (isTrxMenuLooping)  // loop the transaction menu until eXit is used
       {
                     Console.WriteLine();
                     Console.WriteLine("TRANSACTION MENU - Please select an option:");
-                    foreach (var Trxoption in menuOptionsTrx)
+                    foreach (var Trxoption in menuOptionsTrx) // get the list of transaction options from list
                     {
-                    Console.WriteLine(Trxoption);
+                    Console.WriteLine(Trxoption); // print options to screen
                     }
                     string? trxmenuchoice = Console.ReadLine();
-                    // Console.WriteLine(Adminmenuchoice);
-                    string? Trxmenuchoice = trxmenuchoice!.ToUpper();
-                  
-      
+                    //  debug use Console.WriteLine(Adminmenuchoice);
+                    string? Trxmenuchoice = trxmenuchoice!.ToUpper(); // set a variable to capture choice and UPPERCASE it to simplify use
+   
+   // use switch-case to operate from the menu choices
       switch (Trxmenuchoice) //  TRX_MENU_TRX_MENU_TRX_MENU_TRX_MENU_TRX_MENU_TRX_MENU_TRX_MENU_TRX_MENU_TRX_MENU_TRX_MENU_TRX_MENU_TRX_MENU 
         {
         case "L": // TRX LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL
@@ -523,19 +495,16 @@ switch (mainmenuchoiceUp)
                      foreach (Membership aMember in membershipList)
                      {
                       Console.Write(aMember);
-
-                      Console.Write(" | Cashback Rewards Value: " + ($"{aMember.GetReward():C2}"));
-                      Console.WriteLine(" | Special Offers: $" + aMember.GetSpecials());
-
+                      Console.Write(" | Cashback Rewards Value: " + ($"{aMember.GetReward():C2}")); // show rewards values
+                      Console.WriteLine(" | Special Offers: $" + aMember.GetSpecials()); // show special offers
                      }  // end foreach  
-                    
-                     break;
+         break;  //end TRX L
         
         case "P": // TRX PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP
                   // P - Perform Purchase Transaction
-                  // Console.WriteLine("In the Trx Purchase area");
+                  // debug use Console.WriteLine("In the Trx Purchase area");
   {
-                     Console.WriteLine("Welcome to Customer Service - PURCHASES");
+                     Console.WriteLine("Welcome to Customer Service - PURCHASES"); // let user know where they are
                      Console.WriteLine();   
 
                   // Find an Membership ID  in the list
@@ -550,7 +519,7 @@ switch (mainmenuchoiceUp)
                        if (membershipList[index].membershipID == purFindID) // we found a ID matching input
                         {
                            purIDFound = true; // used for message below
-                           purRow = index;
+                           purRow = index; // a variable that makes choices easier than index :}
                         }
                     }
                     if (purIDFound!=true)  // no account matches input, so let user know
@@ -559,16 +528,15 @@ switch (mainmenuchoiceUp)
                       Console.WriteLine();
                      }
         
-                    if (purIDFound==true)
+                    if (purIDFound==true)  // found a user. lets buy something!
                      {
-                     // Now we have an Member ID, make a Purchase transaction here, find out how much
+                  // find out how much to spend
                      string? purAmt = "0"; // string variable for deposit input 
-                     // That out of the way, get the amount and make a Purchase transaction here
                      double newpurAmt = 0; // variable to hold Purchase amount
                
-                     Console.WriteLine("Please enter a Purchase Amount: ");
-                     purAmt = Console.ReadLine();
-                     newpurAmt = Convert.ToDouble(purAmt);
+                     Console.WriteLine("Please enter a Purchase Amount: "); // user prompt
+                     purAmt = Console.ReadLine(); // user inputs an amount as string
+                     newpurAmt = Convert.ToDouble(purAmt); // convert string to double
                      if (newpurAmt < 0) // amount must be greater than 0 or transaction is cancelled w a message
                      { 
                         Console.WriteLine ("The amount must be more than 0. Transaction Cancelled.");
@@ -576,30 +544,28 @@ switch (mainmenuchoiceUp)
                      }
                      // double check the input
                      Console.WriteLine("You entered: " + newpurAmt + "  Is that correct?: ") ;
-                 
                      string? purchaseYN = "n";  // yes/no variable for check
                      purchaseYN = Console.ReadLine(); // set variable to input
                      if (purchaseYN == "y"|| purchaseYN=="Y") // treat anything but y or Y as a no 
                          {
-                          membershipList[purRow].Purchase(newpurAmt); // make the Purchase
-                           Console.WriteLine("Purchase of " + newpurAmt + " made to " + purFindID) ;
+                          membershipList[purRow].Purchase(newpurAmt); // make the Purchase by changing the membershiplist using Purchase method
+                          Console.WriteLine("Purchase of " + newpurAmt + " made to " + purFindID) ;
                          }
                      else
                      {
-                       Console.WriteLine("Purchase cancelled.") ;  
+                      Console.WriteLine("Purchase cancelled.") ;  
                      }
-                     
-                     Console.WriteLine();
-             }  
-        } //end found loop
+                      Console.WriteLine();
+                   }  // end valid memberid
+        } // end case P
 
-                     break; // end of Purchases
+         break; // end of Purchases
         
         case "T": // TRX TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
                   // T - Perform Return Transaction
                   // Console.WriteLine("In the Trx Update area");
   {
-                     Console.WriteLine("Welcome to Customer Service - RETURNS");
+                     Console.WriteLine("Welcome to Customer Service - RETURNS"); // let user know where they are
                      Console.WriteLine();   
 
                   // Find an Membership ID  in the list
@@ -656,16 +622,15 @@ switch (mainmenuchoiceUp)
                      }
                      
                      Console.WriteLine();
-             }  
-        } //end found loop
-
-                     break; // end of returns
+              }  // end of valid memberid
+          } //end T case
+         break; // end of returns
         
-        case "A": // TODO TRX AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        case "A": // TRX AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
                   // A - Apply Cash Back Rewards
-                  // Console.WriteLine("In the Trx Cashback area");
-  {
-                     Console.WriteLine("Welcome to Customer Service - CASHBACK REWARDS!");
+                  // debug use Console.WriteLine("In the Trx Cashback area");
+         {
+                     Console.WriteLine("Welcome to Customer Service - CASHBACK REWARDS!"); // let user know where they are
                      Console.WriteLine();   
 
                   // Find an Membership ID  in the list
@@ -680,7 +645,7 @@ switch (mainmenuchoiceUp)
                        if (membershipList[index].membershipID == cashbackFindID) // we found a ID matching input
                         {
                            cashbackIDFound = true; // used for message below
-                           cashbackRow = index;
+                           cashbackRow = index; // less confusing than index :}
                         }
                     }
                     if (cashbackIDFound!=true)  // no account matches input, so let user know
@@ -692,14 +657,9 @@ switch (mainmenuchoiceUp)
                     if (cashbackIDFound==true)
                      {
                      // Now we have an Member ID, make a cashback transaction here, find out how much
-                     // string? cashbackAmt = "0"; // string variable for deposit input 
-                     // That out of the way, get the amount and make a cashback transaction here
                      double newcashbackAmt = 0; // variable to hold cashback amount
-               
-                 //    Console.WriteLine("Please enter a Cashback Amount to Redeem: ");
-                 //    cashbackAmt = Console.ReadLine();
-                 //    newcashbackAmt = Convert.ToDouble(cashbackAmt);
-                     Console.WriteLine("Would you like to redeem your cashback reward? y/n:") ;
+
+                     Console.WriteLine("Would you like to redeem your cashback reward? y/n:") ; // prompt user
                  
                      string? cashbackYN = "n";  // yes/no variable for check
                      cashbackYN = Console.ReadLine(); // set variable to input
@@ -726,14 +686,14 @@ switch (mainmenuchoiceUp)
                      }
                      
                      Console.WriteLine();
-             }  
-        } //end found loop
+             }  //end found loop
+         } // end case A
 
-                     break; // end of cashbacks
+         break; // end of cashbacks
         
         case "X": // TRX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
                   // Quit the Admin menu.
-                  // Console.WriteLine("In the Trx eXit area");
+                  // debug use Console.WriteLine("In the Trx eXit area");
                      isTrxMenuLooping = false; // user chose X so quit the looping Admin menu
                      Console.WriteLine("You chose eXit. back to Main...");
                      break;
@@ -748,7 +708,7 @@ switch (mainmenuchoiceUp)
     
     case "Q": // MAIN QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
     // Quit the application.
-    //  Console.WriteLine("In the Q/q area");
+    // debug use  Console.WriteLine("In the Q/q area");
     isMainMenuLooping = false; // user chose Q so quit the looping
     Console.WriteLine("You chose Quit. Good Bye...");
     break;

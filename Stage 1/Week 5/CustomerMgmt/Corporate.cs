@@ -1,4 +1,4 @@
-// Executive Child Class
+// Corporate - Child Class of Membership
 
 using System;
 
@@ -12,7 +12,6 @@ namespace CustomerMgmt
         public Corporate(string membershipID, string type, string contact, double annualCost, double currentMonthlyPurchases): base(membershipID, type, contact, annualCost, currentMonthlyPurchases)
         {
         }
-
 
          public override void Return(double amount)
         {
@@ -44,7 +43,7 @@ namespace CustomerMgmt
 
         public override double GetReward() // implementation of abstract method for Corporate
         {
-            return (currentMonthlyPurchases * 1.12); // flat rate of 12%
+            return (currentMonthlyPurchases * .02); // flat rate of 2%
         }
 
         public override double GetSpecials() // interface method
@@ -54,7 +53,6 @@ namespace CustomerMgmt
 
         public override string ToString()
         {
-         //   return $"ID: {membershipID}, Type: {type}, Email: {contact}, Annual Fee: ${annualCost}, Cur.Mon.Purchases: ${currentMonthlyPurchases}";
             return $"ID: {membershipID}, Type: {type}, Email: {contact}, Annual Fee: " + ($"{annualCost:C2}") + ", Cur.Mon.Purchases: " + ($"{currentMonthlyPurchases:C2}") + " ";    
         }
     }

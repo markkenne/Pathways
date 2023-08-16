@@ -1,4 +1,4 @@
-// Executive Child Class
+// NonProfit - Child Class of Membership
 
 using System;
 
@@ -63,7 +63,7 @@ namespace CustomerMgmt
 
         public override string ToString()
         {
-         return $"ID: {membershipID}, Type: {type}, Email: {contact}, Annual Fee: " + ($"{annualCost:C2}") + ", Cur.Mon.Purchases: " + ($"{currentMonthlyPurchases:C2}") + ", Mil or Edu: " + milEdu;
+            return $"ID: {membershipID}, Type: {type}, Email: {contact}, Annual Fee: " + ($"{annualCost:C2}") + ", Cur.Mon.Purchases: " + ($"{currentMonthlyPurchases:C2}") + ", Mil or Edu: " + milEdu;
         }
     }
 }

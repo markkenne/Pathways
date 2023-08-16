@@ -1,4 +1,4 @@
-// Executive Child Class
+// Executive - Child Class of Membership
 
 using System;
 
@@ -12,7 +12,6 @@ namespace CustomerMgmt
         public Executive(string membershipID, string type, string contact, double annualCost, double currentMonthlyPurchases): base(membershipID, type, contact, annualCost, currentMonthlyPurchases)
         {
         }
-
 
         public override void Return(double amount)
         {

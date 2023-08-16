@@ -1,4 +1,4 @@
-// Regular Child Class
+// Regular - Child Class of Membership
 
 using System;
 using System.Dynamic;
@@ -7,24 +7,13 @@ namespace CustomerMgmt
 {
    class Regular : Membership
     {
-       public double cashback  // property
-       { get; set; }
+        public double cashback  // property
+        { get; set; }
        
-       /* public Regular() : base()
-        {
-            cashback = 0;
-        }
-*/
         public Regular(string membershipID, string type, string contact, double annualCost, double currentMonthlyPurchases): base(membershipID, type, contact, annualCost, currentMonthlyPurchases)
         {
-          //  newMembershipID = membershipID;
-          //  newContact = contact;
-          //  newAnnualCost = annualCost;
-          //  newCurrentMonthlyPurchases = currentMonthlyPurchases;
-          //  cashback = 0;
         }
         
-     
         public override void Return(double amount)
         {
            if (!(amount > 0))
@@ -62,7 +51,7 @@ namespace CustomerMgmt
         }
         public override string ToString()
         {
-          return $"ID: {membershipID}, Type: {type}, Email: {contact}, Annual Fee: " + ($"{annualCost:C2}") + ", Cur.Mon.Purchases: " + ($"{currentMonthlyPurchases:C2}") + " ";
+            return $"ID: {membershipID}, Type: {type}, Email: {contact}, Annual Fee: " + ($"{annualCost:C2}") + ", Cur.Mon.Purchases: " + ($"{currentMonthlyPurchases:C2}") + " ";
         }
     }
 }
