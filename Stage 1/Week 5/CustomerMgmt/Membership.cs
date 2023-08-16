@@ -8,15 +8,15 @@ namespace CustomerMgmt
     {
         public string membershipID;  // holds membership ID
         public string type;          // holds membership type (C for corparate, E for Executive, N for Non-profit, R for Regular)
-        public string contactEmail;   
+        public string contact;   
         public double annualCost;
         public double currentMonthlyPurchases;
         // primary constructor
-        public Membership(string membershipID, string type, string contactEmail, double annualCost, double currentMonthlyPurchases)
+        public Membership(string membershipID, string type, string contact, double annualCost, double currentMonthlyPurchases)
         {
             this.membershipID = membershipID;
             this.type = type;
-            this.contactEmail = contactEmail;
+            this.contact = contact;
             this.annualCost = annualCost;
             this.currentMonthlyPurchases = currentMonthlyPurchases;
         }

@@ -58,11 +58,11 @@ Algorithm:
   (1) Create an Membership.cs class file with namepace of CustomerMgmt
     (1a) Create 4 properties using the get-set automatic method
      (1a1) MembershipID - to hold membership ID, must be a unique string - PK
-     (1a2) ContactEmail - string to hold Member email addr
+     (1a2) Contact - string to hold Member email addr
      (1a3) AnnualCost - double to hold annual membership cost
      (1a4) CurrentMonthlyPurchases - double to hold current monthly purchas total
     (1b) Create construct for default, no value passed
-    (1c) Create construct for 2 string, 2 double (membershipID, ContactEmail, AnnualCost, CurrentMonthlyPurchases)
+    (1c) Create construct for 2 string, 2 double (membershipID, Contact, AnnualCost, CurrentMonthlyPurchases)
     (1d) Ctrate a toString to dislplay the values when used
   (2) In Program.cs, test the Membership Class and construct objects by doing some basic set-up:
    (2a) Create a staic void Main section in Class Program
@@ -225,16 +225,13 @@ switch (mainmenuchoiceUp)
                         {
                         string newMembershipID = findNewID;
                         string newMilEdu = "N";
-                        string? newContactEMail;
+                       // string? newContact;
+                      // string newContact = default;
                         // prompt for an email addr
-                        Console.Write("Please enter a contact Email address: ");
+                        Console.WriteLine("Please enter a contact Email address: ");
                         
-                        newContactEMail = (Console.ReadLine());
-                        if (newContactEMail=="") 
-                        {
-                            newContactEMail ="None Provided";
-                        }
-                        
+                        string? newContact = Console.ReadLine() + " ";
+
                         // prompt for a membership type
                         Console.WriteLine("Please enter a Membership Type from these choices: ");
                         Console.WriteLine("R) Regular");
@@ -277,23 +274,23 @@ switch (mainmenuchoiceUp)
                         // Create a new list item based on Memnership Type
                         if (newType == "R") 
                         {
-                        membershipList.Add(new Regular(newMembershipID, newType, newContactEMail, newAnnualCost, newCurrentMonthlyPurchases));
+                        membershipList.Add(new Regular(newMembershipID, newType, newContact, newAnnualCost, newCurrentMonthlyPurchases));
                          Console.WriteLine("Added new Regular Membership for: " + newMembershipID);
                         }
                         // Create a new list item based on Memnership Type
                         if (newType == "E") 
                         {
-                        membershipList.Add(new Executive(newMembershipID, newType, newContactEMail, newAnnualCost, newCurrentMonthlyPurchases));
+                        membershipList.Add(new Executive(newMembershipID, newType, newContact, newAnnualCost, newCurrentMonthlyPurchases));
                          Console.WriteLine("Added new Executive Membership for: " + newMembershipID);
                         }
                         if (newType == "C") 
                         {
-                        membershipList.Add(new Corporate(newMembershipID, newType, newContactEMail, newAnnualCost, newCurrentMonthlyPurchases));
+                        membershipList.Add(new Corporate(newMembershipID, newType, newContact, newAnnualCost, newCurrentMonthlyPurchases));
                          Console.WriteLine("Added new Corporate Membership for: " + newMembershipID);
                         }
                         if (newType == "N") 
                         {
-                        membershipList.Add(new NonProfit(newMembershipID, newType, newContactEMail, newAnnualCost, newCurrentMonthlyPurchases, newMilEdu));
+                        membershipList.Add(new NonProfit(newMembershipID, newType, newContact, newAnnualCost, newCurrentMonthlyPurchases, newMilEdu));
                          Console.WriteLine("Added new Non-Profit Membership for: " + newMembershipID);
                          Console.WriteLine("newMilEdu was set to" + newMilEdu);
                         }
@@ -344,20 +341,21 @@ switch (mainmenuchoiceUp)
                          {
                        // don't change ID  string newMembershipID = findUpdateID;
                        // string updateMilEdu = "";
-                        string? updateContactEMail = "";
+                       // string? updateContact = "";
                         // prompt for an email addr
-                        // debug use Console.Write(membershipList[updateRow].contactEmail);
+                        // debug use Console.Write(membershipList[updateRow].contact);
                         Console.WriteLine();
-                        Console.WriteLine("Please enter a contact Email address or 'Enter' to keep current email: " + membershipList[updateRow].contactEmail);
+                        Console.WriteLine("Please enter a contact Email address or 'Enter' to keep current email: " + membershipList[updateRow].contact);
                         
-                        updateContactEMail = (Console.ReadLine());
-                        if (updateContactEMail=="") 
+                        string? updateContact = Console.ReadLine() + " ";
+                        if (updateContact=="") 
                         {
-                         updateContactEMail = membershipList[updateRow].contactEmail;
+                         updateContact = membershipList[updateRow].contact;
                         }
-                        Console.WriteLine(updateContactEMail);
+                        Console.WriteLine(updateContact);
                        //save email update to list
-                       membershipList[updateRow].contactEmail = updateContactEMail;
+                       string? uContact = updateContact + " ";
+                       membershipList[updateRow].contact = uContact;
                        Console.WriteLine();
                         
                         Console.WriteLine();
@@ -413,10 +411,10 @@ switch (mainmenuchoiceUp)
                         membershipList[updateRow].annualCost = updateAnnualCost;
 
                         double updateCurrentMonthlyPurchases = 0;
-                        string cpBal = "";
+
                         Console.WriteLine("Please enter a Current Purchase Balance or 'Enter' to keep: " + membershipList[updateRow].currentMonthlyPurchases);
                        
-                        cpBal = Console.ReadLine();
+                        string? cpBal = Console.ReadLine();
                         if (cpBal=="")
                          {
                           updateCurrentMonthlyPurchases = membershipList[updateRow].currentMonthlyPurchases;  
@@ -537,10 +535,8 @@ switch (mainmenuchoiceUp)
 
                   // Find an Membership ID  in the list
                      bool purIDFound = false;   // set a variable to change to true on found ID
-                     string  purFindID = ""; // set an input variable to empty
-
                      Console.Write("Please enter a valid Membership ID: ");
-                     purFindID = (Console.ReadLine());
+                     string? purFindID = Console.ReadLine(); // set an input variable and get MembershipID
 
                     // linear search thru the membership list
                     int purRow = 0;
@@ -597,10 +593,9 @@ switch (mainmenuchoiceUp)
 
                   // Find an Membership ID  in the list
                      bool retIDFound = false;   // set a variable to change to true on found ID
-                     string  retFindID = ""; // set an input variable to empty
 
                      Console.Write("Please enter a valid Membership ID: ");
-                     retFindID = (Console.ReadLine());
+                     string? retFindID = Console.ReadLine(); // set an input variable and get MembershipID
 
                     // linear search thru the membership list
                     int retRow = 0;
@@ -657,12 +652,10 @@ switch (mainmenuchoiceUp)
 
                   // Find an Membership ID  in the list
                      bool cashbackIDFound = false;   // set a variable to change to true on found ID
-                     string  cashbackFindID = ""; // set an input variable to empty
-
                      Console.Write("Please enter a valid Membership ID: ");
-                     cashbackFindID = (Console.ReadLine());
+                     string? cashbackFindID = Console.ReadLine(); //set an input variable and get the MemberID
 
-                    // linear search thru the membership list
+                  // linear search thru the membership list
                     int cashbackRow = 0;
                     for (int index = 0; index < membershipList.Count; index++)
                     {

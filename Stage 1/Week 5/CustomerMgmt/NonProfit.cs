@@ -8,17 +8,13 @@ namespace CustomerMgmt
     {
        public double cashback  // property
        { get; set; }
-          public string milEdu  // property
+       public string milEdu  // property
        { get; set; }    
        
-       public NonProfit(string membershipID, string type, string contactEmail, double annualCost, double currentMonthlyPurchases, string newmilEdu): base(membershipID, type, contactEmail, annualCost, currentMonthlyPurchases)
+       public NonProfit(string membershipID, string type, string contact, double annualCost, double currentMonthlyPurchases, string newmilEdu): base(membershipID, type, contact, annualCost, currentMonthlyPurchases)
         {
         milEdu = newmilEdu;
         }
-
-//TODO need to return the mil or Edu flag
-
-
 
         public override void Return(double amount)
         {
@@ -50,13 +46,20 @@ namespace CustomerMgmt
 
         public override double GetReward() // implementation of abstract method
         {
-            return currentMonthlyPurchases; // balance x 1 for Regular
+           if (milEdu == "Y")
+           {
+            return currentMonthlyPurchases * 1.10; // double (10%)  for Mil or Edu NPs
+           }
+           else
+           {
+            return currentMonthlyPurchases * 1.05; // normal rate is 5% for NPs
+           }
         }
 
-  
+
         public override string ToString()
         {
-            return $"ID: {membershipID}, Type: {type}, Mil or Edu: {milEdu} Email: {contactEmail}, Annual Fee: ${annualCost}, Cur.Mon.Purchases: ${currentMonthlyPurchases}";
+            return $"ID: {membershipID}, Type: {type}, Mil or Edu: {milEdu} Email: {contact}, Annual Fee: ${annualCost}, Cur.Mon.Purchases: ${currentMonthlyPurchases}";
         }
     }
 }

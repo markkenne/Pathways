@@ -15,13 +15,13 @@ namespace CustomerMgmt
             cashback = 0;
         }
 */
-        public Regular(string membershipID, string type, string contactEmail, double annualCost, double currentMonthlyPurchases): base(membershipID, type, contactEmail, annualCost, currentMonthlyPurchases)
+        public Regular(string membershipID, string type, string contact, double annualCost, double currentMonthlyPurchases): base(membershipID, type, contact, annualCost, currentMonthlyPurchases)
         {
           //  newMembershipID = membershipID;
-          //  newContactEMail = contactEmail;
+          //  newContact = contact;
           //  newAnnualCost = annualCost;
           //  newCurrentMonthlyPurchases = currentMonthlyPurchases;
-           //  cashback = 0;
+          //  cashback = 0;
         }
         
      
@@ -58,7 +58,7 @@ namespace CustomerMgmt
         }
         public override string ToString()
         {
-            return $"ID: {membershipID}, Type: {type}, Email: {contactEmail}, Annual Fee: ${annualCost}, Cur.Mon.Purchases: ${currentMonthlyPurchases}";
+            return $"ID: {membershipID}, Type: {type}, Email: {contact}, Annual Fee: ${annualCost}, Cur.Mon.Purchases: ${currentMonthlyPurchases}";
         }
     }
 }

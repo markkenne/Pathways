@@ -9,7 +9,7 @@ namespace CustomerMgmt
        public double cashback  // property
        { get; set; }
        
-        public Executive(string membershipID, string type, string contactEmail, double annualCost, double currentMonthlyPurchases): base(membershipID, type, contactEmail, annualCost, currentMonthlyPurchases)
+        public Executive(string membershipID, string type, string contact, double annualCost, double currentMonthlyPurchases): base(membershipID, type, contact, annualCost, currentMonthlyPurchases)
         {
         }
 
@@ -54,7 +54,7 @@ namespace CustomerMgmt
 
         public override string ToString()
         {
-            return $"ID: {membershipID}, Type: {type}, Email: {contactEmail}, Annual Fee: ${annualCost}, Cur.Mon.Purchases: ${currentMonthlyPurchases}";
+            return $"ID: {membershipID}, Type: {type}, Email: {contact}, Annual Fee: ${annualCost}, Cur.Mon.Purchases: ${currentMonthlyPurchases}";
         }
     }
 }
