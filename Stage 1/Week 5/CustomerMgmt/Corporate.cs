@@ -46,9 +46,16 @@ namespace CustomerMgmt
         {
             return (currentMonthlyPurchases * 1.12); // flat rate of 12%
         }
+
+        public override double GetSpecials() // interface method
+        {
+            return 0; //no special
+        }
+
         public override string ToString()
         {
-            return $"ID: {membershipID}, Type: {type}, Email: {contact}, Annual Fee: ${annualCost}, Cur.Mon.Purchases: ${currentMonthlyPurchases}";
+         //   return $"ID: {membershipID}, Type: {type}, Email: {contact}, Annual Fee: ${annualCost}, Cur.Mon.Purchases: ${currentMonthlyPurchases}";
+            return $"ID: {membershipID}, Type: {type}, Email: {contact}, Annual Fee: " + ($"{annualCost:C2}") + ", Cur.Mon.Purchases: " + ($"{currentMonthlyPurchases:C2}") + " ";    
         }
     }
 }

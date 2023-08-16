@@ -54,11 +54,15 @@ namespace CustomerMgmt
         }
         public override double GetReward() // implementation of abstract method
         {
-            return currentMonthlyPurchases; // balance x 1 for Regular
+            return currentMonthlyPurchases *.01; // 1.0% for Regular
+        }
+        public override double GetSpecials() // interface method
+        {
+            return annualCost * 0.25; //implementation for a regular membership will simply return 25% of the annual membership cost 
         }
         public override string ToString()
         {
-            return $"ID: {membershipID}, Type: {type}, Email: {contact}, Annual Fee: ${annualCost}, Cur.Mon.Purchases: ${currentMonthlyPurchases}";
+          return $"ID: {membershipID}, Type: {type}, Email: {contact}, Annual Fee: " + ($"{annualCost:C2}") + ", Cur.Mon.Purchases: " + ($"{currentMonthlyPurchases:C2}") + " ";
         }
     }
 }

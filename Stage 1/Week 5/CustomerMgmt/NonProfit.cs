@@ -48,11 +48,11 @@ namespace CustomerMgmt
         {
            if (milEdu == "Y")
            {
-            return currentMonthlyPurchases * 1.10; // double (10%)  for Mil or Edu NPs
+            return currentMonthlyPurchases * .02; // double (2%)  for Mil or Edu NPs
            }
            else
            {
-            return currentMonthlyPurchases * 1.05; // normal rate is 5% for NPs
+            return currentMonthlyPurchases * .01; // normal rate is 1% for NPs
            }
         }
 

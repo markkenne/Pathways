@@ -46,15 +46,20 @@ namespace CustomerMgmt
         {
             if (currentMonthlyPurchases > 1000)
             { 
-                return (1000 + ((currentMonthlyPurchases - 1000) * 1.1 )); // 100 % amt under 1000  + 110% amount over 1000
+                return (1000 *.01 + ((currentMonthlyPurchases - 1000) * .02 )); // 1 % amt under 1000  + 2% amount over 1000
             }
             else
             return currentMonthlyPurchases; // 100% for balance under 1000 for Executive
         }
 
+        public override double GetSpecials() // interface method
+        {
+            return annualCost * .50; //implementation for the executive membership will return 50% of the annual membership cost.
+        }
+
         public override string ToString()
         {
-            return $"ID: {membershipID}, Type: {type}, Email: {contact}, Annual Fee: ${annualCost}, Cur.Mon.Purchases: ${currentMonthlyPurchases}";
+         return $"ID: {membershipID}, Type: {type}, Email: {contact}, Annual Fee: " + ($"{annualCost:C2}") + ", Cur.Mon.Purchases: " + ($"{currentMonthlyPurchases:C2}") + " ";
         }
     }
 }

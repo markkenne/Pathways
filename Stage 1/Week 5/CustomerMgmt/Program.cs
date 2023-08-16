@@ -121,12 +121,12 @@ namespace CustomerMgmt
       // Add a Regular to test 
        membershipList.Add(new Regular("M001", "R", "mkenne00@lincoln.ne.gov", 100, 111.00));
        membershipList.Add(new Regular("M002", "R", "tblinker@lincoln.ne.gov", 100, 222.00));
-       membershipList.Add(new Executive("M003", "E", "ablanker@lincoln.ne.gov", 200, 3333.00));
-       membershipList.Add(new Executive("M004", "E", "reddward@lincoln.ne.gov", 200, 4444.00));       
-       membershipList.Add(new NonProfit("M005", "N", "mbanks@nonprofit.net", 60, 5555.00, "Y"));
-       membershipList.Add(new NonProfit("M006", "N", "rfields@nonprofit.net", 60, 6666.00, "N"));
-       membershipList.Add(new Corporate("M007", "C", "mbags@corprus.com", 3000, 7777.00));
-       membershipList.Add(new Corporate("M008", "C", "slimey@bigcorp.com", 3000, 8888.00));           
+       membershipList.Add(new Executive("M003", "E", "ablanker@lincoln.ne.gov", 200, 2000.00));
+       membershipList.Add(new Executive("M004", "E", "reddward@lincoln.ne.gov", 200, 3000.00));       
+       membershipList.Add(new NonProfit("M005", "N", "mbanks@nonprofit.net", 60, 1000.00, "Y"));
+       membershipList.Add(new NonProfit("M006", "N", "rfields@nonprofit.net", 60, 1000.00, "N"));
+       membershipList.Add(new Corporate("M007", "C", "mbags@corprus.com", 3000, 2000.00));
+       membershipList.Add(new Corporate("M008", "C", "slimey@bigcorp.com", 3000, 1000.00));           
      // Create the menus as lists
        List<string> menuOptionsMain = new List<string>();
        menuOptionsMain.Add("A - Admin Menu");
@@ -305,8 +305,10 @@ switch (mainmenuchoiceUp)
                      foreach (Membership aMember in membershipList)
                      {
                       Console.Write(aMember);
-                      Console.WriteLine(" | Cashback Rewards Value: $" + aMember.GetReward());
-                     }  // end foreach  
+                      // Console.Write(" | Cashback Rewards Value: $" + aMember.GetReward());
+                      Console.Write(" | Cashback Rewards Value: " + ($"{aMember.GetReward():C2}"));
+                      Console.WriteLine(" | Special Offers: $" + aMember.GetSpecials());
+                     }  // end foreach 
                      break;
 
         case "U": // ADMIN UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU
@@ -521,7 +523,10 @@ switch (mainmenuchoiceUp)
                      foreach (Membership aMember in membershipList)
                      {
                       Console.Write(aMember);
-                      Console.WriteLine(" | Cashback Rewards Value: $" + aMember.GetReward());
+
+                      Console.Write(" | Cashback Rewards Value: " + ($"{aMember.GetReward():C2}"));
+                      Console.WriteLine(" | Special Offers: $" + aMember.GetSpecials());
+
                      }  // end foreach  
                     
                      break;
@@ -564,6 +569,12 @@ switch (mainmenuchoiceUp)
                      Console.WriteLine("Please enter a Purchase Amount: ");
                      purAmt = Console.ReadLine();
                      newpurAmt = Convert.ToDouble(purAmt);
+                     if (newpurAmt < 0) // amount must be greater than 0 or transaction is cancelled w a message
+                     { 
+                        Console.WriteLine ("The amount must be more than 0. Transaction Cancelled.");
+                        break;
+                     }
+                     // double check the input
                      Console.WriteLine("You entered: " + newpurAmt + "  Is that correct?: ") ;
                  
                      string? purchaseYN = "n";  // yes/no variable for check
@@ -621,8 +632,15 @@ switch (mainmenuchoiceUp)
                      double newRetAmt = 0; // variable to hold return amount
                
                      Console.WriteLine("Please enter a Return Amount: ");
-                     retAmt = Console.ReadLine();
-                     newRetAmt = Convert.ToDouble(retAmt);
+                     retAmt = Console.ReadLine();  // variable to hold return amount as string
+                     newRetAmt = Convert.ToDouble(retAmt);  // variable to hold return amount as double
+
+                     if (newRetAmt < 0) // amount must be greater than 0 or transaction is cancelled w a message
+                     { 
+                        Console.WriteLine ("The amount must be more than 0. Transaction Cancelled.");
+                        break;
+                     }
+                     // double check amount before proceding
                      Console.WriteLine("You entered: " + newRetAmt + "  Is that correct?: ") ;
                  
                      string? returnYN = "n";  // yes/no variable for check
@@ -687,10 +705,20 @@ switch (mainmenuchoiceUp)
                      cashbackYN = Console.ReadLine(); // set variable to input
                      if (cashbackYN == "y"|| cashbackYN=="Y") // treat anything but y or Y as a no 
                          {
-                        newcashbackAmt =  membershipList[cashbackRow].GetReward(); // make the cashback
-                        Console.WriteLine("cashback of " + newcashbackAmt + " made to " + cashbackFindID) ;
+                        newcashbackAmt =  membershipList[cashbackRow].GetReward(); // get the cashback reward to use in output message
+                        // let user know that transaction was processed
+
+                        if (newcashbackAmt > 0)
+                        {
+                        Console.WriteLine("Cash-back reward request for membership " + cashbackFindID  + " in the amount of " + ($"{newcashbackAmt:C2}") +" has been made." ) ;
+
                         // now zero the currentMonthlyPurchases ######################################################################
                         membershipList[cashbackRow].currentMonthlyPurchases = 0;
+                        }
+                        else
+                        {
+                           Console.WriteLine("No cashback amount exists. Action cancelled.");
+                        }
                          }
                      else
                      {
