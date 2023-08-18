@@ -1,6 +1,6 @@
 ﻿/* Customer Mgmt - a Costco like scenario
    Programmer: Mark Kenne
-   First - Last Update:  08/14/2023
+   First - Last Update:  08/14/2023 - 8/17/2023
    Program Description -  End-of-stage competency challenge.
   
    Requirements:                      
@@ -86,15 +86,25 @@ Algorithm:
    (10c) T - Perform Return Transaction
    (10d) A - Apply Cash Back Rewards
    (10e) X - eXit to Main Menu   
-  (11)  Create Admin process C for a new user 
-
+  (11)  Create Admin process R and Transaction (Trx) L for a list display 
+   (11a) use a foreach loop to cycle once through list
+   (11b) do a console  wrile line to put the toString values up for each
+   (11c) Write the GetReward value and the GetSpecial for each row
+  (12) Create the Create Membership routine in the C case of Admin
+  (13) Create the Delete Membership routine in the D case of Admin
+  (14) Create the Update Membership routine in the U case of Admin
+  (15) Create the Return routine in the T case of Trx
+  (16) Create the Purchase routine in the P case of Trx
+  (17) Create the Apply Cashback routine in the A case of Trx
+  (18) Create a two-tiered cashback for Executive
+  (19) Create the Military Education Flag and cashback routines 
   */ // end of comments section
 
 using System;
 using System.Collections.Generic;   // needed for Lists
-//using System.Data;
-//using System.IO;
-//using System.Net;
+using System.ComponentModel.DataAnnotations;
+using System.Xml;
+
 namespace CustomerMgmt
 {
   class Program
@@ -107,7 +117,7 @@ namespace CustomerMgmt
       const int aCostCor = 3000; // Corporation
       const int aCostNP  = 60;   // Non-Profit
 
-   // Initialize Lists
+   // Initialize Lists used in Main
    // Create a list of Membership
       List<Membership> membershipList = new List<Membership>();
    // Add membershipList data using new method to have some test data 
@@ -215,17 +225,26 @@ switch (mainmenuchoiceUp)
                         string newMembershipID = findNewID;
                         string newMilEdu = "N";
 
-                        // prompt for an email addr
-                        Console.WriteLine("Please enter a contact Email address: ");
-                        string? newContact = Console.ReadLine() + " ";
-                        // prompt for a membership type
-                        Console.WriteLine("Please enter a Membership Type from these choices: ");
-                        Console.WriteLine("R) Regular");
-                        Console.WriteLine("E) Executive");
-                        Console.WriteLine("N) Non-Profit");
-                        Console.WriteLine("C) Corporation");
-                        string? newTypeAnyCase = Console.ReadLine(); //input string for Membership type
-                        string newType = newTypeAnyCase!.ToUpper(); //convert Membership type to uppercase
+                          Console.WriteLine("Please enter a contact Email address: ");
+                          string? newContact = Console.ReadLine() + " ";
+                          // prompt for a membership type
+                          Console.WriteLine("Please enter a Membership Type from these choices: ");
+                          Console.WriteLine("R) Regular");
+                          Console.WriteLine("E) Executive");
+                          Console.WriteLine("N) Non-Profit");
+                          Console.WriteLine("C) Corporation");
+                          string? newTypeAnyCase = Console.ReadLine(); //input string for Membership type
+                          string newType = newTypeAnyCase!.ToUpper(); //convert Membership type to uppercase
+                          // make sure Type is one of the valid types
+                          string x = newType;
+                          string[] strings = { "R", "E", "N", "C" };
+                          bool isInTuple = strings.Any(s => s.Equals(x));
+                          if (isInTuple == false)
+                          { 
+                            Console.WriteLine("That is not a valid choice for Membership Type. Please try again");
+                            break;    
+                            }
+
                         double newAnnualCost = 0;
                         // set costs from constants
                         if (newType == "R")  // Regular
@@ -333,7 +352,7 @@ switch (mainmenuchoiceUp)
                         Console.WriteLine("Please enter a contact Email address or 'Enter' to keep current email: " + membershipList[updateRow].contact);
                         
                         string? updateContact = Console.ReadLine() + " ";
-                        if (updateContact=="") 
+                        if (updateContact==" ") 
                         {
                          updateContact = membershipList[updateRow].contact;
                         }
