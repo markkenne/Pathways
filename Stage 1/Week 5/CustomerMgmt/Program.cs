@@ -413,7 +413,13 @@ switch (mainmenuchoiceUp)
                          }
                         if (cpBal!="") // if you have something...
                          {
+                          
                           updateCurrentMonthlyPurchases = Convert.ToDouble(cpBal); // convert to double from string
+                          if (updateCurrentMonthlyPurchases < 0) // stop if not greater than zero
+                          {
+                           Console.WriteLine(" This value needs to be greater than 0. Cancelling.");
+                           break;
+                          }
                          }
                      // for debug Console.WriteLine(updateCurrentMonthlyPurchases);
                      // save cmp update to list
