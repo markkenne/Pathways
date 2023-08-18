@@ -1,7 +1,7 @@
-﻿/* Customer Mgmt - a Costco like scenario
-   Programmer: Mark Kenne
-   First - Last Update:  08/14/2023 - 8/17/2023
-   Program Description -  End-of-stage competency challenge.
+﻿/* Name:                 CustomerMgmt 
+   Programmer:           Mark Kenne
+   First - Last Update:  08/14/2023 - 8/18/2023
+   Program Description:  End-of-stage competency challenge - a Costco like scenario
   
    Requirements:                      
   (1) An list of Customer Details in an abstract Class called Membership 
@@ -606,7 +606,7 @@ switch (mainmenuchoiceUp)
                        if (membershipList[index].membershipID == retFindID) // we found a ID matching input
                         {
                            retIDFound = true; // used for message below
-                           retRow = index;
+                           retRow = index; // easire to debug than index :)
                         }
                     }
                     if (retIDFound!=true)  // no account matches input, so let user know
