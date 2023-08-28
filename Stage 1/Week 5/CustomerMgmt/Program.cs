@@ -143,7 +143,7 @@ namespace CustomerMgmt
       menuOptionsAdmin.Add("X - eXit to Main Menu");
    // Choices for Members
       List<string> menuOptionsTrx = new List<string>();
-      menuOptionsTrx.Add("L - List all membership with all info");
+      menuOptionsTrx.Add("L - List all Memberships with all info");
       menuOptionsTrx.Add("P - Purchase Transaction Entry");
       menuOptionsTrx.Add("T - Transact a Return");
       menuOptionsTrx.Add("A - Apply Cash Back Rewards");       
