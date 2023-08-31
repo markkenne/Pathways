@@ -21,13 +21,17 @@ async function getArtists(term){
     console.log("items = ");
     document.getElementById("artistName").innerHTML = "";
     document.getElementById("collectionName").innerHTML = "";
-    document.getElementById("trackName").innerHTML = "";
+    document.getElementById("collectionPrice").innerHTML = "";
     
     for (let i=0;i<items;i++){
       //document.getElementById("artistName").innerHTML += jsonData.properties.results[i].artistName + "<br><br>";
       document.getElementById("artistName").innerHTML += jsonData.results[i].artistName + "<br><br>";
       document.getElementById("collectionName").innerHTML += jsonData.results[i].collectionName + "<br><br>";
-      document.getElementById("trackName").innerHTML += jsonData.results[i].collectionPrice + " cost" + "<br><br>";
+      document.getElementById("collectionPrice").innerHTML +=  "$" + jsonData.results[i].collectionPrice +"<br><br>";
     }
+
+
+
+
     //const resultsDiv = document.getElementById("results");
 }

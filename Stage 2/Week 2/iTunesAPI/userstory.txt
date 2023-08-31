@@ -1,0 +1,3 @@
+Using the Apple iTunes API, user would like to be able to search for either an artist 
+or an album (or collection) and see 25 results, showing the 
+Artist Name, collection name and the current price from the iTunes store.
