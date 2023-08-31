@@ -19,15 +19,18 @@ async function getArtists(term){
     document.getElementById("items").innerHTML +=  "items = " + items;
     console.log("items = " + items);
     console.log("items = ");
+    
     document.getElementById("artistName").innerHTML = "";
     document.getElementById("collectionName").innerHTML = "";
     document.getElementById("collectionPrice").innerHTML = "";
+    document.getElementById("artworkUrl60").innerHTML = ""; 
     
     for (let i=0;i<items;i++){
       //document.getElementById("artistName").innerHTML += jsonData.properties.results[i].artistName + "<br><br>";
       document.getElementById("artistName").innerHTML += jsonData.results[i].artistName + "<br><br>";
       document.getElementById("collectionName").innerHTML += jsonData.results[i].collectionName + "<br><br>";
       document.getElementById("collectionPrice").innerHTML +=  "$" + jsonData.results[i].collectionPrice +"<br><br>";
+      document.getElementById("artworkUrl60").innerHTML +=  "<img src=" + jsonData.results[i].artworkUrl60 +" class=rounded alt='image path'>" +"<br><br>";      
     }
 
 
