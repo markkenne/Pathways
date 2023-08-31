@@ -17,6 +17,7 @@
 
 <body>
 <header>
+ <!--
   <div class="collapse bg-dark" id="navbarHeader">
     <div class="container">
       <div class="row">
@@ -27,6 +28,7 @@
       </div>
     </div>
   </div>
+-->
   <div class="navbar navbar-dark bg-dark shadow-sm">
     <div class="container">
      
@@ -35,26 +37,24 @@
           <div class="col-lg-6 col-md-8 mx-auto">
             <h1 class="fw-light">Apple iTunes API</h1>
             <p class="lead text-muted">Input a search term:</p>
-
-            <p>
+            <input type="text" id="term" placeholder="Enter an artist name">
+            <button onclick="getArtists($('#term').val())">Search</button>
+            
                 <p class="card-text" id="items">items</p>
-              </p> 
+           
          </div>
         </div>
     </div>
 </div> 
 </header>
     <main>
-        <input type="text" id="term" placeholder="Enter an artist name">
-        <button onclick="getArtists($('#term').val())">Search</button>
 
 
-<p>
-    <p class="card-text" id="myJson"> json</p>
-  </p>
 
 
-  <div id="results"></div>
+
+
+ 
 <p></p>
 <p></p>
 <p></p>
@@ -103,7 +103,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>

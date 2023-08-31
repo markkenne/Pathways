@@ -3,7 +3,7 @@ async function getArtists(term){
     var ApiString = "https://itunes.apple.com/search?term=";
    // var theNewOffice = document.getElementById("newOffice","CLE").value;
    // ApiString = ApiString + theNewOffice + "/31,80/forecast";
-    ApiString = "https://itunes.apple.com/search?term=" + term + "&wrapperType=track&entity=album&type=Artist&country=US&limit=5";
+    ApiString = "https://itunes.apple.com/search?term=" + term + "&wrapperType=track&entity=album&type=Artist&country=US&limit=25";
   
     console.log(ApiString);
   
@@ -11,7 +11,7 @@ async function getArtists(term){
     var jsonData = await response.json();
 
     console.log(jsonData);
-    document.getElementById("myJson").innerHTML =  JSON.stringify(jsonData);
+    //document.getElementById("myJson").innerHTML =  JSON.stringify(jsonData);
     var items = 0;
    // items=jsonData.properties.results.length; // array length
     items=jsonData.results.length; // array length
