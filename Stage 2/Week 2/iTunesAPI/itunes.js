@@ -3,7 +3,7 @@ async function getArtists(term){
     var ApiString = "https://itunes.apple.com/search?term=";
    // var theNewOffice = document.getElementById("newOffice","CLE").value;
    // ApiString = ApiString + theNewOffice + "/31,80/forecast";
-    ApiString = "https://itunes.apple.com/search?term=" + term + "&wrapperType=track&entity=album&type=Artist&country=US&limit=25";
+    ApiString = "https://itunes.apple.com/search?term=" + term + "&wrapperType=track&entity=album&type=Artist&country=US&limit=50";
   
     console.log(ApiString);
   
@@ -27,10 +27,10 @@ async function getArtists(term){
     
     for (let i=0;i<items;i++){
       //document.getElementById("artistName").innerHTML += jsonData.properties.results[i].artistName + "<br><br>";
-      document.getElementById("artistName").innerHTML += jsonData.results[i].artistName + "<br><br>";
-      document.getElementById("collectionName").innerHTML += jsonData.results[i].collectionName + "<br><br>";
-      document.getElementById("collectionPrice").innerHTML +=  "$" + jsonData.results[i].collectionPrice +"<br><br>";
-      document.getElementById("artworkUrl60").innerHTML +=  "<img src=" + jsonData.results[i].artworkUrl60 +" class=rounded alt='image path'>" +"<br><br>";      
+      document.getElementById("artistName").innerHTML += jsonData.results[i].artistName + "<br><br><br>";
+      document.getElementById("collectionName").innerHTML += jsonData.results[i].collectionName + "<br><br><br>";
+      document.getElementById("collectionPrice").innerHTML +=  "$" + jsonData.results[i].collectionPrice +"<br><br><br>";
+      document.getElementById("artworkUrl60").innerHTML +=  "<img src=" + jsonData.results[i].artworkUrl60 +" height=72px class=rounded alt='image path'>" +"<br>";      
     }
 
 

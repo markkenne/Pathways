@@ -11,3 +11,8 @@
         font-size:2.5rem;
     }
   }
+
+[class*="col-"]{
+    margin-bottom: -99px;
+    padding-bottom: 99px;
+}
