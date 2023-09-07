@@ -1,0 +1,11 @@
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\InterfaceAndDI\InterfaceAndDI\bin\Debug\InterfaceAndDI.exe.config
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\InterfaceAndDI\InterfaceAndDI\bin\Debug\InterfaceAndDI.exe
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\InterfaceAndDI\InterfaceAndDI\bin\Debug\InterfaceAndDI.pdb
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\InterfaceAndDI\InterfaceAndDI\bin\Debug\InterfaceAndDI.xml
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\InterfaceAndDI\InterfaceAndDI\obj\Debug\InterfaceAndDI.vbproj.AssemblyReference.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\InterfaceAndDI\InterfaceAndDI\obj\Debug\InterfaceAndDI.Resources.resources
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\InterfaceAndDI\InterfaceAndDI\obj\Debug\InterfaceAndDI.vbproj.GenerateResource.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\InterfaceAndDI\InterfaceAndDI\obj\Debug\InterfaceAndDI.vbproj.CoreCompileInputs.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\InterfaceAndDI\InterfaceAndDI\obj\Debug\InterfaceAndDI.exe
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\InterfaceAndDI\InterfaceAndDI\obj\Debug\InterfaceAndDI.xml
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\InterfaceAndDI\InterfaceAndDI\obj\Debug\InterfaceAndDI.pdb

@@ -1,0 +1,14 @@
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\InterfaceAndDI2\InterfaceAndDI2\bin\Debug\net7.0\InterfaceAndDI2.exe
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\InterfaceAndDI2\InterfaceAndDI2\bin\Debug\net7.0\InterfaceAndDI2.deps.json
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\InterfaceAndDI2\InterfaceAndDI2\bin\Debug\net7.0\InterfaceAndDI2.runtimeconfig.json
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\InterfaceAndDI2\InterfaceAndDI2\bin\Debug\net7.0\InterfaceAndDI2.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\InterfaceAndDI2\InterfaceAndDI2\bin\Debug\net7.0\InterfaceAndDI2.pdb
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\InterfaceAndDI2\InterfaceAndDI2\obj\Debug\net7.0\InterfaceAndDI2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\InterfaceAndDI2\InterfaceAndDI2\obj\Debug\net7.0\InterfaceAndDI2.AssemblyInfoInputs.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\InterfaceAndDI2\InterfaceAndDI2\obj\Debug\net7.0\InterfaceAndDI2.AssemblyInfo.cs
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\InterfaceAndDI2\InterfaceAndDI2\obj\Debug\net7.0\InterfaceAndDI2.csproj.CoreCompileInputs.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\InterfaceAndDI2\InterfaceAndDI2\obj\Debug\net7.0\InterfaceAndDI2.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\InterfaceAndDI2\InterfaceAndDI2\obj\Debug\net7.0\refint\InterfaceAndDI2.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\InterfaceAndDI2\InterfaceAndDI2\obj\Debug\net7.0\InterfaceAndDI2.pdb
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\InterfaceAndDI2\InterfaceAndDI2\obj\Debug\net7.0\InterfaceAndDI2.genruntimeconfig.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\InterfaceAndDI2\InterfaceAndDI2\obj\Debug\net7.0\ref\InterfaceAndDI2.dll
