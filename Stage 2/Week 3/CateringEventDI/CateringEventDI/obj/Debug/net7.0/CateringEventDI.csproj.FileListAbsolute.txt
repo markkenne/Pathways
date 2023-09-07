@@ -1,0 +1,14 @@
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\CateringEventDI\CateringEventDI\obj\Debug\net7.0\CateringEventDI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\CateringEventDI\CateringEventDI\obj\Debug\net7.0\CateringEventDI.AssemblyInfoInputs.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\CateringEventDI\CateringEventDI\obj\Debug\net7.0\CateringEventDI.AssemblyInfo.cs
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\CateringEventDI\CateringEventDI\obj\Debug\net7.0\CateringEventDI.csproj.CoreCompileInputs.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\CateringEventDI\CateringEventDI\bin\Debug\net7.0\CateringEventDI.exe
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\CateringEventDI\CateringEventDI\bin\Debug\net7.0\CateringEventDI.deps.json
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\CateringEventDI\CateringEventDI\bin\Debug\net7.0\CateringEventDI.runtimeconfig.json
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\CateringEventDI\CateringEventDI\bin\Debug\net7.0\CateringEventDI.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\CateringEventDI\CateringEventDI\bin\Debug\net7.0\CateringEventDI.pdb
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\CateringEventDI\CateringEventDI\obj\Debug\net7.0\CateringEventDI.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\CateringEventDI\CateringEventDI\obj\Debug\net7.0\refint\CateringEventDI.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\CateringEventDI\CateringEventDI\obj\Debug\net7.0\CateringEventDI.pdb
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\CateringEventDI\CateringEventDI\obj\Debug\net7.0\CateringEventDI.genruntimeconfig.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\CateringEventDI\CateringEventDI\obj\Debug\net7.0\ref\CateringEventDI.dll
