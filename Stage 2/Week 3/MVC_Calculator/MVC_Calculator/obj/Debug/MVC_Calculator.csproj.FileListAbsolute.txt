@@ -1,0 +1,7 @@
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\MVC_Calculator\MVC_Calculator\obj\Debug\MVC_Calculator.csproj.AssemblyReference.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\MVC_Calculator\MVC_Calculator\obj\Debug\MVC_Calculator.csproj.CoreCompileInputs.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\MVC_Calculator\MVC_Calculator\bin\Debug\MVC_Calculator.exe.config
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\MVC_Calculator\MVC_Calculator\bin\Debug\MVC_Calculator.exe
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\MVC_Calculator\MVC_Calculator\bin\Debug\MVC_Calculator.pdb
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\MVC_Calculator\MVC_Calculator\obj\Debug\MVC_Calculator.exe
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\MVC_Calculator\MVC_Calculator\obj\Debug\MVC_Calculator.pdb

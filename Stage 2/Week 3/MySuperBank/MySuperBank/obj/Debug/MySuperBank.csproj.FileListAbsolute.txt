@@ -1,0 +1,7 @@
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\MySuperBank\MySuperBank\obj\Debug\MySuperBank.csproj.AssemblyReference.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\MySuperBank\MySuperBank\obj\Debug\MySuperBank.csproj.CoreCompileInputs.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\MySuperBank\MySuperBank\bin\Debug\MySuperBank.exe.config
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\MySuperBank\MySuperBank\bin\Debug\MySuperBank.exe
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\MySuperBank\MySuperBank\bin\Debug\MySuperBank.pdb
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\MySuperBank\MySuperBank\obj\Debug\MySuperBank.exe
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\MySuperBank\MySuperBank\obj\Debug\MySuperBank.pdb
