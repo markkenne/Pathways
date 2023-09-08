@@ -2,7 +2,7 @@
 
 namespace HouseBuilder
 {
-    public class House // Parent class
+    public class House
     {
         private IComponent[] components;
 
