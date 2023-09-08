@@ -1,0 +1,14 @@
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\Bank\Bank\bin\Debug\net7.0\Bank.exe
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\Bank\Bank\bin\Debug\net7.0\Bank.deps.json
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\Bank\Bank\bin\Debug\net7.0\Bank.runtimeconfig.json
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\Bank\Bank\bin\Debug\net7.0\Bank.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\Bank\Bank\bin\Debug\net7.0\Bank.pdb
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\Bank\Bank\obj\Debug\net7.0\Bank.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\Bank\Bank\obj\Debug\net7.0\Bank.AssemblyInfoInputs.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\Bank\Bank\obj\Debug\net7.0\Bank.AssemblyInfo.cs
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\Bank\Bank\obj\Debug\net7.0\Bank.csproj.CoreCompileInputs.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\Bank\Bank\obj\Debug\net7.0\Bank.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\Bank\Bank\obj\Debug\net7.0\refint\Bank.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\Bank\Bank\obj\Debug\net7.0\Bank.pdb
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\Bank\Bank\obj\Debug\net7.0\Bank.genruntimeconfig.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\Bank\Bank\obj\Debug\net7.0\ref\Bank.dll
