@@ -1,0 +1,7 @@
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\HouseBuilder\HouseBuilder\obj\Debug\HouseBuilder.csproj.AssemblyReference.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\HouseBuilder\HouseBuilder\obj\Debug\HouseBuilder.csproj.CoreCompileInputs.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\HouseBuilder\HouseBuilder\bin\Debug\HouseBuilder.exe.config
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\HouseBuilder\HouseBuilder\bin\Debug\HouseBuilder.exe
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\HouseBuilder\HouseBuilder\bin\Debug\HouseBuilder.pdb
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\HouseBuilder\HouseBuilder\obj\Debug\HouseBuilder.exe
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\HouseBuilder\HouseBuilder\obj\Debug\HouseBuilder.pdb
