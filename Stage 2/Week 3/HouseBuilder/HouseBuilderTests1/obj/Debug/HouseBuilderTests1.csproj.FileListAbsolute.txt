@@ -1,0 +1,11 @@
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\HouseBuilder\HouseBuilderTests1\bin\Debug\HouseBuilderTests1.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\HouseBuilder\HouseBuilderTests1\bin\Debug\HouseBuilderTests1.pdb
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\HouseBuilder\HouseBuilderTests1\bin\Debug\HouseBuilder.exe
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\HouseBuilder\HouseBuilderTests1\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\HouseBuilder\HouseBuilderTests1\bin\Debug\HouseBuilder.pdb
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\HouseBuilder\HouseBuilderTests1\bin\Debug\HouseBuilder.exe.config
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\HouseBuilder\HouseBuilderTests1\obj\Debug\HouseBuilderTests1.csproj.AssemblyReference.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\HouseBuilder\HouseBuilderTests1\obj\Debug\HouseBuilderTests1.csproj.CoreCompileInputs.cache
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\HouseBuilder\HouseBuilderTests1\obj\Debug\HouseBuilderTests1.csproj.CopyComplete
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\HouseBuilder\HouseBuilderTests1\obj\Debug\HouseBuilderTests1.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\HouseBuilder\HouseBuilderTests1\obj\Debug\HouseBuilderTests1.pdb
