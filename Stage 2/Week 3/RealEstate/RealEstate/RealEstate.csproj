@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="TodoApi_2.csproj" />
+    <None Include="PropertyApi_2.csproj" />
   </ItemGroup>
 
   <ItemGroup>
