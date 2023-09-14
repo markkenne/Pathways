@@ -19,7 +19,8 @@ public class TodoItemsController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<IEnumerable<TodoItemDTO>>> GetTodoItems()
     {
-        return await _context.TodoItems
+             return await _context.TodoItems
+          
             .Select(x => ItemToDTO(x))
             .ToListAsync();
     }
@@ -80,7 +81,7 @@ public class TodoItemsController : ControllerBase
     [HttpPost]
     public async Task<ActionResult<TodoItemDTO>> PostTodoItem(TodoItemDTO todoDTO)
     {
-        var todoItem = new TodoItem
+        var todoItem = new ListingItems
         {
             IsComplete = todoDTO.IsComplete,
             Name = todoDTO.Name,
@@ -118,7 +119,7 @@ public class TodoItemsController : ControllerBase
         return _context.TodoItems.Any(e => e.Id == id);
     }
 
-    private static TodoItemDTO ItemToDTO(TodoItem todoItem) =>
+    private static TodoItemDTO ItemToDTO(ListingItems todoItem) =>
        new TodoItemDTO
        {
            Id = todoItem.Id,
