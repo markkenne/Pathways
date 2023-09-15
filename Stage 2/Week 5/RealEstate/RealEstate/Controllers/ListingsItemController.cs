@@ -47,9 +47,9 @@ public class TodoItemsController : ControllerBase
     // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
     // <snippet_Update>
     [HttpPut("{id}")]
-    public async Task<IActionResult> PutTodoItem(long id, ListingsItemDTO todoDTO)
+    public async Task<IActionResult> PutTodoItem(long id, ListingsItemDTO listingDTO)
     {
-        if (id != todoDTO.Id)
+        if (id != listingDTO.Id)
         {
             return BadRequest();
         }
@@ -60,9 +60,9 @@ public class TodoItemsController : ControllerBase
             return NotFound();
         }
 
-        ListingItem.Name = todoDTO.Name;
-        ListingItem.IsComplete = todoDTO.IsComplete;
-        ListingItem.Worker = todoDTO.Worker;
+        ListingItem.Name = listingDTO.Name;
+        ListingItem.IsComplete = listingDTO.IsComplete;
+        ListingItem.Worker = listingDTO.Worker;
 
         try
         {
