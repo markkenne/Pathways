@@ -1,5 +1,6 @@
 ﻿//PropertyItemDTO.cs
-namespace TodoApi.Models;
+//namespace TodoApi.Models;
+namespace RealEstate.Models;
 
 public class ListingsItemDTO
 {

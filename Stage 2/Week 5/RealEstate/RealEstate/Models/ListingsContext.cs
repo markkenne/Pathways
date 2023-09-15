@@ -2,11 +2,12 @@
 using Microsoft.EntityFrameworkCore;
 using RealEstate.Models;
 
+//namespace RealEstate.Models;
 namespace TodoApi.Models;
 
-public class TodoContext : DbContext
+public class ListingsContext : DbContext
 {
-    public TodoContext(DbContextOptions<TodoContext> options)
+    public ListingsContext(DbContextOptions<ListingsContext> options)
         : base(options)
     {
     }

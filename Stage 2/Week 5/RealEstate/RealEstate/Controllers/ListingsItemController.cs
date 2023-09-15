@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TodoApi.Models;
+using RealEstate.Models;
 
 namespace TodoApi.Controllers;
 
@@ -9,9 +10,9 @@ namespace TodoApi.Controllers;
 [ApiController]
 public class TodoItemsController : ControllerBase
 {
-    private readonly TodoContext _context;
+    private readonly ListingsContext _context;
 
-    public TodoItemsController(TodoContext context)
+    public TodoItemsController(ListingsContext context)
     {
         _context = context;
     }

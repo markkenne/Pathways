@@ -6,7 +6,7 @@ using TodoApi.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
-builder.Services.AddDbContext<TodoContext>(opt =>
+builder.Services.AddDbContext<ListingsContext>(opt =>
     opt.UseInMemoryDatabase("ListingsList"));
 //opt.UseInMemoryDatabase("TodoList"));
 var app = builder.Build();
