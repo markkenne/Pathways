@@ -1,10 +1,10 @@
 ﻿// PropertyItemsController.cs in Controllers
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using TodoApi.Models;
+//using TodoApi.Models;
 using RealEstate.Models;
-
-namespace TodoApi.Controllers;
+ namespace RealEstate.Controllers;
+//namespace TodoApi.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -30,7 +30,8 @@ public class TodoItemsController : ControllerBase
     // GET: api/TodoItems/5
     // <snippet_GetByID>
     [HttpGet("{id}")]
-    public async Task<ActionResult<ListingsItemDTO>> GetTodoItem(long id)
+  
+    public async Task<ActionResult<ListingsItemDTO>> GetListingsItem(long id)
     {
         var ListingItem = await _context.ListingsItems.FindAsync(id);
 
@@ -94,7 +95,7 @@ public class TodoItemsController : ControllerBase
         await _context.SaveChangesAsync();
 
         return CreatedAtAction(
-            nameof(GetTodoItem),
+            nameof(GetListingsItem),
             new { id = ListingItem.Id },
             ItemToDTO(ListingItem));
     }

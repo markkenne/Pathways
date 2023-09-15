@@ -2,8 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using RealEstate.Models;
 
-//namespace RealEstate.Models;
-namespace TodoApi.Models;
+namespace RealEstate.Models;
 
 public class ListingsContext : DbContext
 {

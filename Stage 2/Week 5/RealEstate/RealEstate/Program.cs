@@ -1,7 +1,8 @@
 //Program.cs
 
 using Microsoft.EntityFrameworkCore;
-using TodoApi.Models;
+//using TodoApi.Models;
+using RealEstate.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 

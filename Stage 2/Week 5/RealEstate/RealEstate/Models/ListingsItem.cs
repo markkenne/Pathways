@@ -1,6 +1,5 @@
 ﻿//TodoItems.cs in Models
 namespace RealEstate.Models;
-//namespace TodoApi.Models;
 
 public class ListingItems
 {
