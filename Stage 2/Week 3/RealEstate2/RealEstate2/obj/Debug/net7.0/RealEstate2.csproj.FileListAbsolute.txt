@@ -28,3 +28,5 @@ C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\RealEstate2\RealEstate2\obj\Debu
 C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\RealEstate2\RealEstate2\obj\Debug\net7.0\RealEstate2.pdb
 C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\RealEstate2\RealEstate2\obj\Debug\net7.0\RealEstate2.genruntimeconfig.cache
 C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\RealEstate2\RealEstate2\obj\Debug\net7.0\ref\RealEstate2.dll
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\RealEstate2\RealEstate2\bin\Debug\net7.0\Views\Home\Index.cshtml
+C:\Users\dpdmak\Desktop\Pathways\Stage 2\Week 3\RealEstate2\RealEstate2\bin\Debug\net7.0\Views\Home\Privacy.cshtml
