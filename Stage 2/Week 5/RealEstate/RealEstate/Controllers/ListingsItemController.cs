@@ -32,14 +32,14 @@ public class TodoItemsController : ControllerBase
     [HttpGet("{id}")]
     public async Task<ActionResult<ListingsItemDTO>> GetTodoItem(long id)
     {
-        var todoItem = await _context.ListingsItems.FindAsync(id);
+        var ListingItem = await _context.ListingsItems.FindAsync(id);
 
-        if (todoItem == null)
+        if (ListingItem == null)
         {
             return NotFound();
         }
 
-        return ItemToDTO(todoItem);
+        return ItemToDTO(ListingItem);
     }
     // </snippet_GetByID>
 
@@ -54,15 +54,15 @@ public class TodoItemsController : ControllerBase
             return BadRequest();
         }
 
-        var todoItem = await _context.ListingsItems.FindAsync(id);
-        if (todoItem == null)
+        var ListingItem = await _context.ListingsItems.FindAsync(id);
+        if (ListingItem == null)
         {
             return NotFound();
         }
 
-        todoItem.Name = todoDTO.Name;
-        todoItem.IsComplete = todoDTO.IsComplete;
-        todoItem.Worker = todoDTO.Worker;
+        ListingItem.Name = todoDTO.Name;
+        ListingItem.IsComplete = todoDTO.IsComplete;
+        ListingItem.Worker = todoDTO.Worker;
 
         try
         {
@@ -81,22 +81,22 @@ public class TodoItemsController : ControllerBase
     // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
     // <snippet_Create>
     [HttpPost]
-    public async Task<ActionResult<ListingsItemDTO>> PostTodoItem(ListingsItemDTO todoDTO)
+    public async Task<ActionResult<ListingsItemDTO>> PostTodoItem(ListingsItemDTO listingItemDTO)
     {
-        var todoItem = new ListingItems
+        var ListingItem = new ListingItems
         {
-            IsComplete = todoDTO.IsComplete,
-            Name = todoDTO.Name,
-            Worker = todoDTO.Worker
+            IsComplete = listingItemDTO.IsComplete,
+            Name = listingItemDTO.Name,
+            Worker = listingItemDTO.Worker
         };
 
-        _context.ListingsItems.Add(todoItem);
+        _context.ListingsItems.Add(ListingItem);
         await _context.SaveChangesAsync();
 
         return CreatedAtAction(
             nameof(GetTodoItem),
-            new { id = todoItem.Id },
-            ItemToDTO(todoItem));
+            new { id = ListingItem.Id },
+            ItemToDTO(ListingItem));
     }
     // </snippet_Create>
 
@@ -104,13 +104,13 @@ public class TodoItemsController : ControllerBase
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteTodoItem(long id)
     {
-        var todoItem = await _context.ListingsItems.FindAsync(id);
-        if (todoItem == null)
+        var ListingItem = await _context.ListingsItems.FindAsync(id);
+        if (ListingItem == null)
         {
             return NotFound();
         }
 
-        _context.ListingsItems.Remove(todoItem);
+        _context.ListingsItems.Remove(ListingItem);
         await _context.SaveChangesAsync();
 
         return NoContent();
@@ -121,12 +121,12 @@ public class TodoItemsController : ControllerBase
         return _context.ListingsItems.Any(e => e.Id == id);
     }
 
-    private static ListingsItemDTO ItemToDTO(ListingItems todoItem) =>
+    private static ListingsItemDTO ItemToDTO(ListingItems ListingItem) =>
        new ListingsItemDTO
        {
-           Id = todoItem.Id,
-           Name = todoItem.Name,
-           IsComplete = todoItem.IsComplete,
-           Worker = todoItem.Worker
+           Id = ListingItem.Id,
+           Name = ListingItem.Name,
+           IsComplete = ListingItem.IsComplete,
+           Worker = ListingItem.Worker
        };
 }
