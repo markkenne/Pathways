@@ -1,10 +1,9 @@
 ﻿// PropertyItemsController.cs in Controllers
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-//using TodoApi.Models;
 using RealEstate.Models;
- namespace RealEstate.Controllers;
-//namespace TodoApi.Controllers;
+
+namespace RealEstate.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -19,7 +18,8 @@ public class TodoItemsController : ControllerBase
 
     // GET: api/TodoItems
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<ListingsItemDTO>>> GetTodoItems()
+    //public async Task<ActionResult<IEnumerable<ListingsItemDTO>>> GetListingsItems()
+   public async Task<ActionResult<IEnumerable<ListingsItemDTO>>> GetTodoItems()
     {
         return await _context.ListingsItems
 
@@ -61,9 +61,9 @@ public class TodoItemsController : ControllerBase
             return NotFound();
         }
 
-        ListingItem.Name = listingDTO.Name;
-        ListingItem.IsComplete = listingDTO.IsComplete;
-        ListingItem.Worker = listingDTO.Worker;
+        ListingItem.Address = listingDTO.Address;
+        ListingItem.IsSold = listingDTO.IsSold;
+        ListingItem.Agent = listingDTO.Agent;
 
         try
         {
@@ -86,9 +86,9 @@ public class TodoItemsController : ControllerBase
     {
         var ListingItem = new ListingItems
         {
-            IsComplete = listingItemDTO.IsComplete,
-            Name = listingItemDTO.Name,
-            Worker = listingItemDTO.Worker
+            IsSold = listingItemDTO.IsSold,
+            Address = listingItemDTO.Address,
+            Agent = listingItemDTO.Agent
         };
 
         _context.ListingsItems.Add(ListingItem);
@@ -126,8 +126,8 @@ public class TodoItemsController : ControllerBase
        new ListingsItemDTO
        {
            Id = ListingItem.Id,
-           Name = ListingItem.Name,
-           IsComplete = ListingItem.IsComplete,
-           Worker = ListingItem.Worker
+           Address = ListingItem.Address,
+           IsSold = ListingItem.IsSold,
+           Agent = ListingItem.Agent
        };
 }

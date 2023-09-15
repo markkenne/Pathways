@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="css/site.css" />
 </head>
 <body>
-    <h1>To-do CRUD</h1>
+    <h1>Real Estate Listing CRUD</h1>
     <h3>Add</h3>
     <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
-        <input type="text" id="add-name" placeholder="New to-do">
-        <input type="text" id="add-worker" placeholder="New worker">
+        <input type="text" id="add-address" placeholder="New property">
+        <input type="text" id="add-agent" placeholder="New agent">
         <input type="submit" value="Add">
     </form>
 
@@ -19,9 +19,9 @@
         <h3>Edit</h3>
         <form action="javascript:void(0);" onsubmit="updateItem()">
             <input type="hidden" id="edit-id">
-            <input type="checkbox" id="edit-isComplete">
-            <input type="text" id="edit-name">
-            <input type="text" id="edit-worker">
+            <input type="checkbox" id="edit-isSold">
+            <input type="text" id="edit-address">
+            <input type="text" id="edit-agent">
             <input type="submit" value="Save">
             <a onclick="closeInput()" aria-label="Close">&#10006;</a>
         </form>
@@ -31,9 +31,9 @@
 
     <table>
         <tr>
-            <th>Is Complete?</th>
-            <th>Name</th>
-            <th>Worker</th>
+            <th>Is Sold?</th>
+            <th>Property Address</th>
+            <th>Listing Agent</th>
             <th></th>
             <th></th>
         </tr>

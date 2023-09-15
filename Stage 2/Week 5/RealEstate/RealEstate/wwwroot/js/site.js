@@ -11,12 +11,12 @@ function getItems() {
 }
 
 function addItem() {
-    const addNameTextbox = document.getElementById('add-name');
-    const addWorkerTextbox = document.getElementById('add-worker');
+    const addAddressTextbox = document.getElementById('add-address');
+    const addAgentTextbox = document.getElementById('add-agent');
     const item = {
-        isComplete: false,
-        name: addNameTextbox.value.trim(),
-        worker: addWorkerTextbox.value.trim()
+        isSold: false,
+        address: addAddressTextbox.value.trim(),
+        agent: addAgentTextbox.value.trim()
     };
 
     fetch(uri, {
@@ -30,8 +30,8 @@ function addItem() {
         .then(response => response.json())
         .then(() => {
             getItems();
-            addNameTextbox.value = '';
-            addWorkerTextbox.value = '';
+            addAddressTextbox.value = '';
+            addAgentTextbox.value = '';
         })
         .catch(error => console.error('Unable to add item.', error));
 }
@@ -47,9 +47,9 @@ function deleteItem(id) {
 function displayEditForm(id) {
     const item = listings.find(item => item.id === id);
 
-    document.getElementById('edit-isComplete').checked = item.isComplete;
-    document.getElementById('edit-name').value = item.name;
-    document.getElementById('edit-worker').value = item.worker;
+    document.getElementById('edit-isSold').checked = item.isSold;
+    document.getElementById('edit-address').value = item.address;
+    document.getElementById('edit-agent').value = item.agent;
     document.getElementById('edit-id').value = item.id;
     document.getElementById('editForm').style.display = 'block';
 }
@@ -58,9 +58,9 @@ function updateItem() {
     const itemId = document.getElementById('edit-id').value;
     const item = {
         id: parseInt(itemId, 10),
-        isComplete: document.getElementById('edit-isComplete').checked,
-        name: document.getElementById('edit-name').value.trim(),
-        worker: document.getElementById('edit-worker').value.trim()
+        isSold: document.getElementById('edit-isSold').checked,
+        address: document.getElementById('edit-address').value.trim(),
+        agent: document.getElementById('edit-agent').value.trim()
     };
 
     fetch(`${uri}/${itemId}`, {
@@ -84,9 +84,9 @@ function closeInput() {
 }
 
 function _displayCount(itemCount) {
-    const name = (itemCount === 1) ? 'to-do' : 'to-dos';
+    const address = (itemCount === 1) ? 'to-do' : 'Property Listings';
 
-    document.getElementById('counter').innerText = `${itemCount} ${name}`;
+    document.getElementById('counter').innerText = `${itemCount} ${address}`;
 }
 
 function _displayItems(data) {
@@ -98,10 +98,10 @@ function _displayItems(data) {
     const button = document.createElement('button');
 
     data.forEach(item => {
-        let isCompleteCheckbox = document.createElement('input');
-        isCompleteCheckbox.type = 'checkbox';
-        isCompleteCheckbox.disabled = true;
-        isCompleteCheckbox.checked = item.isComplete;
+        let isSoldCheckbox = document.createElement('input');
+        isSoldCheckbox.type = 'checkbox';
+        isSoldCheckbox.disabled = true;
+        isSoldCheckbox.checked = item.isSold;
 
         let editButton = button.cloneNode(false);
         editButton.innerText = 'Edit';
@@ -114,14 +114,14 @@ function _displayItems(data) {
         let tr = tBody.insertRow();
 
         let td1 = tr.insertCell(0);
-        td1.appendChild(isCompleteCheckbox);
+        td1.appendChild(isSoldCheckbox);
 
         let td2 = tr.insertCell(1);
-        let textNode = document.createTextNode(item.name);
+        let textNode = document.createTextNode(item.address);
         td2.appendChild(textNode);
 
         let td3 = tr.insertCell(2);
-        let textNode1 = document.createTextNode(item.worker);
+        let textNode1 = document.createTextNode(item.agent);
         td3.appendChild(textNode1);
 
         let td4 = tr.insertCell(3);
