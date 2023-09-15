@@ -1,6 +1,7 @@
 ﻿// site.js in wwwroot/js
-const uri = 'api/todoitems';
-let todos = [];
+ const uri = 'api/todoitems';
+
+let listings = [];
 
 function getItems() {
     fetch(uri)
@@ -44,7 +45,7 @@ function deleteItem(id) {
 }
 
 function displayEditForm(id) {
-    const item = todos.find(item => item.id === id);
+    const item = listings.find(item => item.id === id);
 
     document.getElementById('edit-isComplete').checked = item.isComplete;
     document.getElementById('edit-name').value = item.name;
@@ -89,7 +90,7 @@ function _displayCount(itemCount) {
 }
 
 function _displayItems(data) {
-    const tBody = document.getElementById('todos');
+    const tBody = document.getElementById('listings');
     tBody.innerHTML = '';
 
     _displayCount(data.length);
@@ -130,5 +131,5 @@ function _displayItems(data) {
         td5.appendChild(deleteButton);
     });
 
-    todos = data;
+    listings = data;
 }

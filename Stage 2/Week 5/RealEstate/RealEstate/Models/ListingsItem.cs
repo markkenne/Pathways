@@ -1,4 +1,4 @@
-﻿//ListingItems.cs in Models
+﻿//TodoItems.cs in Models
 
 namespace TodoApi.Models;
 

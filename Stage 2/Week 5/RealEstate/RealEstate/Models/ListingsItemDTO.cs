@@ -1,7 +1,7 @@
 ﻿//PropertyItemDTO.cs
 namespace TodoApi.Models;
 
-public class TodoItemDTO
+public class ListingsItemDTO
 {
     public long Id { get; set; }
     public string? Name { get; set; }

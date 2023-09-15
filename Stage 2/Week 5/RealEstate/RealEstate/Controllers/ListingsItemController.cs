@@ -18,9 +18,9 @@ public class TodoItemsController : ControllerBase
 
     // GET: api/TodoItems
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<TodoItemDTO>>> GetTodoItems()
+    public async Task<ActionResult<IEnumerable<ListingsItemDTO>>> GetTodoItems()
     {
-        return await _context.TodoItems
+        return await _context.ListingsItems
 
        .Select(x => ItemToDTO(x))
        .ToListAsync();
@@ -29,9 +29,9 @@ public class TodoItemsController : ControllerBase
     // GET: api/TodoItems/5
     // <snippet_GetByID>
     [HttpGet("{id}")]
-    public async Task<ActionResult<TodoItemDTO>> GetTodoItem(long id)
+    public async Task<ActionResult<ListingsItemDTO>> GetTodoItem(long id)
     {
-        var todoItem = await _context.TodoItems.FindAsync(id);
+        var todoItem = await _context.ListingsItems.FindAsync(id);
 
         if (todoItem == null)
         {
@@ -46,14 +46,14 @@ public class TodoItemsController : ControllerBase
     // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
     // <snippet_Update>
     [HttpPut("{id}")]
-    public async Task<IActionResult> PutTodoItem(long id, TodoItemDTO todoDTO)
+    public async Task<IActionResult> PutTodoItem(long id, ListingsItemDTO todoDTO)
     {
         if (id != todoDTO.Id)
         {
             return BadRequest();
         }
 
-        var todoItem = await _context.TodoItems.FindAsync(id);
+        var todoItem = await _context.ListingsItems.FindAsync(id);
         if (todoItem == null)
         {
             return NotFound();
@@ -80,7 +80,7 @@ public class TodoItemsController : ControllerBase
     // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
     // <snippet_Create>
     [HttpPost]
-    public async Task<ActionResult<TodoItemDTO>> PostTodoItem(TodoItemDTO todoDTO)
+    public async Task<ActionResult<ListingsItemDTO>> PostTodoItem(ListingsItemDTO todoDTO)
     {
         var todoItem = new ListingItems
         {
@@ -89,7 +89,7 @@ public class TodoItemsController : ControllerBase
             Worker = todoDTO.Worker
         };
 
-        _context.TodoItems.Add(todoItem);
+        _context.ListingsItems.Add(todoItem);
         await _context.SaveChangesAsync();
 
         return CreatedAtAction(
@@ -103,13 +103,13 @@ public class TodoItemsController : ControllerBase
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteTodoItem(long id)
     {
-        var todoItem = await _context.TodoItems.FindAsync(id);
+        var todoItem = await _context.ListingsItems.FindAsync(id);
         if (todoItem == null)
         {
             return NotFound();
         }
 
-        _context.TodoItems.Remove(todoItem);
+        _context.ListingsItems.Remove(todoItem);
         await _context.SaveChangesAsync();
 
         return NoContent();
@@ -117,11 +117,11 @@ public class TodoItemsController : ControllerBase
 
     private bool TodoItemExists(long id)
     {
-        return _context.TodoItems.Any(e => e.Id == id);
+        return _context.ListingsItems.Any(e => e.Id == id);
     }
 
-    private static TodoItemDTO ItemToDTO(ListingItems todoItem) =>
-       new TodoItemDTO
+    private static ListingsItemDTO ItemToDTO(ListingItems todoItem) =>
+       new ListingsItemDTO
        {
            Id = todoItem.Id,
            Name = todoItem.Name,
