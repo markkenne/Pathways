@@ -19,8 +19,11 @@
         <h3>Edit</h3>
         <form action="javascript:void(0);" onsubmit="updateItem()">
             <input type="hidden" id="edit-id">
+            <label for="edit-isSold">Sold   </label>
             <input type="checkbox" id="edit-isSold">
+            <label for="edit-address"> Address  </label>
             <input type="text" id="edit-address">
+            <label for="edit-agent"> Agent Name  </label>
             <input type="text" id="edit-agent">
             <input type="submit" value="Save">
             <a onclick="closeInput()" aria-label="Close">&#10006;</a>
@@ -31,11 +34,11 @@
 
     <table>
         <tr>
-            <th>Is Sold?</th>
+            <th>Sold</th>
             <th>Property Address</th>
             <th>Listing Agent</th>
-            <th></th>
-            <th></th>
+            <th>Edit</th>
+            <th>Delete</th>
         </tr>
         <tbody id="listings"></tbody>
     </table>
