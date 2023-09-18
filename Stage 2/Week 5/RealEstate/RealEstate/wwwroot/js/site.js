@@ -12,10 +12,16 @@ function getItems() {
 
 function addItem() {
     const addAddressTextbox = document.getElementById('add-address');
+    const addCityTextbox = document.getElementById('add-city');
+    const addStateTextbox = document.getElementById('add-state');
+    const addPriceTextbox = document.getElementById('add-price');
     const addAgentTextbox = document.getElementById('add-agent');
     const item = {
         isSold: false,
         address: addAddressTextbox.value.trim(),
+        city: addCityTextbox.value.trim(),
+        state: addStateTextbox.value.trim(),
+        price: addPriceTextbox.value.trim(),
         agent: addAgentTextbox.value.trim()
     };
 
@@ -31,6 +37,9 @@ function addItem() {
         .then(() => {
             getItems();
             addAddressTextbox.value = '';
+            addCityTextbox.value = '';
+            addStateTextbox.value = '';
+            addPriceTextbox.value = '';
             addAgentTextbox.value = '';
         })
         .catch(error => console.error('Unable to add item.', error));
@@ -49,6 +58,9 @@ function displayEditForm(id) {
 
     document.getElementById('edit-isSold').checked = item.isSold;
     document.getElementById('edit-address').value = item.address;
+    document.getElementById('edit-city').value = item.city;
+    document.getElementById('edit-state').value = item.state;
+    document.getElementById('edit-price').value = item.price;
     document.getElementById('edit-agent').value = item.agent;
     document.getElementById('edit-id').value = item.id;
     document.getElementById('editForm').style.display = 'block';
@@ -60,6 +72,9 @@ function updateItem() {
         id: parseInt(itemId, 10),
         isSold: document.getElementById('edit-isSold').checked,
         address: document.getElementById('edit-address').value.trim(),
+        city: document.getElementById('edit-city').value.trim(),
+        state: document.getElementById('edit-state').value.trim(),
+        price: document.getElementById('edit-price').value.trim(),
         agent: document.getElementById('edit-agent').value.trim()
     };
 
@@ -121,14 +136,26 @@ function _displayItems(data) {
         td2.appendChild(textNode);
 
         let td3 = tr.insertCell(2);
-        let textNode1 = document.createTextNode(item.agent);
-        td3.appendChild(textNode1);
+        let textNode2 = document.createTextNode(item.city);
+        td3.appendChild(textNode2);
 
         let td4 = tr.insertCell(3);
-        td4.appendChild(editButton);
+        let textNode3 = document.createTextNode(item.state);
+        td4.appendChild(textNode3);
 
         let td5 = tr.insertCell(4);
-        td5.appendChild(deleteButton);
+        let textNode4 = document.createTextNode(item.price);
+        td5.appendChild(textNode4);
+
+        let td6 = tr.insertCell(5);
+        let textNode5 = document.createTextNode(item.agent);
+        td6.appendChild(textNode5);
+
+        let td7 = tr.insertCell(6);
+        td7.appendChild(editButton);
+
+        let td8 = tr.insertCell(7);
+        td8.appendChild(deleteButton);
     });
 
     listings = data;

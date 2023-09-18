@@ -3,15 +3,18 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>To-do CRUD</title>
+    <title>Real Estate Listing CRUD</title>
     <link rel="stylesheet" href="css/site.css" />
 </head>
 <body>
     <h1>Real Estate Listing CRUD</h1>
     <h3>Add</h3>
     <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
-        <input type="text" id="add-address" placeholder="New property">
-        <input type="text" id="add-agent" placeholder="New agent">
+        <input type="text" id="add-address" placeholder="New address">
+        <input type="text" id="add-city"    placeholder="New city">
+        <input type="text" id="add-state"   placeholder="New state">
+        <input type="text" id="add-price"   placeholder="New price">
+        <input type="text" id="add-agent"   placeholder="New agent">
         <input type="submit" value="Add">
     </form>
 
@@ -23,6 +26,12 @@
             <input type="checkbox" id="edit-isSold">
             <label for="edit-address"> Address  </label>
             <input type="text" id="edit-address">
+            <label for="edit-address"> City  </label>
+            <input type="text" id="edit-city">
+            <label for="edit-address"> State  </label>
+            <input type="text" id="edit-state">
+            <label for="edit-address"> Price  </label>
+            <input type="text" id="edit-price">
             <label for="edit-agent"> Agent Name  </label>
             <input type="text" id="edit-agent">
             <input type="submit" value="Save">
@@ -36,6 +45,9 @@
         <tr>
             <th>Sold</th>
             <th>Property Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Price</th>
             <th>Listing Agent</th>
             <th>Edit</th>
             <th>Delete</th>

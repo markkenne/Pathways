@@ -62,6 +62,9 @@ public class TodoItemsController : ControllerBase
         }
 
         ListingItem.Address = listingDTO.Address;
+        ListingItem.City = listingDTO.City;
+        ListingItem.State = listingDTO.State;
+        ListingItem.Price = listingDTO.Price;
         ListingItem.IsSold = listingDTO.IsSold;
         ListingItem.Agent = listingDTO.Agent;
 
@@ -88,6 +91,9 @@ public class TodoItemsController : ControllerBase
         {
             IsSold = listingItemDTO.IsSold,
             Address = listingItemDTO.Address,
+            City = listingItemDTO.City,
+            State = listingItemDTO.State,
+            Price = listingItemDTO.Price,
             Agent = listingItemDTO.Agent
         };
 
@@ -127,6 +133,9 @@ public class TodoItemsController : ControllerBase
        {
            Id = ListingItem.Id,
            Address = ListingItem.Address,
+           City = ListingItem.City,
+           State = ListingItem.State,
+           Price = ListingItem.Price,
            IsSold = ListingItem.IsSold,
            Agent = ListingItem.Agent
        };
