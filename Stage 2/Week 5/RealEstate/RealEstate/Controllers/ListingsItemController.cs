@@ -61,7 +61,9 @@ public class TodoItemsController : ControllerBase
             return NotFound();
         }
 
-        ListingItem.Address = listingDTO.Address;
+        ListingItem.AddressNo = listingDTO.AddressNo;
+        ListingItem.AddressSt = listingDTO.AddressSt;
+        ListingItem.AddressStType = listingDTO.AddressStType;
         ListingItem.City = listingDTO.City;
         ListingItem.State = listingDTO.State;
         ListingItem.Price = listingDTO.Price;
@@ -90,7 +92,9 @@ public class TodoItemsController : ControllerBase
         var ListingItem = new ListingItems
         {
             IsSold = listingItemDTO.IsSold,
-            Address = listingItemDTO.Address,
+            AddressNo = listingItemDTO.AddressNo,
+            AddressSt = listingItemDTO.AddressSt,
+            AddressStType = listingItemDTO.AddressStType,
             City = listingItemDTO.City,
             State = listingItemDTO.State,
             Price = listingItemDTO.Price,
@@ -132,7 +136,9 @@ public class TodoItemsController : ControllerBase
        new ListingsItemDTO
        {
            Id = ListingItem.Id,
-           Address = ListingItem.Address,
+           AddressNo = ListingItem.AddressNo,
+           AddressSt = ListingItem.AddressSt,
+           AddressStType = ListingItem.AddressStType,
            City = ListingItem.City,
            State = ListingItem.State,
            Price = ListingItem.Price,
