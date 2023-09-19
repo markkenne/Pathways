@@ -1,5 +1,4 @@
-﻿//PropertyItemDTO.cs
-namespace RealEstate.Models;
+﻿namespace RealEstate.Models;
 
 public class ListingsItemDTO
 {
@@ -9,9 +8,7 @@ public class ListingsItemDTO
     public string? AddressStType { get; set; }
     public string? City { get; set; }
     public string? State { get; set; }
-
     public string? Agent { get; set; }
     public bool IsSold { get; set; }
     public double Price { get; set; }
-
 }

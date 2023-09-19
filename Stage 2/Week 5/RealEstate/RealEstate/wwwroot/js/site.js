@@ -1,5 +1,4 @@
-﻿// site.js in wwwroot/js
- const uri = 'api/todoitems';
+﻿const uri = 'api/todoitems';
 
 let listings = [];
 
@@ -19,14 +18,14 @@ function addItem() {
     const addPriceTextbox = document.getElementById('add-price');
     const addAgentTextbox = document.getElementById('add-agent');
     const item = {
-        isSold: false,
-        addressNo: addAddressNoTextbox.value.trim(),
-        addressSt: addAddressStTextbox.value.trim(),
-        addressStType: addAddressStTypeTextbox.value.trim(),
-        city: addCityTextbox.value.trim(),
-        state: addStateTextbox.value.trim(),
-        price: addPriceTextbox.value.trim(),
-        agent: addAgentTextbox.value.trim()
+          isSold: false,
+          addressNo: addAddressNoTextbox.value.trim(),
+          addressSt: addAddressStTextbox.value.trim(),
+          addressStType: addAddressStTypeTextbox.value.trim(),
+          city: addCityTextbox.value.trim(),
+          state: addStateTextbox.value.trim(),
+          price: addPriceTextbox.value.trim(),
+          agent: addAgentTextbox.value.trim()
     };
 
     fetch(uri, {
@@ -61,7 +60,6 @@ function deleteItem(id) {
 
 function displayEditForm(id) {
     const item = listings.find(item => item.id === id);
-
     document.getElementById('edit-isSold').checked = item.isSold;
     document.getElementById('edit-addressNo').value = item.addressNo;
     document.getElementById('edit-addressSt').value = item.addressSt;
@@ -180,21 +178,12 @@ function _displayItems(data) {
         td10.appendChild(deleteButton);
 
         let linkButton = button.cloneNode(false);
-     //   string ? addressStPlus = replace(item.addressSt, " ", "+");
-
-        var addresslink = "<a href=https://maps.google.com/?q=" + item.addressNo + "+" + item.addressSt + item.city + item.state + ">Google</a>";
-       // linkButton.innerHTML = `<a href="https://www.google.com/maps/place/" + item.address + item.city +item.state >Google</a>`;;
-     //   linkButton.innerHTML = '<a href="https://www.google.com/maps/place/" >Google</a>`;
-        linkButton.text = "hello";
+        var addresslink = "<a href=https://maps.google.com/?q=" + item.addressNo + "+" + item.addressSt + "+" + item.addressStType + "+" + item.city + "+" + item.state + ">Google</a>";
         linkButton.innerHTML = addresslink;
-     //     linkButton.innerHTML = `<a href="https://www.google.com/maps/place/"+ addresslink >Map</a>`;
-      //  linkButton.innerHTML = "<a href=https://www.google.com/maps/place/" + item.address + item.city + item.state + ">Google</a>";
-       // linkButton.setAttribute('onclick', window.open("https://www.google.com", "_blank");
-      
         let td11 = tr.insertCell(10);
         td11.appendChild(linkButton);
 
-   
+        
     });
 
     listings = data;

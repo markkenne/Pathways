@@ -1,5 +1,4 @@
-﻿// PropertyItemsController.cs in Controllers
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RealEstate.Models;
 
@@ -18,8 +17,7 @@ public class TodoItemsController : ControllerBase
 
     // GET: api/TodoItems
     [HttpGet]
-    //public async Task<ActionResult<IEnumerable<ListingsItemDTO>>> GetListingsItems()
-   public async Task<ActionResult<IEnumerable<ListingsItemDTO>>> GetTodoItems()
+    public async Task<ActionResult<IEnumerable<ListingsItemDTO>>> GetTodoItems()
     {
         return await _context.ListingsItems
 
