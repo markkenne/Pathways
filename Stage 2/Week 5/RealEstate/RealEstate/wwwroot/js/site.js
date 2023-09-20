@@ -178,7 +178,7 @@ function _displayItems(data) {
         td10.appendChild(deleteButton);
 
         let linkButton = button.cloneNode(false);
-        var addresslink = "<a href=https://maps.google.com/?q=" + item.addressNo + "+" + item.addressSt + "+" + item.addressStType + "+" + item.city + "+" + item.state + ">Google</a>";
+        var addresslink = "<html><a href=https://maps.google.com/?q=" + item.addressNo + "+" + item.addressSt + "+" + item.addressStType + "+" + item.city + "+" + item.state + " >Google</a> </html>";
         linkButton.innerHTML = addresslink;
         let td11 = tr.insertCell(10);
         td11.appendChild(linkButton);
