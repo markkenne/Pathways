@@ -1,9 +1,18 @@
-﻿using ContosoCraftsWebSite.Services;
+﻿using System.Text.Json;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using ContosoCraftsWebSite.Services;
+using ContosoCraftsWebSite.Models;
+using ContosoCraftsWebSite.Pages;
+using ContosoCraftsWebSite.Components;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.HttpsPolicy;
 
 namespace ContosoCrafts.WebSite
 {
@@ -50,6 +59,7 @@ namespace ContosoCrafts.WebSite
                 endpoints.MapRazorPages();
                 endpoints.MapControllers();
                 endpoints.MapBlazorHub();
+
 
                 // endpoints.MapGet("/products", (context) => 
                 // {
