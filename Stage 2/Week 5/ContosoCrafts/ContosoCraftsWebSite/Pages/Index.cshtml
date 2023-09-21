@@ -4,14 +4,33 @@
 @{
     ViewData["Title"] = "Home page";
 }
-<div class="text-center"
+
+
+    
+<div class="text-center" >
 <h1 class="display-4">Contoso Crafts</h1>
-></div>
+</div>
+<div class="threeColumns">
+    
+    
+ <div class="card-columns" >
+        
+    @foreach (var product in Model.Products)
+    {
+             
+                    
+    <div class="card" >
+        <div class="card-img" style="background-image: url('@product.Image');".></div>
+        <div class="card-body" >
+                <h5 class="card-title">@product.Title</h5>
+                    <br>
+        </div>
+                    </div>
+                    
+  
+    }
+</div>
+</div>
 
-
-@foreach (var product in Model.Products)
-{
-    <h2>@product.Title</h2>
-}
 
 <script src="_framework/blazor.server.js"></script>
