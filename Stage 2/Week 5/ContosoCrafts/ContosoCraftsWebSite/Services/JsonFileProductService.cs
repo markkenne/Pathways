@@ -32,12 +32,12 @@ namespace ContosoCraftsWebSite.Services
         {
             var products = GetProducts();
 
-            if (products.First(x => x.Id == productId).Ratings == null)
+            if (products.First(x => x.Id == productId).Ratings == null) 
             {
-                products.First(x => x.Id == productId).Ratings = new int[] { rating };
+                products.First(x => x.Id == productId).Ratings = new int[] { rating }; 
             }
             else
-            {
+            {  
                 var ratings = products.First(x => x.Id == productId).Ratings.ToList();
                 ratings.Add(rating);
                 products.First(x => x.Id == productId).Ratings = ratings.ToArray();
@@ -46,7 +46,7 @@ namespace ContosoCraftsWebSite.Services
             using var outputStream = File.OpenWrite(JsonFileName);
 
             JsonSerializer.Serialize<IEnumerable<Product>>(
-                new Utf8JsonWriter(outputStream, new JsonWriterOptions
+                new Utf8JsonWriter(outputStream, new JsonWriterOptions   // Utf8 allows this to happen in any language
                 {
                     SkipValidation = true,
                     Indented = true
