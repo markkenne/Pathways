@@ -14,7 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 
-namespace ContosoCrafts.WebSite
+namespace ContosoCraftsWebSite
 {
     public class Startup
     {
@@ -49,7 +49,6 @@ namespace ContosoCrafts.WebSite
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
             app.UseRouting();
 
             app.UseAuthorization();

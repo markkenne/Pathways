@@ -5,7 +5,7 @@
     "iisExpress": {
       "applicationUrl": "http://localhost:62042",
       "sslPort": 44370
-    }
+      }
   },
   "profiles": {
     "ContosoCraftsWebSite": {

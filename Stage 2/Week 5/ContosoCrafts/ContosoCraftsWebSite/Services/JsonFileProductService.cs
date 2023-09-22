@@ -3,7 +3,10 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 using ContosoCraftsWebSite.Models;
+using ContosoCraftsWebSite.Components;
+using ContosoCraftsWebSite.Pages;
 using Microsoft.AspNetCore.Hosting;
+
 
 namespace ContosoCraftsWebSite.Services
 {
